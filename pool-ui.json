@@ -1,0 +1,53 @@
+{
+  "left_entrypoint": "assets/left.html",
+  "schema_version": "1.0.0",
+  "default_page": "overview",
+  "meaningfully_updated_at": "2026-09-16T03:40:00Z",
+  "pages": [
+    {
+      "id": "overview",
+      "slug": "",
+      "label": "Start here",
+      "icon": "↗",
+      "group": "Guide",
+      "description": "A compact answer and decision path for safe HTTP caching.",
+      "parent": null,
+      "entrypoint": "index.html",
+      "entrypoint_type": "html_fragment",
+      "redirects": [],
+      "visibility": "public",
+      "indexable": true,
+      "tools": []
+    },
+    {
+      "id": "report",
+      "slug": "report",
+      "label": "Bootstrap report",
+      "icon": "▤",
+      "group": "Guide",
+      "description": "The dated standards-grounded first report with checks and uncertainty notes.",
+      "parent": null,
+      "entrypoint": "report/index.html",
+      "entrypoint_type": "html_fragment",
+      "redirects": [],
+      "visibility": "public",
+      "indexable": true,
+      "tools": []
+    },
+    {
+      "id": "history",
+      "slug": "history",
+      "label": "Research history",
+      "icon": "◷",
+      "group": "About",
+      "description": "A dated record of research runs and meaningful answer changes.",
+      "parent": null,
+      "entrypoint": "history/index.html",
+      "entrypoint_type": "html_fragment",
+      "redirects": [],
+      "visibility": "public",
+      "indexable": true,
+      "tools": []
+    }
+  ]
+}

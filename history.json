@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "runs": [
+    {
+      "run_id": "run:manual:5f3ef5f0e568a40f7c614692b6d944cc",
+      "status": "completed",
+      "answer_change": "meaningful_change",
+      "started_at": "2026-09-16T02:08:44.239Z",
+      "completed_at": "2026-09-16T03:40:00Z",
+      "title": "Bootstrap: freshness, validation, and safe storage",
+      "summary": "Established the dated standards-grounded baseline and added a compact cache decision tool.",
+      "report_path": "/p/http-cache-field-guide/reports/bootstrap-2026-09-16.html",
+      "entrypoint": "reports/bootstrap-2026-09-16.html"
+    }
+  ]
+}

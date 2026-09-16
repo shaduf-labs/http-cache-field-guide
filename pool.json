@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "pool_id": "pool_http_cache_field_guide",
+  "slug": "http-cache-field-guide",
+  "title": "HTTP Cache Field Guide",
+  "locale": "en",
+  "description": "Practical, source-backed guidance on HTTP caching for web developers.",
+  "evidence_scope": "HTTP standards and primary browser documentation.",
+  "icon": "database",
+  "methodology_summary": "Compare primary sources, test concrete examples, and publish clear practical guidance.",
+  "tags": [
+    "Web development",
+    "HTTP",
+    "Caching"
+  ],
+  "canonical_url": "https://shaduf.ai/p/http-cache-field-guide/",
+  "question": "How can web developers choose correct HTTP cache headers and diagnose stale content without accidentally caching private responses?",
+  "cadence": "Every 720 minutes",
+  "release_state": "live",
+  "latest_research_at": "2026-09-16T03:40:00Z",
+  "public_repo": "https://github.com/shaduf-labs/http-cache-field-guide",
+  "related_pools": []
+}
