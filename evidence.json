@@ -250,6 +250,156 @@
       "accessed_at": "2026-09-16T10:56:00Z",
       "relation": "context",
       "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc9111-layer-boundary",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-6",
+      "title": "RFC 9111 §6: Relationship to Applications",
+      "claim": "Separates HTTP cache requirements from browser history and other application caching mechanisms; a history restoration is not automatically HTTP-cache reuse.",
+      "accessed_at": "2026-09-16T14:02:40Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc9111-age",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-5.1",
+      "title": "RFC 9111 §5.1: Age",
+      "claim": "A stored response reused without validation must generate Age, but absence of Age does not imply that the origin was contacted.",
+      "accessed_at": "2026-09-16T14:02:40Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc9110-via",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-7.6.3",
+      "title": "RFC 9110 §7.6.3: Via",
+      "claim": "Via identifies intermediaries that forwarded a message; it is not a cache-hit field.",
+      "accessed_at": "2026-09-16T14:02:40Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "fetch-layer-division",
+      "source_type": "standard",
+      "source_url": "https://fetch.spec.whatwg.org/#http-header-layer-division",
+      "title": "Fetch Standard: HTTP header layer division",
+      "claim": "Distinguishes API, service-worker, and network/cache layers; a worker delegation does not by itself identify the downstream response source.",
+      "accessed_at": "2026-09-16T14:02:40Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "fetch-network-cache",
+      "source_type": "standard",
+      "source_url": "https://fetch.spec.whatwg.org/#http-network-or-cache-fetch",
+      "title": "Fetch Standard: HTTP-network-or-cache fetch",
+      "claim": "Defines the downstream network/cache fetch path that still requires inspection after a service worker delegates.",
+      "accessed_at": "2026-09-16T14:02:40Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "serviceworker-handle-fetch",
+      "source_type": "standard",
+      "source_url": "https://w3c.github.io/ServiceWorker/#handle-fetch",
+      "title": "Service Workers: Handle Fetch",
+      "claim": "Defines service-worker fetch handling, including the possibility of a worker supplying or delegating a response.",
+      "accessed_at": "2026-09-16T14:02:40Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "serviceworker-caches",
+      "source_type": "standard",
+      "source_url": "https://w3c.github.io/ServiceWorker/#caches",
+      "title": "Service Workers: Caches",
+      "claim": "Named Cache objects are script-managed and origin-associated, separate from the browser HTTP cache.",
+      "accessed_at": "2026-09-16T14:02:40Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "html-reloading-traversing",
+      "source_type": "standard",
+      "source_url": "https://html.spec.whatwg.org/multipage/browsing-the-web.html#reloading-and-traversing",
+      "title": "HTML: Reloading and traversing",
+      "claim": "Defines session-history traversal and reload as distinct navigation observations for controlled lifecycle tests.",
+      "accessed_at": "2026-09-16T14:02:40Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "html-persisted-history",
+      "source_type": "standard",
+      "source_url": "https://html.spec.whatwg.org/multipage/browsing-the-web.html#persisted-history-entry-state",
+      "title": "HTML: Persisted history entry state",
+      "claim": "Provides the persisted-history state boundary used to distinguish a restored document from a newly fetched navigation.",
+      "accessed_at": "2026-09-16T14:02:40Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "html-page-transition",
+      "source_type": "standard",
+      "source_url": "https://html.spec.whatwg.org/multipage/nav-history-apis.html#the-pagetransitionevent-interface",
+      "title": "HTML: PageTransitionEvent",
+      "claim": "Provides the page lifecycle signal used by a test-only pageshow/pagehide log; the signal identifies lifecycle handling, not original response provenance.",
+      "accessed_at": "2026-09-16T14:02:40Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "html-document-lifecycle",
+      "source_type": "standard",
+      "source_url": "https://html.spec.whatwg.org/multipage/document-lifecycle.html#unloading-documents",
+      "title": "HTML: Document lifecycle and bfcache",
+      "claim": "Documents persisted document lifecycle behavior relevant to back/forward cache diagnosis.",
+      "accessed_at": "2026-09-16T14:02:40Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "chrome-network-layer",
+      "source_type": "browser-documentation",
+      "source_url": "https://developer.chrome.com/docs/devtools/network/",
+      "title": "Chrome DevTools Network panel",
+      "claim": "Provides browser-specific request rows and request metadata for comparing normal, fresh-profile, reload, and disabled-cache conditions.",
+      "accessed_at": "2026-09-16T14:02:40Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "chrome-network-reference-layer",
+      "source_type": "browser-documentation",
+      "source_url": "https://developer.chrome.com/docs/devtools/network/reference/",
+      "title": "Chrome DevTools Network features reference",
+      "claim": "Documents Disable cache, Clear browser cache, service-worker timing phases, and related controls; these change the experiment.",
+      "accessed_at": "2026-09-16T14:02:40Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "chrome-application-layer",
+      "source_type": "browser-documentation",
+      "source_url": "https://developer.chrome.com/docs/devtools/application/",
+      "title": "Chrome DevTools Application panel",
+      "claim": "Provides Chrome-specific inspection for service workers, Cache Storage, storage, and bfcache tools.",
+      "accessed_at": "2026-09-16T14:02:40Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "chrome-bfcache-layer",
+      "source_type": "browser-documentation",
+      "source_url": "https://developer.chrome.com/docs/devtools/application/back-forward-cache/",
+      "title": "Chrome DevTools bfcache test",
+      "claim": "Cross-checks that bfcache is distinct from browser/HTTP cache and provides a browser-specific test surface.",
+      "accessed_at": "2026-09-16T14:02:40Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
     }
   ]
 }

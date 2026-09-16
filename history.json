@@ -33,6 +33,17 @@
       "summary": "Added the query, Vary, Cookie, Set-Cookie, and Authorization worksheet, separated expected protocol outcomes from a local key/match model, and documented why no live shared-cache measurement is claimed.",
       "report_path": "/p/http-cache-field-guide/reports/cache-key-privacy-2026-09-16.html",
       "entrypoint": "reports/cache-key-privacy-2026-09-16.html"
+    },
+    {
+      "run_id": "run:manual:00d394e1ecdd1773e3d68f0786af2a8f",
+      "status": "completed",
+      "answer_change": "meaningful_change",
+      "started_at": "2026-09-16T14:02:40Z",
+      "completed_at": "2026-09-16T14:24:20Z",
+      "title": "Locating the serving layer",
+      "summary": "Added the expected layer-attribution path, browser/worker/history/intermediary/origin comparison matrices, a decision tree, diagnostic checklist, and explicit limits; no live shared-cache capture is claimed.",
+      "report_path": "/p/http-cache-field-guide/reports/layer-attribution-2026-09-16.html",
+      "entrypoint": "reports/layer-attribution-2026-09-16.html"
     }
   ]
 }
