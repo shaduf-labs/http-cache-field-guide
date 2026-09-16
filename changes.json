@@ -1,1 +1,47 @@
-{"schema_version":"1.0.0","items":[{"change_id":"bootstrap-answer","changed_at":"2026-09-16T03:40:00Z","summary":"Added a concise decision-first answer for freshness, validation, private/shared storage, and stale diagnosis.","path":"/p/"},{"change_id":"bootstrap-report","changed_at":"2026-09-16T03:40:00Z","summary":"Added the dated first research report with policy table, timeline, curl checks, sources, and uncertainty.","path":"/p/report"},{"change_id":"bootstrap-tool","changed_at":"2026-09-16T03:40:00Z","summary":"Added a small local cache policy decision tool and research history page.","path":"/p/history"},{"change_id":"bootstrap-auth-example","changed_at":"2026-09-16T06:18:13Z","summary":"Added a worked Authorization example that separates private browser retention from shared-cache reuse and links RFC 9111 section 3.5.","path":"/p/report"}]}
+{
+  "schema_version": "1.0.0",
+  "items": [
+    {
+      "change_id": "bootstrap-answer",
+      "changed_at": "2026-09-16T03:40:00Z",
+      "summary": "Added a concise decision-first answer for freshness, validation, private/shared storage, and stale diagnosis.",
+      "path": "/p/"
+    },
+    {
+      "change_id": "bootstrap-report",
+      "changed_at": "2026-09-16T03:40:00Z",
+      "summary": "Added the dated first research report with policy table, timeline, curl checks, sources, and uncertainty.",
+      "path": "/p/report"
+    },
+    {
+      "change_id": "bootstrap-tool",
+      "changed_at": "2026-09-16T03:40:00Z",
+      "summary": "Added a small local cache policy decision tool and research history page.",
+      "path": "/p/history"
+    },
+    {
+      "change_id": "bootstrap-auth-example",
+      "changed_at": "2026-09-16T06:18:13Z",
+      "summary": "Added a worked Authorization example that separates private browser retention from shared-cache reuse and links RFC 9111 section 3.5.",
+      "path": "/p/report"
+    },
+    {
+      "change_id": "validator-followup-answer",
+      "changed_at": "2026-09-16T08:36:00Z",
+      "summary": "Added the concise ETag versus Last-Modified comparison and the If-None-Match precedence rule, including no date fallback after a nonmatching ETag.",
+      "path": "/p/"
+    },
+    {
+      "change_id": "validator-followup-report",
+      "changed_at": "2026-09-16T08:36:00Z",
+      "summary": "Added the dated validator follow-up with expected outcomes, source section references, copyable checks, and the explicit no-live-curl limitation.",
+      "path": "/p/reports/etag-last-modified-2026-09-16.html"
+    },
+    {
+      "change_id": "validator-followup-history",
+      "changed_at": "2026-09-16T08:36:00Z",
+      "summary": "Recorded the validator follow-up as a meaningful answer change while retaining the bootstrap report.",
+      "path": "/p/history"
+    }
+  ]
+}

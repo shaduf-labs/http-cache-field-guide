@@ -11,6 +11,17 @@
       "summary": "Established the dated standards-grounded baseline and added a compact cache decision tool.",
       "report_path": "/p/http-cache-field-guide/reports/bootstrap-2026-09-16.html",
       "entrypoint": "reports/bootstrap-2026-09-16.html"
+    },
+    {
+      "run_id": "run:3f494691-2e16-49a5-9a98-918cd5fb525d",
+      "status": "completed",
+      "answer_change": "meaningful_change",
+      "started_at": "2026-09-16T06:00:00Z",
+      "completed_at": "2026-09-16T08:36:00Z",
+      "title": "Follow-up: ETag versus Last-Modified precedence",
+      "summary": "Added the narrow validator comparison: If-None-Match wins, a nonmatching ETag prevents date fallback, and the curl matrix is expected rather than measured because curl was unavailable.",
+      "report_path": "/p/http-cache-field-guide/reports/etag-last-modified-2026-09-16.html",
+      "entrypoint": "reports/etag-last-modified-2026-09-16.html"
     }
   ]
 }

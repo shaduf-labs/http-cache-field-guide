@@ -1,1 +1,125 @@
-{"schema_version":"1.0.0","items":[{"evidence_id":"rfc9111","source_type":"standard","source_url":"https://www.rfc-editor.org/rfc/rfc9111.html","title":"RFC 9111: HTTP Caching","claim":"Defines cache storage, freshness, reuse, stale response rules, validation, and Cache-Control directives including max-age, no-cache, no-store, private, public, and s-maxage.","accessed_at":"2026-09-16T00:00:00Z","relation":"supports","publication_basis":"linked-summary"},{"evidence_id":"rfc9110","source_type":"standard","source_url":"https://www.rfc-editor.org/rfc/rfc9110.html","title":"RFC 9110: HTTP Semantics","claim":"Defines validators, conditional request precedence, and the no-body meaning of 304 Not Modified.","accessed_at":"2026-09-16T00:00:00Z","relation":"supports","publication_basis":"linked-summary"},{"evidence_id":"rfc5861","source_type":"standard-extension","source_url":"https://www.rfc-editor.org/rfc/rfc5861.html","title":"RFC 5861: HTTP stale controls","claim":"Defines bounded stale-while-revalidate and stale-if-error permissions; support is not universal.","accessed_at":"2026-09-16T00:00:00Z","relation":"supports","publication_basis":"linked-summary"},{"evidence_id":"rfc9211","source_type":"standard","source_url":"https://www.rfc-editor.org/rfc/rfc9211.html","title":"RFC 9211: The Cache-Status HTTP Response Header Field","claim":"Defines optional Cache-Status evidence such as hit and forwarding reasons; absence is not proof of no cache.","accessed_at":"2026-09-16T00:00:00Z","relation":"supports","publication_basis":"linked-summary"},{"evidence_id":"mdn-caching","source_type":"developer-reference","source_url":"https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching","title":"MDN: HTTP caching","claim":"Provides developer-facing examples for cache states, validators, private/shared caches, and history/bfcache limits.","accessed_at":"2026-09-16T00:00:00Z","relation":"context","publication_basis":"linked-summary"},{"evidence_id":"mdn-cache-control","source_type":"developer-reference","source_url":"https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control","title":"MDN: Cache-Control","claim":"Summarizes directive meanings and compatibility caveats for developer use.","accessed_at":"2026-09-16T00:00:00Z","relation":"context","publication_basis":"linked-summary"},{"evidence_id":"mdn-conditional","source_type":"developer-reference","source_url":"https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Conditional_requests","title":"MDN: Conditional requests","claim":"Explains validators, conditional requests, and the fresh-versus-stale lifecycle.","accessed_at":"2026-09-16T00:00:00Z","relation":"context","publication_basis":"linked-summary"},{"evidence_id":"chrome-network","source_type":"browser-documentation","source_url":"https://developer.chrome.com/docs/devtools/network/reference","title":"Chrome DevTools Network reference","claim":"Documents Network inspection, Disable cache, Clear browser cache, replay, and network-condition controls; these change the experiment.","accessed_at":"2026-09-16T00:00:00Z","relation":"limits","publication_basis":"linked-summary"},{"evidence_id":"rfc9111-authenticated-requests","source_type":"standard","source_url":"https://www.rfc-editor.org/rfc/rfc9111.html","title":"RFC 9111 §3.5: Cache Handling of Authentication Information","claim":"A shared cache must not reuse a response to a request containing Authorization unless the response explicitly permits shared reuse with public, s-maxage, or must-revalidate; this protocol rule does not make a user-specific representation safe to share.","accessed_at":"2026-09-16T06:18:13Z","relation":"supports","publication_basis":"linked-summary"}]}
+{
+  "schema_version": "1.0.0",
+  "items": [
+    {
+      "evidence_id": "rfc9111",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html",
+      "title": "RFC 9111: HTTP Caching",
+      "claim": "Defines cache storage, freshness, reuse, stale response rules, validation, and Cache-Control directives including max-age, no-cache, no-store, private, public, and s-maxage.",
+      "accessed_at": "2026-09-16T00:00:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc9110",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9110.html",
+      "title": "RFC 9110: HTTP Semantics",
+      "claim": "Defines validators, conditional request precedence, and the no-body meaning of 304 Not Modified.",
+      "accessed_at": "2026-09-16T00:00:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc5861",
+      "source_type": "standard-extension",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc5861.html",
+      "title": "RFC 5861: HTTP stale controls",
+      "claim": "Defines bounded stale-while-revalidate and stale-if-error permissions; support is not universal.",
+      "accessed_at": "2026-09-16T00:00:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc9211",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9211.html",
+      "title": "RFC 9211: The Cache-Status HTTP Response Header Field",
+      "claim": "Defines optional Cache-Status evidence such as hit and forwarding reasons; absence is not proof of no cache.",
+      "accessed_at": "2026-09-16T00:00:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "mdn-caching",
+      "source_type": "developer-reference",
+      "source_url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching",
+      "title": "MDN: HTTP caching",
+      "claim": "Provides developer-facing examples for cache states, validators, private/shared caches, and history/bfcache limits.",
+      "accessed_at": "2026-09-16T00:00:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "mdn-cache-control",
+      "source_type": "developer-reference",
+      "source_url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control",
+      "title": "MDN: Cache-Control",
+      "claim": "Summarizes directive meanings and compatibility caveats for developer use.",
+      "accessed_at": "2026-09-16T00:00:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "mdn-conditional",
+      "source_type": "developer-reference",
+      "source_url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Conditional_requests",
+      "title": "MDN: Conditional requests",
+      "claim": "Explains ETag and Last-Modified validators, conditional requests, and the fresh-versus-stale lifecycle; notes ETag precedence when both request conditions are present.",
+      "accessed_at": "2026-09-16T00:00:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "chrome-network",
+      "source_type": "browser-documentation",
+      "source_url": "https://developer.chrome.com/docs/devtools/network/reference",
+      "title": "Chrome DevTools Network reference",
+      "claim": "Documents Network inspection, Disable cache, Clear browser cache, replay, and network-condition controls; these change the experiment.",
+      "accessed_at": "2026-09-16T00:00:00Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc9111-authenticated-requests",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html",
+      "title": "RFC 9111 §3.5: Cache Handling of Authentication Information",
+      "claim": "A shared cache must not reuse a response to a request containing Authorization unless the response explicitly permits shared reuse with public, s-maxage, or must-revalidate; this protocol rule does not make a user-specific representation safe to share.",
+      "accessed_at": "2026-09-16T06:18:13Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc9110-conditional-precedence",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9110.html",
+      "title": "RFC 9110 §§13.1.3 and 13.2.2: Conditional request precedence",
+      "claim": "If-None-Match is evaluated before If-Modified-Since; the date condition is ignored when If-None-Match is present, including when the ETag does not match.",
+      "accessed_at": "2026-09-16T00:00:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "mdn-etag",
+      "source_type": "developer-reference",
+      "source_url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/ETag",
+      "title": "MDN: ETag",
+      "claim": "Describes ETag as a representation validator used with If-None-Match and the developer trade-off between strong and weak validation.",
+      "accessed_at": "2026-09-16T00:00:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "mdn-last-modified",
+      "source_type": "developer-reference",
+      "source_url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Last-Modified",
+      "title": "MDN: Last-Modified",
+      "claim": "Describes Last-Modified as a date validator used with If-Modified-Since and explains its lower precision compared with ETag in some cases.",
+      "accessed_at": "2026-09-16T00:00:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    }
+  ]
+}
