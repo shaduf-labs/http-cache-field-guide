@@ -1,1 +1,144 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline';"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cache decision tool</title><style>body{font:15px system-ui,sans-serif;margin:0;padding:18px;color:#183b56;background:#f7fafc}fieldset{border:1px solid #cbd5e0;border-radius:10px;margin:0 0 14px;padding:12px}label{display:block;margin:8px 0}select,button{font:inherit;padding:8px;border-radius:7px;border:1px solid #90a4ae}button{background:#1261a0;color:white;cursor:pointer}.result{background:#e6fffa;border-left:4px solid #159a9c;border-radius:6px;padding:12px;line-height:1.5}.warn{color:#9b2c2c;font-weight:600}</style></head><body><h2 style="margin-top:0">Choose a starting policy</h2><fieldset><label>Response class <select id="kind"><option value="personal">Personalized or sensitive</option><option value="public">Public, changes occasionally</option><option value="asset">Fingerprint/versioned asset</option><option value="nostore">Must not be stored</option></select></label><label>Shared cache/CDN may store it? <select id="shared"><option value="no">No</option><option value="yes">Yes</option></select></label><label>Validators available? <select id="validator"><option value="yes">Yes (ETag or Last-Modified)</option><option value="no">No</option></select></label><label>Request carries Authorization? <select id="auth"><option value="no">No</option><option value="yes">Yes</option></select></label></fieldset><button id="go">Show policy</button><div id="out" class="result" role="status" style="margin-top:14px"></div><script>(function(){const $=id=>document.getElementById(id);function show(){let k=$("kind").value,s=$("shared").value,v=$("validator").value,a=$("auth").value,policy,note;if(k==="nostore"){policy="Cache-Control: no-store";note="Compliant HTTP caches should not intentionally store this response. This does not erase an older entry or act as a complete security boundary."}else if(k==="personal"){policy="Cache-Control: private, no-cache";note=a==="yes"?"A private browser cache may retain a user-specific response and validate it with ETag or Last-Modified. A shared cache must not reuse it; Authorization is not a substitute for a safe cache key or privacy policy.":"Keep it in a private cache only, then validate before reuse. Do not add public or s-maxage for personalized content."}else if(k==="asset"){policy="Cache-Control: public, max-age=31536000, immutable";note=a==="yes"?"Only use this for a representation genuinely safe to share despite Authorization, with deliberate cache-key design; otherwise choose a private policy.":"Use only when the URL is versioned/fingerprinted and a new URL is deployed for changed bytes."}else{policy=s==="yes"?"Cache-Control: public, max-age=60, s-maxage=10":"Cache-Control: private, max-age=60";note=a==="yes"&&s==="yes"?"RFC 9111 §3.5 requires an explicit allowing directive before a shared cache may reuse an Authorization response. Share only if the representation is identical and the cache key is deliberately safe; authentication alone does not make it public.":a==="yes"?"With no shared cache, a private policy keeps the response browser-local. If it is user-specific, prefer private, no-cache or no-store.":"Fresh reuse can avoid a request. A stale entry may validate with ETag/Last-Modified; s-maxage affects shared caches only."}$("out").innerHTML="<strong>Starting header</strong><br><code>"+policy+"</code><p>"+note+"</p>"+(k==="personal"&&s==="yes"?'<p class="warn">Warning: a shared cache choice conflicts with personalization. Check cache keys and privacy before shipping.</p>':"")+(a==="yes"&&s==="yes"&&k!=="nostore"?'<p class="warn">Authorization warning: explicit permission is not proof that this response is safe to share.</p>':"")+"<small>Heuristic aid, not a security boundary or vendor-specific configuration.</small>"}$("go").addEventListener("click",show);show()})();</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; form-action 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline';">
+  <title>Cache freshness calculator and policy chooser</title>
+  <style>
+    :root{color-scheme:light;--ink:#102a43;--text:#243b53;--muted:#52606d;--line:#cbd5e0;--blue:#1261a0;--blue-wash:#eaf4ff;--teal:#0f766e;--teal-wash:#e6fffa;--amber:#92400e;--amber-wash:#fff7ed;--red:#9b2c2c;--red-wash:#fff5f5}
+    *{box-sizing:border-box}body{margin:0;padding:18px;color:var(--text);background:#fff;font:15px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}h1{margin:0 0 5px;color:var(--ink);font-size:1.3rem;line-height:1.2}h2{margin:20px 0 9px;color:var(--ink);font-size:1rem}p{margin:7px 0}.intro{color:var(--muted);margin-bottom:14px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}fieldset{min-width:0;margin:0 0 12px;padding:11px 12px;border:1px solid var(--line);border-radius:10px}legend{padding:0 5px;color:var(--ink);font-weight:800}label{display:block;margin:8px 0;font-weight:650}input,select,button{font:inherit}input[type=number],select{display:block;width:100%;margin-top:4px;padding:7px 8px;border:1px solid #90a4ae;border-radius:7px;background:#fff;color:var(--text)}input[type=checkbox]{accent-color:var(--teal);margin-right:5px}button{padding:7px 10px;border:1px solid var(--blue);border-radius:7px;background:var(--blue);color:#fff;font-weight:750;cursor:pointer}button.secondary{background:#fff;color:var(--blue)}button:hover,button:focus{filter:brightness(.94);outline:2px solid #7cc4f4;outline-offset:1px}.presets{display:flex;flex-wrap:wrap;gap:7px;margin:8px 0 13px}.results{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px}.result{border:1px solid var(--line);border-left:5px solid var(--blue);border-radius:9px;padding:11px;background:var(--blue-wash)}.result.shared{border-left-color:var(--teal);background:var(--teal-wash)}.result.stale{border-left-color:var(--amber);background:var(--amber-wash)}.result.omitted{border-left-color:#718096;background:#f7fafc}.result strong{color:var(--ink)}.state{display:inline-block;margin-top:5px;padding:2px 7px;border-radius:99px;font-size:.78rem;font-weight:800}.fresh{background:#c6f6d5;color:#22543d}.stale{background:#feebc8;color:var(--amber)}.omitted{background:#e2e8f0;color:#4a5568}.policy{border:1px solid #9ae6b4;border-left:5px solid var(--teal);border-radius:9px;padding:12px;background:var(--teal-wash);min-height:76px}.policy code{display:inline-block;margin-top:4px;padding:3px 5px;border-radius:5px;background:#fff;border:1px solid #b2f5ea;color:#065f46}.warning{margin-top:9px;padding:9px 10px;border-left:4px solid var(--red);border-radius:6px;background:var(--red-wash);color:var(--red);font-weight:650}.note{color:var(--muted);font-size:.88rem}.checks{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;margin-top:10px}.check{padding:9px;border:1px dashed #9fb3c8;border-radius:8px;background:#f8fbff}.check b{display:block;color:var(--ink)}.rule{height:1px;margin:17px 0;border:0;background:#e2e8f0}
+    @media(max-width:520px){body{padding:13px}.grid,.results{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <h1>Cache freshness calculator + policy chooser</h1>
+  <p class="intro">Use separate controls for a private browser’s <code>max-age</code> and a shared cache’s <code>s-maxage</code>. The shared result uses the same illustrative age; real hops can have different ages.</p>
+
+  <h2>Freshness calculation</h2>
+  <fieldset>
+    <legend>Explicit freshness inputs</legend>
+    <div class="grid">
+      <label>Browser max-age / lifetime (seconds)
+        <input id="browserLifetime" type="number" min="0" step="1" value="60" inputmode="numeric">
+      </label>
+      <label>Current age (seconds)
+        <input id="currentAge" type="number" min="0" step="1" value="15" inputmode="numeric">
+      </label>
+      <label><span><input id="sharedEnabled" type="checkbox" checked>Use a separate shared-cache s-maxage</span>
+        <input id="sharedLifetime" type="number" min="0" step="1" value="30" inputmode="numeric" aria-label="Shared cache s-maxage in seconds">
+      </label>
+    </div>
+  </fieldset>
+  <div class="presets" aria-label="Calculator presets">
+    <button id="freshPreset" type="button" class="secondary">Load 60s / age 15s</button>
+    <button id="stalePreset" type="button" class="secondary">Set age to 75s</button>
+  </div>
+  <div class="results" aria-live="polite">
+    <div id="browserResult" class="result"></div>
+    <div id="sharedResult" class="result shared"></div>
+  </div>
+  <div id="calculationNote" class="checks"></div>
+
+  <hr class="rule">
+  <h2>Policy questions</h2>
+  <fieldset>
+    <legend>Describe the response</legend>
+    <div class="grid">
+      <label>Response class
+        <select id="kind"><option value="personal">Personalized or sensitive</option><option value="public">Public, changes occasionally</option><option value="asset">Fingerprint/versioned asset</option><option value="nostore">Must not be stored</option></select>
+      </label>
+      <label>May a shared cache / CDN store it?
+        <select id="shared"><option value="no">No</option><option value="yes">Yes</option></select>
+      </label>
+      <label>Are validators available?
+        <select id="validator"><option value="yes">Yes (ETag or Last-Modified)</option><option value="no">No</option></select>
+      </label>
+      <label>Does the request carry Authorization?
+        <select id="auth"><option value="no">No</option><option value="yes">Yes</option></select>
+      </label>
+      <label>Does the body vary by Cookie or user state?
+        <select id="cookie"><option value="no">No</option><option value="yes">Yes</option></select>
+      </label>
+    </div>
+  </fieldset>
+  <div id="policy" class="policy" aria-live="polite"></div>
+  <div id="warnings"></div>
+
+  <p class="note"><strong>Educational calculation:</strong> this subtracts the supplied age from each supplied lifetime. It omits clock skew, response age calculations, revalidation, stale extensions, browser history/bfcache, service workers, cache partitioning, provider defaults, and hidden cache-key inputs. It is a teaching aid and policy prompt—not a security boundary, a proof of storage/reuse, or vendor-specific configuration advice.</p>
+
+  <script>
+    (function(){
+      'use strict';
+      const $ = id => document.getElementById(id);
+      function seconds(id){
+        const raw = $(id).value.trim();
+        if(raw === '') return null;
+        const value = Number(raw);
+        return Number.isFinite(value) && value >= 0 ? value : null;
+      }
+      function freshness(lifetime, age){
+        if(lifetime === null || age === null) return {state:'omitted', remaining:null};
+        const remaining = lifetime - age;
+        return remaining > 0 ? {state:'fresh', remaining:remaining} : {state:'stale', remaining:0};
+      }
+      function label(value){return value === null ? 'omitted' : String(value) + 's';}
+      function renderFreshness(target, title, lifetime, age){
+        const result = freshness(lifetime, age);
+        target.className = 'result ' + (result.state === 'stale' ? 'stale' : result.state === 'omitted' ? 'omitted' : '');
+        const stateText = result.state === 'fresh' ? 'fresh' : result.state === 'stale' ? 'stale' : 'omitted input';
+        const detail = result.state === 'fresh' ? result.remaining + ' seconds remaining' : result.state === 'stale' ? 'stale; remaining freshness is 0 seconds' : 'enter both lifetime and age';
+        target.innerHTML = '<strong>' + title + '</strong><br>lifetime ' + label(lifetime) + ' − age ' + label(age) + '<br><span class="state ' + result.state + '">' + stateText + '</span> · ' + detail;
+        return result;
+      }
+      function renderFreshnessPanel(){
+        const browserLifetime = seconds('browserLifetime');
+        const age = seconds('currentAge');
+        const browser = renderFreshness($('browserResult'), 'Browser max-age', browserLifetime, age);
+        const shared = $('sharedEnabled').checked ? renderFreshness($('sharedResult'), 'Shared-cache s-maxage', seconds('sharedLifetime'), age) : renderFreshness($('sharedResult'), 'Shared-cache s-maxage', null, age);
+        const notes = [];
+        notes.push('<div class="check"><b>Browser example</b>60s lifetime − 15s age = <strong>' + (60 - 15) + 's remaining</strong>.</div>');
+        notes.push('<div class="check"><b>Stale example</b>60s lifetime − 75s age = <strong>stale</strong>.</div>');
+        if(!$('sharedEnabled').checked) notes.push('<div class="check"><b>Omitted shared input</b>Without s-maxage, do not infer shared freshness from this browser value.</div>');
+        else if(shared.state === 'stale') notes.push('<div class="check"><b>Different shared rule</b>The shared s-maxage can be stale even while browser max-age is fresh.</div>');
+        else notes.push('<div class="check"><b>Hop reminder</b>This illustrative shared result reuses the entered age; production Age can differ by layer.</div>');
+        $('calculationNote').innerHTML = notes.join('');
+      }
+      function renderPolicy(){
+        const kind = $('kind').value;
+        const shared = $('shared').value === 'yes';
+        const validator = $('validator').value === 'yes';
+        const auth = $('auth').value === 'yes';
+        const cookie = $('cookie').value === 'yes';
+        let policy, note;
+        if(kind === 'nostore'){
+          policy = 'Cache-Control: no-store';
+          note = 'Compliant HTTP caches should not intentionally store this response. This does not erase an older entry or act as a complete security boundary.';
+        }else if(kind === 'personal'){
+          policy = 'Cache-Control: private, no-cache';
+          note = 'A private browser may retain a user-specific response and validate it before ordinary reuse. Do not add public or s-maxage for personalized content.';
+        }else if(kind === 'asset'){
+          policy = 'Cache-Control: public, max-age=31536000, immutable';
+          note = 'Use only for a versioned/fingerprinted representation whose bytes are genuinely safe to share; deploy a new URL for changed bytes.';
+        }else{
+          policy = shared ? 'Cache-Control: public, max-age=60, s-maxage=10' : 'Cache-Control: private, max-age=60';
+          note = shared ? 'Browser freshness uses max-age; a shared cache uses s-maxage. A stale entry can revalidate with a validator when one is available.' : (validator ? 'Keep it private to the browser and use ETag or Last-Modified for validation.' : 'With no shared cache, a private policy keeps the response browser-local; add a validator when practical.');
+        }
+        $('policy').innerHTML = '<strong>Starting policy</strong><br><code>' + policy + '</code><p>' + note + '</p>' + (auth ? '<p class="note"><strong>Authorization:</strong> a shared cache needs explicit permission such as public, s-maxage, or must-revalidate before reuse; authentication alone is not a safe key.</p>' : '') + (cookie ? '<p class="note"><strong>Cookie/user state:</strong> treat the body as personalized unless you have deliberately designed and tested a shareable variant.</p>' : '');
+        const warnings = [];
+        if(kind === 'personal' && shared) warnings.push('A shared-cache choice conflicts with personalization. Fix the storage audience before tuning the key.');
+        if((auth || cookie) && shared && kind !== 'nostore') warnings.push('Warning: explicit cache permission is not proof that a user-specific representation is safe to share.');
+        if(cookie && shared) warnings.push('Warning: Vary: Cookie can constrain matching but does not grant storage permission or cover unlisted inputs.');
+        $('warnings').innerHTML = warnings.map(text => '<div class="warning">' + text + '</div>').join('');
+      }
+      function render(){renderFreshnessPanel();renderPolicy();}
+      ['browserLifetime','currentAge','sharedLifetime','sharedEnabled','kind','shared','validator','auth','cookie'].forEach(id => $(id).addEventListener('input', render));
+      ['sharedEnabled','kind','shared','validator','auth','cookie'].forEach(id => $(id).addEventListener('change', render));
+      $('freshPreset').addEventListener('click', function(){$('browserLifetime').value='60';$('currentAge').value='15';render();});
+      $('stalePreset').addEventListener('click', function(){$('browserLifetime').value='60';$('currentAge').value='75';render();});
+      render();
+    })();
+  </script>
+</body>
+</html>

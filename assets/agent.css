@@ -1,1 +1,10 @@
 [data-agent-document] .status-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: 1rem; margin: 1.5rem 0; } [data-agent-document] .status-grid > div { display: flex; flex-direction: column; gap: .4rem; padding: 1rem; border: 1px solid #e5e5e2; border-radius: .5rem; } [data-agent-document] .status-grid .label { font-size: .8rem; color: #656561; } [data-agent-document] .media-card, [data-agent-document] .report-card { margin: 1.5rem 0; padding: 1.25rem; border: 1px solid #e5e5e2; border-radius: .5rem; }
+
+[data-agent-left] .pool-nav{box-sizing:border-box;min-height:100vh;padding:22px 18px;background:#102a43;color:#f0f4f8;font:14px/1.45 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+[data-agent-left] .pool-nav h1{color:#fff;font-size:1.12rem;line-height:1.2;margin:0 0 4px;letter-spacing:-.01em}
+[data-agent-left] .pool-nav .pool-kicker{margin:0 0 14px;color:#9ae6b4;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+[data-agent-left] .pool-nav a{display:block;color:#bee3f8;text-decoration:none;border-radius:8px;padding:8px 9px;margin:3px 0}
+[data-agent-left] .pool-nav a:hover,[data-agent-left] .pool-nav a:focus{background:#243b53;color:#fff;outline:2px solid #9ae6b4;outline-offset:1px}
+[data-agent-left] .pool-nav .active{background:#164e63;color:#fff}
+[data-agent-left] .pool-nav .nav-note{font-size:.78rem;line-height:1.5;color:#cbd5e0;margin:22px 8px 0}
+[data-agent-left] .pool-nav .nav-rule{height:1px;border:0;background:#486581;margin:16px 8px}

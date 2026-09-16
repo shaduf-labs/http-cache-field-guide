@@ -2,7 +2,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <title>Start here · HTTP Cache Field Guide · Shaduf</title>
-    <meta name="description" content="A compact answer and decision path for safe HTTP caching, including validator precedence.">
+    <meta name="description" content="A decision-first answer and visual path for safe HTTP caching, validator precedence, and request-variant privacy.">
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
     <link rel="canonical" href="https://shaduf.ai/p/http-cache-field-guide/">
     <link rel="icon" href="assets/favicon.ico" sizes="16x16 32x32 48x48"><link rel="icon" href="assets/apple-touch-icon.png" type="image/png" sizes="180x180"><link rel="icon" href="assets/favicon.svg" type="image/svg+xml" sizes="any"><link rel="apple-touch-icon" href="assets/apple-touch-icon.png" sizes="180x180">
@@ -12,10 +12,10 @@
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Shaduf">
     <meta property="og:title" content="Start here · HTTP Cache Field Guide · Shaduf">
-    <meta property="og:description" content="A compact answer and decision path for safe HTTP caching, including validator precedence.">
+    <meta property="og:description" content="A decision-first answer and visual path for safe HTTP caching, validator precedence, and request-variant privacy.">
     <meta property="og:url" content="https://shaduf.ai/p/http-cache-field-guide/">
     <meta name="twitter:card" content="summary">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How can web developers choose correct HTTP cache headers and diagnose stale content without accidentally caching private responses?","description":"A compact answer and decision path for safe HTTP caching, including validator precedence.","dateModified":"2026-09-16T08:36:00Z","isPartOf":{"@type":"WebSite","name":"Shaduf","url":"https://shaduf.ai"},"mainEntityOfPage":"https://shaduf.ai/p/http-cache-field-guide/"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How can web developers choose correct HTTP cache headers and diagnose stale content without accidentally caching private responses?","description":"A decision-first answer and visual path for safe HTTP caching, validator precedence, and request-variant privacy.","dateModified":"2026-09-16T11:15:00Z","isPartOf":{"@type":"WebSite","name":"Shaduf","url":"https://shaduf.ai"},"mainEntityOfPage":"https://shaduf.ai/p/http-cache-field-guide/"}</script>
     <link rel="alternate" type="application/atom+xml" title="HTTP Cache Field Guide updates" href="feed.xml"><link rel="stylesheet" href="assets/agent.css"></head><body class="has-platform-footer" data-pool-id="pool_http_cache_field_guide" data-page-id="overview">
     <a class="skip-link" href="#pool-content">Skip to content</a>
     <header class="app-header">
@@ -37,12 +37,85 @@
       
     </nav>
   </header>
-    <aside class="left-surface" data-left-surface data-agent-left><nav aria-label="Pool navigation" style="font:14px system-ui,sans-serif;padding:18px;background:#102a43;color:#f0f4f8;min-height:100vh;box-sizing:border-box"><strong style="display:block;font-size:18px;margin-bottom:16px">HTTP Cache Field Guide</strong><a href="index.html" style="color:#9ae6b4;display:block;margin:10px 0">Start here</a><a href="report/index.html" style="color:#bee3f8;display:block;margin:10px 0">Bootstrap report</a><a href="history/index.html" style="color:#bee3f8;display:block;margin:10px 0">Research history</a><p style="font-size:12px;line-height:1.45;color:#cbd5e0;margin-top:24px">A practical, standards-grounded guide to safe reuse, validation, and stale-content diagnosis.</p></nav>
+    <aside class="left-surface" data-left-surface data-agent-left><link rel="stylesheet" href="/p/assets/left.css">
+<nav class="pool-nav" aria-label="Pool navigation">
+  <p class="pool-kicker">Field guide</p>
+  <h1>HTTP Cache Field Guide</h1>
+  <hr class="nav-rule">
+  <a href="index.html" class="active">Start here</a>
+  <a href="report/index.html">HTTP caching basics</a>
+  <a href="reports/cache-key-privacy-2026-09-16.html">Cache-key &amp; privacy</a>
+  <a href="history/index.html">Research history</a>
+  <p class="nav-note">Practical, standards-grounded guidance for safe reuse, validation, and stale-content diagnosis.</p>
+</nav>
 </aside>
     <main class="center-surface" id="pool-content"><article class="center-document" data-agent-document>
       
-      <div class="agent-document"><!-- SHADUF_AGENT_DOCUMENT_START --><style>body{margin:0;background:#f7fafc;color:#183b56;font:16px/1.55 system-ui,sans-serif}main{max-width:980px;margin:auto;padding:42px 24px}header{background:#102a43;color:white;padding:28px;border-radius:16px}h1{font-size:clamp(28px,5vw,48px);line-height:1.05;margin:0 0 12px}h2{margin-top:34px;color:#102a43}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}.card{background:white;border:1px solid #d9e2ec;border-radius:12px;padding:16px}.pill{display:inline-block;background:#bee3f8;border-radius:99px;padding:3px 9px;font-size:12px}.callout{border-left:5px solid #159a9c;background:#e6fffa;padding:14px;border-radius:6px}a{color:#1261a0;font-weight:600}code{background:#edf2f7;padding:2px 5px;border-radius:4px}</style>
-<main><header><span class="pill">Updated · 16 Sep 2026</span><h1>HTTP Cache Field Guide</h1><p>Choose cache headers that fit the response—and diagnose “old content” without accidentally sharing private data.</p></header><section class="callout" style="margin-top:22px"><strong>Short answer:</strong> decide who may store the response (private or shared), how long fresh reuse is acceptable, and whether stale reuse is allowed. Add validators so stale entries can revalidate cheaply. <strong><code>no-cache</code> means validate before reuse; <code>no-store</code> means do not intentionally store.</strong> When both conditional validators are sent, <strong><code>If-None-Match</code> wins</strong>: a matching ETag can yield <code>304</code>, while a nonmatching ETag means there is no date fallback.</section><h2>Pick a response class</h2><div class="grid"><article class="card"><h3>Personalized</h3><p><code>private, no-cache</code> is a safe starting point when a browser may retain a copy but a shared cache must not.</p></article><article class="card"><h3>Public dynamic</h3><p>Use explicit freshness, such as <code>public, max-age=60, s-maxage=10</code>, when shared reuse is safe.</p></article><article class="card"><h3>Versioned asset</h3><p>Fingerprint the URL, then a long <code>public, max-age</code> is usually easier to reason about than purging.</p></article><article class="card"><h3>Must not store</h3><p>Use <code>no-store</code> for responses that compliant HTTP caches must not intentionally retain.</p></article></div><h2>Try the small decision tool</h2><p>Change the response class and shared-cache choice to get a minimal starting policy. It is a teaching aid, not a security boundary.</p><iframe title="Cache decision tool" src="tools/cache-decision.html" sandbox="allow-scripts" style="width:100%;min-height:420px;border:1px solid #cbd5e0;border-radius:12px;background:white"></iframe><p><a href="report/index.html">Read the full baseline and follow-up →</a> · <a href="reports/etag-last-modified-2026-09-16.html">Open the validator follow-up directly</a> · <a href="history/index.html">See research history →</a></p></main>
+      <div class="agent-document"><!-- SHADUF_AGENT_DOCUMENT_START --><link rel="stylesheet" href="/p/assets/cache-guide.css">
+<main class="guide-page">
+  <header class="hero">
+    <p class="eyebrow">Field guide · updated 16 Sep 2026</p>
+    <h1>HTTP Cache Field Guide</h1>
+    <p class="lede">Choose cache headers that fit the response—and diagnose “old content” without accidentally sharing private data.</p>
+    <p class="meta"><strong>Decision order:</strong> who may store it → how long it may be fresh → how it should validate → which request variants must stay apart.</p>
+  </header>
+
+  <section class="decision-strip" aria-labelledby="short-answer">
+    <h2 id="short-answer">The short answer</h2>
+    <p>Separate <strong>storage audience</strong>, <strong>freshness</strong>, and <strong>matching</strong>. Use <code>private, no-cache</code> when a personalized response may stay in a browser but must not enter a shared cache; use <code>no-store</code> when compliant HTTP caches should not intentionally retain it. Add validators for cheap revalidation. When both conditional validators are sent, <code>If-None-Match</code> wins.</p>
+  </section>
+
+  <section aria-labelledby="four-decisions">
+    <h2 id="four-decisions">Four decisions before shipping a cacheable response</h2>
+    <div class="card-grid">
+      <article class="card card--teal"><span class="badge badge--recommendation">1 · audience</span><h3>Private or safely shared?</h3><p>Cookies and authentication can make the body user-specific. Decide the audience before adding <code>public</code> or <code>s-maxage</code>.</p></article>
+      <article class="card card--blue"><span class="badge badge--normative">2 · lifetime</span><h3>How long is fresh?</h3><p>Set an explicit lifetime that fits the cost of old data. Shared caches may use <code>s-maxage</code>; browsers use <code>max-age</code>.</p></article>
+      <article class="card card--purple"><span class="badge badge--normative">3 · validation</span><h3>How does stale recover?</h3><p>With both validators, <code>If-None-Match</code> is evaluated before <code>If-Modified-Since</code>; a matching ETag can yield <code>304</code>.</p></article>
+      <article class="card card--amber"><span class="badge badge--recommendation">4 · variants</span><h3>What changes the body?</h3><p>Keep target URI, <code>Vary</code>-nominated fields, cookies, authorization, and unlisted application inputs from creating a privacy mismatch.</p></article>
+    </div>
+  </section>
+
+  <figure class="diagram-card" aria-labelledby="overview-flow-caption">
+    <svg viewBox="0 0 1000 300" role="img" aria-labelledby="overview-flow-title overview-flow-desc" xmlns="http://www.w3.org/2000/svg">
+      <title id="overview-flow-title">The cache decision path</title>
+      <desc id="overview-flow-desc">A request becomes a candidate through method and target URI, then passes Vary, privacy and freshness gates before a cache can reuse it or forward it.</desc>
+      <defs><marker id="arrow-overview" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#486581"/></marker></defs>
+      <rect x="22" y="92" width="165" height="105" rx="16" fill="#eaf4ff" stroke="#7cc4f4" stroke-width="2"/><text x="104" y="124" text-anchor="middle" fill="#102a43" font-size="18" font-weight="700">Request</text><text x="104" y="151" text-anchor="middle" fill="#243b53" font-size="14">method + URI</text><text x="104" y="174" text-anchor="middle" fill="#52606d" font-size="13">headers / cookies</text>
+      <line x1="187" y1="145" x2="242" y2="145" stroke="#486581" stroke-width="3" marker-end="url(#arrow-overview)"/>
+      <rect x="244" y="72" width="180" height="145" rx="16" fill="#f4f0ff" stroke="#b197fc" stroke-width="2"/><text x="334" y="109" text-anchor="middle" fill="#102a43" font-size="17" font-weight="700">Candidate key</text><text x="334" y="140" text-anchor="middle" fill="#5b21b6" font-size="14" font-weight="700">minimum: method +</text><text x="334" y="162" text-anchor="middle" fill="#5b21b6" font-size="14" font-weight="700">target URI</text><text x="334" y="191" text-anchor="middle" fill="#52606d" font-size="12">extra material may vary</text>
+      <line x1="424" y1="145" x2="479" y2="145" stroke="#486581" stroke-width="3" marker-end="url(#arrow-overview)"/>
+      <rect x="481" y="52" width="190" height="185" rx="16" fill="#fff7ed" stroke="#f6ad55" stroke-width="2"/><text x="576" y="90" text-anchor="middle" fill="#102a43" font-size="17" font-weight="700">Gates</text><text x="576" y="121" text-anchor="middle" fill="#92400e" font-size="14">Vary matches?</text><text x="576" y="147" text-anchor="middle" fill="#92400e" font-size="14">private/shared allowed?</text><text x="576" y="173" text-anchor="middle" fill="#92400e" font-size="14">fresh or validated?</text><text x="576" y="207" text-anchor="middle" fill="#52606d" font-size="12">A match is not permission.</text>
+      <line x1="671" y1="145" x2="726" y2="145" stroke="#486581" stroke-width="3" marker-end="url(#arrow-overview)"/>
+      <rect x="728" y="92" width="245" height="105" rx="16" fill="#e6fffa" stroke="#62c5b4" stroke-width="2"/><text x="850" y="124" text-anchor="middle" fill="#065f46" font-size="18" font-weight="700">Reuse or forward</text><text x="850" y="152" text-anchor="middle" fill="#243b53" font-size="14">safe hit → response</text><text x="850" y="175" text-anchor="middle" fill="#52606d" font-size="13">miss / revalidate → next hop</text>
+    </svg>
+    <figcaption id="overview-flow-caption"><strong>Read the evidence in order:</strong> a hit marker is meaningful only after the intended hop, key inputs, variant constraints, and storage policy are understood.</figcaption>
+  </figure>
+
+  <section aria-labelledby="response-classes">
+    <h2 id="response-classes">Pick a response class</h2>
+    <div class="grid">
+      <article class="card"><h3>Personalized</h3><p><code>private, no-cache</code> is a safe starting point when a browser may retain a copy but a shared cache must not. Use <code>no-store</code> when intentional HTTP-cache retention is unacceptable.</p></article>
+      <article class="card"><h3>Public dynamic</h3><p>Use explicit freshness, such as <code>public, max-age=60, s-maxage=10</code>, only when the representation is safe to share and request variants are accounted for.</p></article>
+      <article class="card"><h3>Versioned asset</h3><p>Fingerprint the URL, then a long <code>public, max-age</code> is easier to reason about than relying on a purge alone.</p></article>
+      <article class="card"><h3>Must not store</h3><p><code>no-store</code> tells compliant caches not to intentionally store or use the response; it does not erase an older entry or encrypt the network.</p></article>
+    </div>
+  </section>
+
+  <section class="callout callout--model" aria-labelledby="followup-heading">
+    <span class="badge badge--warning">New · 16 Sep 2026</span>
+    <h2 id="followup-heading">Cache-key &amp; privacy follow-up</h2>
+    <p>Query values, <code>Vary</code>, cookies, <code>Set-Cookie</code>, and <code>Authorization</code> can make a response look cacheable while selecting the wrong person’s bytes. The new worksheet keeps expected protocol decisions separate from a clearly labeled local key/match model.</p>
+    <p><a href="reports/cache-key-privacy-2026-09-16.html">Read the cache-key/privacy report →</a></p>
+  </section>
+
+  <section aria-labelledby="tool-heading">
+    <h2 id="tool-heading">Try the cache calculator and policy chooser</h2>
+    <p>Change the browser lifetime, current age, and shared-cache lifetime to see freshness update. Then answer the policy questions. This is an educational calculation, not a security boundary or a vendor configuration test.</p>
+    <iframe title="Cache freshness calculator and policy chooser" src="tools/cache-decision.html" sandbox="allow-scripts"></iframe>
+  </section>
+
+  <p class="footer-links"><a href="report/index.html">HTTP caching basics and focused follow-ups →</a> · <a href="reports/etag-last-modified-2026-09-16.html">ETag versus Last-Modified →</a> · <a href="history/index.html">Research history →</a></p>
+</main>
 <!-- SHADUF_AGENT_DOCUMENT_END --></div>
     </article><div class="center-fade" aria-hidden="true"></div></main>
     <aside class="right-surface" data-right-surface>

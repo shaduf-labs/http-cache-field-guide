@@ -1,25 +1,29 @@
 {
   "schema_version": "1.0.0",
   "status": "current",
-  "current_answer": "Choose cache policy in this order: identify whether the response is private or safely shared; set an explicit freshness lifetime; add ETag or Last-Modified for cheap validation; and permit stale reuse only when the bounded failure/latency trade-off is intended. Use private, no-cache for a personalized response that may remain in a browser, no-store when compliant HTTP caches must not intentionally retain it, and long-lived public caching only for safe or versioned content. For conditional validation, If-None-Match wins whenever it is present: a matching ETag can produce 304 Not Modified and the date is ignored; a nonmatching ETag means no If-Modified-Since fallback, so an otherwise successful request proceeds to 200 OK. Last-Modified is the fallback only when If-None-Match is absent. Diagnose an old response by separating fresh reuse, stale revalidation, stale serving, browser history/service-worker behavior, and intermediary configuration; inspect request conditionals, Cache-Control, Age, Cache-Status, validators, and the test layer. For a request carrying Authorization, keep a user-specific response private to the browser (or use no-store); a shared cache may reuse an authenticated response only when the response explicitly permits it and the representation and cache key are deliberately safe.",
+  "current_answer": "Choose cache policy in this order: decide whether the response is private or safely shared; set explicit browser max-age and, separately, shared-cache s-maxage when needed; add ETag or Last-Modified for cheap validation; then test every request input that can change the body. Under HTTP’s minimum model, a candidate is selected by method plus target URI and may be narrowed by Vary, but Cookie is not automatically part of that key. Set-Cookie alone does not stop caching. A shared cache must not reuse a response to a request carrying Authorization unless the response explicitly permits it with public, s-maxage, or must-revalidate—and that permission is not proof that a user-specific representation is safe to share. Use private, no-cache for personalized browser-local retention, no-store when compliant HTTP caches must not intentionally retain a response, and long-lived public caching only for safe or versioned content. For stale validation, If-None-Match wins whenever it is present: a matching ETag can produce 304, while a nonmatching ETag does not fall back to the date. Diagnose old or wrong content by separating browser/history/service-worker behavior from intermediary evidence and by using redacted A/B markers at the intended hop.",
   "catalogue_card": {
     "question": "How can web developers choose correct HTTP cache headers and diagnose stale content without accidentally caching private responses?",
-    "text": "Separate storage audience, freshness, and validation. Start with private versus shared safety, then use validators and layer-specific evidence. When both conditional validators are sent, ETag wins and a nonmatching ETag does not fall back to the date."
+    "text": "Separate storage audience, freshness, validation, and variant matching. Use the cache-key/privacy worksheet before sharing responses, and treat hits, Age, and Cache-Status as evidence from a named hop—not as proof of safety."
   },
   "summary": [
     "Fresh reuse may make no network request; stale reuse usually leads to validation.",
-    "304 keeps the stored representation while 200 replaces it.",
-    "If-None-Match takes precedence over If-Modified-Since: a matching ETag can yield 304, while a nonmatching ETag prevents date fallback and normally leads to 200.",
-    "no-cache is not no-store; private is not encryption; s-maxage affects shared caches only.",
-    "Authorization changes the shared-cache decision: a private browser cache may retain a user-specific response, while shared reuse needs explicit permission and a safe representation and key."
+    "304 keeps the stored representation while 200 replaces it; If-None-Match takes precedence over If-Modified-Since.",
+    "The minimum cache-selection model is method plus target URI; query components normally make distinct targets, but extra normalization/keying is deployment-specific.",
+    "Vary constrains matching of nominated request fields, including missing versus present values; Vary: * fails ordinary matching without revalidation.",
+    "Cookie is not automatically part of the HTTP minimum key, and Set-Cookie alone is not a cache barrier; personalized bodies should start private.",
+    "Authorization needs explicit shared-reuse permission (public, s-maxage, or must-revalidate), but permission is not proof that a user-specific body is safe to share.",
+    "A redacted A/B marker plus same-hop Cache-Control, Vary, Set-Cookie, Age, Cache-Status, and Via evidence is a practical pre-deploy check.",
+    "The new cache-key outcomes come from a clearly labeled local model, not a live browser, origin, CDN, or shared-cache measurement."
   ],
   "uncertainty": [
-    "The validator outcomes are normative expectations, not live observations from this run; no curl executable was available for a capture.",
-    "Standards do not force every cache to store or reuse a response; browser, service-worker, CDN, and vendor behavior varies.",
-    "Age and Cache-Status are useful only when exposed by the responding path.",
-    "An Authorization header is not a complete privacy control; shared reuse still depends on response directives, cache keys, and deployment configuration."
+    "The cache-key worksheet and model outcomes are standards-based expectations and synthetic model output; no live curl/socket capture was available for this run.",
+    "Standards do not force every cache to store or reuse a response; browser, service-worker, CDN, reverse-proxy, framework, partitioning, and vendor behavior varies.",
+    "The minimum key does not prescribe query normalization or other extra key material; Vary cannot cover unlisted application state.",
+    "Age and Cache-Status are useful only when exposed by the responding path; their absence is not proof that no cache exists or that an origin was contacted.",
+    "Authorization permission, Vary: Cookie, a 200/304, or a model hit is not a confidentiality guarantee and cannot establish absence of leakage."
   ],
-  "checked_at": "2026-09-16T08:36:00Z",
-  "meaningfully_updated_at": "2026-09-16T08:36:00Z",
-  "freshness_note": "Bootstrap baseline remains accessible as the dated source for broad cache-policy guidance; this 16 Sep 2026 follow-up adds the narrow ETag versus Last-Modified comparison and precedence rule without claiming a live curl measurement."
+  "checked_at": "2026-09-16T11:15:00Z",
+  "meaningfully_updated_at": "2026-09-16T11:15:00Z",
+  "freshness_note": "The dated HTTP caching basics baseline and validator follow-up remain accessible as source material; this 16 Sep 2026 follow-up adds the narrow cache-key/privacy worksheet, Authorization and Cookie distinctions, and a separate local-model limitation without replacing either report."
 }

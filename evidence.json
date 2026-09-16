@@ -120,6 +120,136 @@
       "accessed_at": "2026-09-16T00:00:00Z",
       "relation": "context",
       "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc9111-cache-key",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-2",
+      "title": "RFC 9111 §2: Overview of Cache Operation",
+      "claim": "Defines the minimum cache-selection information as request method plus target URI and allows additional cache-key material, including Vary-nominated fields or implementation-specific inputs.",
+      "accessed_at": "2026-09-16T10:56:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc9111-vary-match",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-4.1",
+      "title": "RFC 9111 §4.1: Calculating Cache Response",
+      "claim": "A stored response must not be used without revalidation unless the request fields nominated by Vary match the values in the request that selected the stored response; Vary: * fails ordinary matching.",
+      "accessed_at": "2026-09-16T10:56:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc9111-sensitive-set-cookie",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-7.3",
+      "title": "RFC 9111 §7.3: Caching of Sensitive Information",
+      "claim": "Set-Cookie alone does not inhibit caching of an otherwise cacheable response; explicit storage policy is needed for sensitive content.",
+      "accessed_at": "2026-09-16T10:56:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc9110-target-uri",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-7.1",
+      "title": "RFC 9110 §7.1: Determining the Target Resource",
+      "claim": "The target URI excludes only a fragment; path and optional query identify the target resource for the minimum URI comparison.",
+      "accessed_at": "2026-09-16T10:56:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc9110-vary",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-12.5.5",
+      "title": "RFC 9110 §12.5.5: Vary",
+      "claim": "Describes Vary as the response declaration of request fields that might have influenced representation selection, including the special wildcard.",
+      "accessed_at": "2026-09-16T10:56:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc9110-authorization",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-11.6.2",
+      "title": "RFC 9110 §11.6.2: Authorization",
+      "claim": "Defines Authorization as credentials used by a user agent to authenticate to an origin.",
+      "accessed_at": "2026-09-16T10:56:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc6265-cookie-fields",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc6265.html#section-4.2",
+      "title": "RFC 6265 §4.2: Cookie",
+      "claim": "Defines the Cookie request field as the user agent serialization of applicable stored cookies; cookie state semantics do not define an HTTP cache key.",
+      "accessed_at": "2026-09-16T10:56:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc9111-auth-permission",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-3.5",
+      "title": "RFC 9111 §3.5: Cache Handling of Authentication Information",
+      "claim": "A shared cache must not reuse a response to a request containing Authorization unless the response explicitly permits shared reuse with public, s-maxage, or must-revalidate; this is not a representation-safety guarantee.",
+      "accessed_at": "2026-09-16T10:56:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc9211-cache-status",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9211.html#section-2",
+      "title": "RFC 9211 §2: Cache-Status",
+      "claim": "Defines optional Cache-Status diagnostics such as hit and forwarding reasons; a field may be omitted and evidence is scoped to the named cache.",
+      "accessed_at": "2026-09-16T10:56:00Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "mdn-vary",
+      "source_type": "developer-reference",
+      "source_url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Vary",
+      "title": "MDN: Vary",
+      "claim": "Provides browser-facing guidance on distinguishing cached responses by nominated request headers and using consistent Vary values.",
+      "accessed_at": "2026-09-16T10:56:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "mdn-cookie",
+      "source_type": "developer-reference",
+      "source_url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cookie",
+      "title": "MDN: Cookie",
+      "claim": "Describes the optional Cookie request header and its relationship to stored cookie state; it is not presented as a complete cache privacy control.",
+      "accessed_at": "2026-09-16T10:56:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "mdn-set-cookie",
+      "source_type": "developer-reference",
+      "source_url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie",
+      "title": "MDN: Set-Cookie",
+      "claim": "Provides developer-facing guidance for the response cookie-setting field, distinct from Cache-Control storage policy.",
+      "accessed_at": "2026-09-16T10:56:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "mdn-authorization",
+      "source_type": "developer-reference",
+      "source_url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Authorization",
+      "title": "MDN: Authorization",
+      "claim": "Describes Authorization as credential-bearing request metadata and cross-checks explicit shared-cache permissions.",
+      "accessed_at": "2026-09-16T10:56:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
     }
   ]
 }
