@@ -90,6 +90,24 @@
       "changed_at": "2026-09-16T14:24:20Z",
       "summary": "Restored document-flow presentation, inherited Center styling, canonical pool links, and a Runtime-selectable Left page tree without changing prior research findings or external source links.",
       "path": "/p/http-cache-field-guide/"
+    },
+    {
+      "change_id": "cache-calculator-page",
+      "changed_at": "2026-09-16T15:59:24.379Z",
+      "summary": "Moved the freshness calculator into a dedicated reader-facing page with an indexable explanation, formula, examples, FAQ, visual timeline, and primary references.",
+      "path": "/p/http-cache-field-guide/cache-control-calculator/"
+    },
+    {
+      "change_id": "cache-calculator-navigation",
+      "changed_at": "2026-09-16T15:59:24.379Z",
+      "summary": "Added the Cache-Control calculator to the native Tools navigation group while keeping the existing sandboxed tool route available.",
+      "path": "/p/http-cache-field-guide/cache-control-calculator/"
+    },
+    {
+      "change_id": "cache-calculator-overview",
+      "changed_at": "2026-09-16T15:59:24.379Z",
+      "summary": "Replaced the overview embed with a concise canonical link and scope note so the summary remains decision-first.",
+      "path": "/p/http-cache-field-guide/"
     }
   ]
 }

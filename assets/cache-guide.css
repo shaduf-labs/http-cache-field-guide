@@ -139,3 +139,39 @@
   [data-agent-document].guide-page .diagram-card{padding:9px 0}
   [data-agent-document].guide-page .diagram-card svg{min-height:230px}
 }
+
+/* Calculator page blocks inherit the Shaduf document surface and keep their styles local. */
+[data-agent-document].guide-page.calculator-page .calculator-embed{
+  border-block:4px solid var(--guide-blue);
+  padding:14px 0 18px;
+  margin:1.1rem 0 1.7rem;
+}
+[data-agent-document].guide-page.calculator-page .calculator-embed h2{margin-top:.2rem}
+[data-agent-document].guide-page.calculator-page .calculator-embed iframe{min-height:700px}
+[data-agent-document].guide-page.calculator-page .formula-block{
+  border-left:4px solid var(--guide-teal);
+  padding:3px 18px 8px;
+  margin:1.4rem 0;
+}
+[data-agent-document].guide-page.calculator-page .formula{
+  margin:1rem 0;
+  font-size:clamp(1.08rem,2.2vw,1.38rem);
+}
+[data-agent-document].guide-page.calculator-page .formula code{
+  display:inline-block;
+  padding:.5rem .75rem;
+  color:#065f46;
+  background:#e6fffa;
+  border-color:#b2f5ea;
+  font-weight:800;
+}
+[data-agent-document].guide-page.calculator-page .calculator-timeline{margin-top:1.55rem}
+[data-agent-document].guide-page.calculator-page .calculator-timeline svg{min-height:210px}
+[data-agent-document].guide-page.calculator-page .example-table{min-width:700px}
+[data-agent-document].guide-page.calculator-page .example-table th:last-child,
+[data-agent-document].guide-page.calculator-page .example-table td:last-child{min-width:250px}
+[data-agent-document].guide-page.calculator-page .source-list{margin-top:.4rem}
+@media(max-width:720px){
+  [data-agent-document].guide-page.calculator-page .calculator-embed iframe{min-height:820px}
+  [data-agent-document].guide-page.calculator-page .calculator-timeline svg{min-height:240px}
+}

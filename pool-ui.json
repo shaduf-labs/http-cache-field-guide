@@ -2,7 +2,7 @@
   "left_entrypoint": "assets/left.html",
   "schema_version": "1.0.0",
   "default_page": "overview",
-  "meaningfully_updated_at": "2026-09-16T14:24:20Z",
+  "meaningfully_updated_at": "2026-09-16T15:59:24.379Z",
   "pages": [
     {
       "id": "overview",
@@ -43,6 +43,21 @@
       "description": "A symptom-first procedure for separating history/bfcache, service workers, browser cache, intermediaries, and origin evidence.",
       "parent": null,
       "entrypoint": "diagnostics/index.html",
+      "entrypoint_type": "html_fragment",
+      "redirects": [],
+      "visibility": "public",
+      "indexable": true,
+      "tools": []
+    },
+    {
+      "id": "cache-control-calculator",
+      "slug": "cache-control-calculator",
+      "label": "Cache-Control calculator",
+      "icon": "◉",
+      "group": "Tools",
+      "description": "Calculate remaining freshness from max-age, s-maxage, and Age in seconds for browser and shared-cache examples.",
+      "parent": null,
+      "entrypoint": "cache-control-calculator/index.html",
       "entrypoint_type": "html_fragment",
       "redirects": [],
       "visibility": "public",

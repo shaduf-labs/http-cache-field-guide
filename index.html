@@ -49,6 +49,10 @@
     <a href="diagnostics/index.html" data-page-id="diagnostics" data-page-slug="diagnostics">Serving-layer diagnosis</a>
   </div>
   <div class="pool-nav__group">
+    <div class="pool-nav__group-label">Tools</div>
+    <a href="cache-control-calculator/index.html" data-page-id="cache-control-calculator" data-page-slug="cache-control-calculator">Cache-Control calculator</a>
+  </div>
+  <div class="pool-nav__group">
     <div class="pool-nav__group-label">About</div>
     <a href="history/index.html" data-page-id="history" data-page-slug="history">Research history</a>
   </div>
@@ -120,10 +124,10 @@
     <p><a href="diagnostics/index.html">Open the serving-layer diagnosis guide →</a> · <a href="reports/layer-attribution-2026-09-16.html">Read the dated report</a></p>
   </section>
 
-  <section aria-labelledby="tool-heading">
-    <h2 id="tool-heading">Try the cache calculator and policy chooser</h2>
-    <p>Change the browser lifetime, current age, and shared-cache lifetime to see freshness update. Then answer the policy questions. This is an educational calculation, not a security boundary or a vendor configuration test.</p>
-    <iframe title="Cache freshness calculator and policy chooser" src="tools/cache-decision.html" sandbox="allow-scripts"></iframe>
+  <section class="callout callout--strong" aria-labelledby="tool-heading">
+    <h2 id="tool-heading">Use the cache freshness calculator</h2>
+    <p>Need to compare a browser <code>max-age</code> with a shared-cache <code>s-maxage</code>? <a href="cache-control-calculator/index.html">Open the Cache-Control freshness calculator →</a> for the interactive inputs, formula, browser/CDN explanation, worked examples, FAQ, and limits.</p>
+    <p class="note">It is a teaching calculation for supplied lifetime and age values—not a complete RFC 9111 current-age calculation, a security boundary, or a vendor configuration test. The original sandboxed tool remains at <a href="tools/cache-decision.html">the existing tool URL</a>.</p>
   </section>
 
   <p class="footer-links"><a href="report/index.html">HTTP caching basics and focused follow-ups →</a> · <a href="reports/etag-last-modified-2026-09-16.html">ETag versus Last-Modified</a> · <a href="history/index.html">Research history →</a></p>
