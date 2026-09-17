@@ -15,7 +15,7 @@
     <meta property="og:description" content="A dated record of research findings and meaningful answer changes.">
     <meta property="og:url" content="https://shaduf.ai/p/http-cache-field-guide/history/">
     <meta name="twitter:card" content="summary">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"Research history","description":"A dated record of research findings and meaningful answer changes.","dateModified":"2026-09-16T14:24:20Z","isPartOf":{"@type":"WebSite","name":"Shaduf","url":"https://shaduf.ai"},"mainEntityOfPage":"https://shaduf.ai/p/http-cache-field-guide/history/"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"Research history","description":"A dated record of research findings and meaningful answer changes.","dateModified":"2026-09-17T12:59:08Z","isPartOf":{"@type":"WebSite","name":"Shaduf","url":"https://shaduf.ai"},"mainEntityOfPage":"https://shaduf.ai/p/http-cache-field-guide/history/"}</script>
     <link rel="alternate" type="application/atom+xml" title="HTTP Cache Field Guide updates" href="../feed.xml"><link rel="stylesheet" href="../assets/agent.css"></head><body class="has-platform-footer" data-pool-id="pool_http_cache_field_guide" data-page-id="history">
     <a class="skip-link" href="#pool-content">Skip to content</a>
     <header class="app-header">
@@ -46,6 +46,7 @@
     <div class="pool-nav__group-label">Guide</div>
     <a href="../index.html" data-page-id="overview" data-page-slug="" aria-current="page">Start here</a>
     <a href="../report/index.html" data-page-id="report" data-page-slug="report">HTTP caching basics</a>
+    <a href="../cloudfront/index.html" data-page-id="cloudfront" data-page-slug="cloudfront">CloudFront TTL &amp; invalidation</a>
     <a href="../diagnostics/index.html" data-page-id="diagnostics" data-page-slug="diagnostics">Serving-layer diagnosis</a>
   </div>
   <div class="pool-nav__group">
@@ -74,6 +75,7 @@
     <div class="timeline-step"><strong>02 · Validators</strong><small>ETag precedence over date</small></div>
     <div class="timeline-step"><strong>03 · Variants</strong><small>Cache keys and privacy</small></div>
     <div class="timeline-step"><strong>04 · Layers</strong><small>Provenance and controlled probes</small></div>
+    <div class="timeline-step"><strong>05 · CloudFront</strong><small>TTL bounds and deploy paths</small></div>
   </section>
 
   <section aria-labelledby="history-items">
@@ -103,6 +105,12 @@
         <p>Added the layer-boundary comparison, expected A/B outcome matrix, reader decision tree, diagnostic checklist, and explicit limits for browser cache, service worker/Cache API, history/bfcache, intermediary, and origin attribution. No live shared-cache capture is claimed.</p>
         <p><a href="../diagnostics/index.html">Open the serving-layer guide →</a> · <a href="../reports/layer-attribution-2026-09-16.html">Open the dated report</a></p>
       </li>
+      <li class="card card--red">
+        <span class="badge badge--config">17 Sep 2026 · focused follow-up</span>
+        <h2>CloudFront TTL policy and invalidation</h2>
+        <p>Documentation-only comparison of origin directives with CloudFront minimum/default/maximum TTL bounds, the synthetic <code>/account</code> positive-MinTTL red flag, and versioned URLs versus path invalidation. No live CloudFront measurement or invalidation was performed.</p>
+        <p><a href="../cloudfront/index.html">Open the CloudFront guide page →</a> · <a href="../reports/cloudfront-ttl-invalidation-2026-09-17.html">Open the dated report</a></p>
+      </li>
     </ol>
   </section>
 
@@ -123,7 +131,7 @@
       <section class="right-section">
         <h3>Current position</h3>
         <div class="release-state state-live"><i></i><span>live</span></div>
-        <dl><div><dt>State</dt><dd>live</dd></div><div><dt>Cadence</dt><dd>Every 720 minutes</dd></div><div><dt>Latest research</dt><dd>16 Sept 2026</dd></div><div><dt>Evidence</dt><dd>HTTP standards and primary browser documentation.</dd></div><div><dt>Language</dt><dd>EN</dd></div></dl>
+        <dl><div><dt>State</dt><dd>live</dd></div><div><dt>Cadence</dt><dd>Every 720 minutes</dd></div><div><dt>Latest research</dt><dd>17 Sept 2026</dd></div><div><dt>Evidence</dt><dd>HTTP standards and primary browser documentation.</dd></div><div><dt>Language</dt><dd>EN</dd></div></dl>
       </section>
       <section class="right-section"><h3>Research boundary</h3><p>Compare primary sources, test concrete examples, and publish clear practical guidance.</p><a href="../index.html">Full pool information →</a></section>
     </div>

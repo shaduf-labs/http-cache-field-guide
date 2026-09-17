@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0.0",
   "status": "current",
-  "current_answer": "Choose cache policy in this order: decide whether the response is private or safely shared; set explicit browser max-age and, separately, shared-cache s-maxage when needed; add ETag or Last-Modified for cheap validation; then test every request input that can change the body. Under HTTP’s minimum model, a candidate is selected by method plus target URI and may be narrowed by Vary, but Cookie is not automatically part of that key. Set-Cookie alone does not stop caching. A shared cache must not reuse a response to a request carrying Authorization unless the response explicitly permits it with public, s-maxage, or must-revalidate—and that permission is not proof that a user-specific representation is safe to share. Use private, no-cache for personalized browser-local retention, no-store when compliant HTTP caches must not intentionally retain a response, and long-lived public caching only for safe or versioned content. For stale validation, If-None-Match wins whenever it is present: a matching ETag can produce 304, while a nonmatching ETag does not fall back to the date. Diagnose old or wrong content by separating browser/history/service-worker behavior from intermediary evidence and by using redacted A/B markers at the intended hop. To locate the serving layer, first record whether a new fetch happened; then use controlled worker/lifecycle logs, named-hop Cache-Status/Age/Via evidence, and a redacted origin A/B marker with a counter. The layer-attribution matrix is an expected procedure only because this run had no curl, browser, authorized endpoint, or permitted loopback listener.",
+  "current_answer": "Choose cache policy in this order: decide whether the response is private or safely shared; set explicit browser max-age and, separately, shared-cache s-maxage when needed; add ETag or Last-Modified for cheap validation; then test every request input that can change the body. Under HTTP’s minimum model, a candidate is selected by method plus target URI and may be narrowed by Vary, but Cookie is not automatically part of that key. Set-Cookie alone does not stop caching. A shared cache must not reuse a response to a request carrying Authorization unless the response explicitly permits it with public, s-maxage, or must-revalidate—and that permission is not proof that a user-specific representation is safe to share. Use private, no-cache for personalized browser-local retention, no-store when compliant HTTP caches must not intentionally retain a response, and long-lived public caching only for safe or versioned content. For a named Amazon CloudFront standard distribution, the matching behavior’s effective minimum/default/maximum TTLs bound the edge result: max-age is capped or floored, s-maxage wins for shared freshness, missing freshness headers fall to the default, and a positive minimum can make CloudFront cache for at least that minimum despite origin no-cache, no-store, or private. That override is CloudFront-specific, not a new HTTP rule. Use MinTTL=0/CachingDisabled for sensitive paths, versioned URLs for frequently changing public assets, and a narrow invalidation for stable HTML or urgent correction; poll to Completed, and do not treat it as a purge of browsers or other downstream hops. For stale validation, If-None-Match wins whenever it is present: a matching ETag can produce 304, while a nonmatching ETag does not fall back to the date. Diagnose old or wrong content by separating browser/history/service-worker behavior from intermediary evidence and by using redacted A/B markers at the intended hop. See the dated CloudFront report at /p/http-cache-field-guide/reports/cloudfront-ttl-invalidation-2026-09-17.html; this run is documentation-only with no live CloudFront measurement or invalidation.",
   "catalogue_card": {
-    "question": "How do you cache safely and fix stale content?",
-    "text": "Choose cache headers, keep private responses private, and trace stale content. Try the calculator to check freshness."
+    "question": "How can web developers choose correct HTTP cache headers and diagnose stale content without accidentally caching private responses?",
+    "text": "Separate storage audience, freshness, validation, and variant matching. Use the cache-key/privacy worksheet before sharing responses, and treat hits, Age, and Cache-Status as evidence from a named hop—not as proof of safety. For an old display, separate lifecycle and worker evidence from named intermediary and origin observations before calling it a cache hit."
   },
   "summary": [
     "Fresh reuse may make no network request; stale reuse usually leads to validation.",
@@ -14,10 +14,13 @@
     "Cookie is not automatically part of the HTTP minimum key, and Set-Cookie alone is not a cache barrier; personalized bodies should start private.",
     "Authorization needs explicit shared-reuse permission (public, s-maxage, or must-revalidate), but permission is not proof that a user-specific body is safe to share.",
     "A redacted A/B marker plus same-hop Cache-Control, Vary, Set-Cookie, Age, Cache-Status, and Via evidence is a practical pre-deploy check.",
-    "The new cache-key outcomes come from a clearly labeled local model, not a live browser, origin, CDN, or shared-cache measurement.",
     "A pageshow persisted reactivation with no request supports history/bfcache, while a worker log can identify a Cache API hit or synthesized response in that client.",
     "A named Cache-Status hit is scoped evidence from that intermediary; Age corroborates when present, Via identifies forwarding, and missing fields are unknown.",
-    "A controlled origin marker/counter plus fixed URL, host, redirects, and client inputs can correlate one path without proving that other layers are empty.",
+    "For a named CloudFront behavior, effective Minimum/Default/Maximum TTL settings bound the edge result; s-maxage controls shared freshness while browser max-age remains separate.",
+    "AWS explicitly documents that a positive CloudFront minimum can override origin no-cache, no-store, or private; keep MinTTL at zero for sensitive paths and review the effective behavior rather than only viewer headers.",
+    "Use a new fingerprinted URL for frequently changing public assets; use a narrow path invalidation for stable HTML or urgent edge refresh, record its ID, and poll to Completed.",
+    "The CloudFront follow-up is documentation-only: no distribution, live response, invalidation, versioned deploy, or downstream purge was observed.",
+    "The cache-key outcomes and A/B markers are clearly labeled model/expected outputs, not live browser, origin, CDN, or shared-cache measurements.",
     "The layer-attribution report is an expected probe and matrix, not a live browser, origin, CDN, or shared-cache measurement."
   ],
   "uncertainty": [
@@ -26,12 +29,16 @@
     "The minimum key does not prescribe query normalization or other extra key material; Vary cannot cover unlisted application state.",
     "Age and Cache-Status are useful only when exposed by the responding path; their absence is not proof that no cache exists or that an origin was contacted.",
     "Authorization permission, Vary: Cookie, a 200/304, or a model hit is not a confidentiality guarantee and cannot establish absence of leakage.",
-    "No live layer attribution was obtained: curl and browsers were absent, no authorized endpoint was supplied, and a Node loopback listener failed with EPERM.",
-    "A positive layer observation is scoped to one client, URL/key, request, time, and topology; it does not prove absence of other POPs, partitions, hidden hops, request collapsing, or cross-user leakage.",
     "Service-worker/Cache API keys are separate from HTTP cache keys; history/bfcache can show old DOM without a new request; a direct client is not a browser topology.",
-    "One A/B marker test cannot establish that all alternate keys, redirects, concurrent races, POPs, or uninstrumented layers are safe."
+    "One A/B marker test cannot establish that all alternate keys, redirects, concurrent races, POPs, partitions, or uninstrumented layers are safe.",
+    "CloudFront TTL, response-header, Server-Timing, invalidation, quota, and versioning claims are product-specific documentation claims for a named configuration, not universal HTTP/CDN behavior.",
+    "The exact CloudFront behavior, cache policy, effective m/d/M values, viewer header transformation, POP, hit/miss, object residency, and downstream copies were not observed.",
+    "No live CloudFront measurement or invalidation was performed: no AWS account/distribution, authorized endpoint, origin counter, client capture, invalidation ID/status, versioned rollout, or cost/quota usage was available.",
+    "CloudFront invalidation Completed is evidence about the named CloudFront operation only; it does not prove that browsers, history/bfcache, service workers, corporate proxies, other CDNs, or other hops discarded an old URL.",
+    "No live layer attribution was obtained: curl and browsers were absent, no authorized endpoint was supplied, and a Node loopback listener failed with EPERM.",
+    "A positive layer observation is scoped to one client, URL/key, request, time, and topology; it does not prove absence of other POPs, partitions, hidden hops, request collapsing, or cross-user leakage."
   ],
-  "checked_at": "2026-09-16T14:24:20Z",
-  "meaningfully_updated_at": "2026-09-16T14:24:20Z",
-  "freshness_note": "The dated HTTP caching basics baseline, validator follow-up, and cache-key/privacy follow-up remain accessible as source material; this 16 Sep 2026 follow-up adds the narrow serving-layer question, an expected controlled A/B path, layer matrices, a decision tree, a diagnostic checklist, and explicit no-live-attribution limits without replacing earlier reports."
+  "checked_at": "2026-09-17T12:59:08Z",
+  "meaningfully_updated_at": "2026-09-17T12:59:08Z",
+  "freshness_note": "Updated 17 Sep 2026 with a dated CloudFront TTL-policy and invalidation follow-up. The prior HTTP caching basics, validator, cache-key/privacy, serving-layer, and calculator pages remain available; the new CloudFront claims are documentation-only and do not replace earlier findings."
 }

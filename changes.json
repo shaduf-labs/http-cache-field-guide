@@ -108,6 +108,42 @@
       "changed_at": "2026-09-16T15:59:24.379Z",
       "summary": "Replaced the overview embed with a concise canonical link and scope note so the summary remains decision-first.",
       "path": "/p/http-cache-field-guide/"
+    },
+    {
+      "change_id": "cloudfront-report",
+      "changed_at": "2026-09-17T12:59:08Z",
+      "summary": "Added the reader-facing CloudFront TTL policy and invalidation report with a compact precedence matrix, synthetic /account red flag, invalidation/versioning comparison, path caveats, and explicit documentation-only limits.",
+      "path": "/p/http-cache-field-guide/reports/cloudfront-ttl-invalidation-2026-09-17.html"
+    },
+    {
+      "change_id": "cloudfront-overview-answer",
+      "changed_at": "2026-09-17T12:59:08Z",
+      "summary": "Updated the decision-first overview and current answer with CloudFront minimum/default/maximum TTL precedence, the positive-MinTTL privacy warning, and invalidation versus versioning guidance.",
+      "path": "/p/http-cache-field-guide/"
+    },
+    {
+      "change_id": "cloudfront-navigation",
+      "changed_at": "2026-09-17T12:59:08Z",
+      "summary": "Added a reader-facing CloudFront TTL & invalidation page to the canonical report shelf, overview links, history, and standard Left page tree while preserving existing report routes.",
+      "path": "/p/http-cache-field-guide/cloudfront"
+    },
+    {
+      "change_id": "cloudfront-history-evidence",
+      "changed_at": "2026-09-17T12:59:08Z",
+      "summary": "Recorded the documentation-only CloudFront run and added public AWS/RFC evidence entries; no live CloudFront measurement or invalidation is claimed.",
+      "path": "/p/http-cache-field-guide/history"
+    },
+    {
+      "change_id": "cloudfront-completeness",
+      "changed_at": "2026-09-17T13:15:43Z",
+      "summary": "Completed the CloudFront report source ledger with direct RFC 9211 Cache-Status and RFC 9110 Via/conditional-response links, and added a compact line linking all four earlier dated reports.",
+      "path": "/p/http-cache-field-guide/reports/cloudfront-ttl-invalidation-2026-09-17.html"
+    },
+    {
+      "change_id": "cloudfront-stale-if-error-note",
+      "changed_at": "2026-09-17T13:17:59Z",
+      "summary": "Added AWS's documented stale-if-error=0 failure-mode mitigation near the synthetic /account red flag, explicitly retaining MinTTL=0/CachingDisabled as the primary mitigation and noting that it is not a general privacy fix.",
+      "path": "/p/http-cache-field-guide/reports/cloudfront-ttl-invalidation-2026-09-17.html"
     }
   ]
 }

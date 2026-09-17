@@ -44,6 +44,17 @@
       "summary": "Added the expected layer-attribution path, browser/worker/history/intermediary/origin comparison matrices, a decision tree, diagnostic checklist, and explicit limits; no live shared-cache capture is claimed.",
       "report_path": "/p/http-cache-field-guide/reports/layer-attribution-2026-09-16.html",
       "entrypoint": "reports/layer-attribution-2026-09-16.html"
+    },
+    {
+      "run_id": "run:manual:2d8b5d5d08351fad4281f20b655ac2c3",
+      "status": "completed",
+      "answer_change": "meaningful_change",
+      "started_at": "2026-09-17T12:32:50.178Z",
+      "completed_at": "2026-09-17T12:59:08Z",
+      "title": "CloudFront TTL policy and invalidation",
+      "summary": "Documentation-only comparison of origin directives with CloudFront minimum/default/maximum TTL bounds, the synthetic /account positive-MinTTL red flag, and versioned URLs versus path invalidation. No live CloudFront measurement or invalidation was performed.",
+      "report_path": "/p/http-cache-field-guide/reports/cloudfront-ttl-invalidation-2026-09-17.html",
+      "entrypoint": "reports/cloudfront-ttl-invalidation-2026-09-17.html"
     }
   ]
 }

@@ -62,6 +62,7 @@
 [data-agent-document].guide-page .badge--config{background:#ede9fe;color:#5b21b6}
 [data-agent-document].guide-page .badge--recommendation{background:#ffedd5;color:#9a3412}
 [data-agent-document].guide-page .badge--warning{background:#fee2e2;color:#991b1b}
+[data-agent-document].guide-page .badge--observed{background:#e2e8f0;color:#475569}
 [data-agent-document].guide-page .decision-strip,
 [data-agent-document].guide-page .callout,
 [data-agent-document].guide-page .box{background:transparent;border:1px solid var(--guide-line);border-radius:0;padding:15px 18px;margin:1.15rem 0}
@@ -138,6 +139,24 @@
   [data-agent-document].guide-page .source-list{columns:1}
   [data-agent-document].guide-page .diagram-card{padding:9px 0}
   [data-agent-document].guide-page .diagram-card svg{min-height:230px}
+}
+
+/* CloudFront report: evidence-bearing comparisons, not a decorative cover. */
+[data-agent-document].guide-page.cloudfront-report .report-status{margin-top:1.25rem}
+[data-agent-document].guide-page.cloudfront-report .related-reports{border-top:1px solid var(--guide-line);margin-top:1.5rem;padding-top:13px;color:var(--guide-muted);font-size:.9rem;line-height:1.7}
+[data-agent-document].guide-page.cloudfront-report .label-row{display:flex;flex-wrap:wrap;align-items:center;gap:7px 9px;color:var(--guide-muted);font-size:.9rem;line-height:1.7;margin:1rem 0}
+[data-agent-document].guide-page.cloudfront-report .cf-matrix table{min-width:1080px}
+[data-agent-document].guide-page.cloudfront-report .cf-matrix th:first-child,
+[data-agent-document].guide-page.cloudfront-report .cf-matrix td:first-child{min-width:220px}
+[data-agent-document].guide-page.cloudfront-report .cf-matrix th:nth-child(2),
+[data-agent-document].guide-page.cloudfront-report .cf-matrix td:nth-child(2){min-width:360px}
+[data-agent-document].guide-page.cloudfront-report .cf-matrix th:nth-child(3),
+[data-agent-document].guide-page.cloudfront-report .cf-matrix td:nth-child(3){min-width:280px}
+[data-agent-document].guide-page.cloudfront-report .cf-arithmetic{min-width:780px}
+[data-agent-document].guide-page.cloudfront-report .cf-release-diagram svg{min-height:245px}
+[data-agent-document].guide-page.cloudfront-landing .callout{margin-top:1.35rem}
+@media(max-width:720px){
+  [data-agent-document].guide-page.cloudfront-report .cf-release-diagram svg{min-height:330px}
 }
 
 /* Calculator page blocks inherit the Shaduf document surface and keep their styles local. */

@@ -400,6 +400,166 @@
       "accessed_at": "2026-09-16T14:02:40Z",
       "relation": "limits",
       "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc9111-s-maxage-cloudfront",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-5.2.2.10",
+      "title": "RFC 9111 §5.2.2.10: s-maxage",
+      "claim": "For a shared cache, s-maxage overrides max-age and Expires when determining freshness.",
+      "accessed_at": "2026-09-17T12:47:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc9111-expires-cloudfront",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-5.3",
+      "title": "RFC 9111 §5.3: Expires",
+      "claim": "Expires supplies an expiration time when a stronger Cache-Control freshness directive is not present; a past value means stale, not a purge.",
+      "accessed_at": "2026-09-17T12:47:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc9111-storage-directives-cloudfront",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-5.2.2",
+      "title": "RFC 9111 §5.2.2: Cache-Control",
+      "claim": "Defines the normative meanings of no-cache, no-store, private, max-age, and shared-cache directives used in the CloudFront comparison.",
+      "accessed_at": "2026-09-17T12:47:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "aws-cloudfront-expiration",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html",
+      "title": "Amazon CloudFront: Manage how long content stays in a cache",
+      "claim": "CloudFront expiration behavior uses origin freshness signals with configured minimum/default/maximum TTL bounds and documents the positive-MinTTL override for no-cache, no-store, and private responses.",
+      "accessed_at": "2026-09-17T12:47:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "aws-cloudfront-cache-policy",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cache-key-understand-cache-policy.html",
+      "title": "Amazon CloudFront: Cache policies",
+      "claim": "A cache policy attached to a cache behavior defines cache-key inputs and minimum/default/maximum TTL settings; an all-zero policy disables caching and a positive minimum can override origin directives.",
+      "accessed_at": "2026-09-17T12:47:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "aws-cloudfront-cache-policy-api",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CachePolicyConfig.html",
+      "title": "Amazon CloudFront API: CachePolicyConfig",
+      "claim": "The cache policy configuration contains default, minimum, and maximum TTL values and documents the warning that a positive minimum can cause caching despite no-cache, no-store, or private.",
+      "accessed_at": "2026-09-17T12:47:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "aws-cloudfront-cache-behavior-api",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CacheBehavior.html",
+      "title": "Amazon CloudFront API: CacheBehavior",
+      "claim": "A cache behavior uses CachePolicyId or legacy ForwardedValues; legacy TTL fields are deprecated and the matching behavior must be identified before interpreting a response.",
+      "accessed_at": "2026-09-17T12:47:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "aws-cloudfront-response-headers",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/understanding-response-headers-policies.html",
+      "title": "Amazon CloudFront: Response headers policies",
+      "claim": "A Cache-Control value added or overridden for the viewer controls browser caching and does not change how CloudFront caches the object; Server-Timing can expose sampled CloudFront metrics when enabled.",
+      "accessed_at": "2026-09-17T12:47:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "aws-cloudfront-invalidation",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html",
+      "title": "Amazon CloudFront: Invalidate files",
+      "claim": "Invalidation removes selected objects from CloudFront edge caches, while versioned filenames avoid waiting for old objects; neither is a universal purge of local or downstream caches.",
+      "accessed_at": "2026-09-17T12:47:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "aws-cloudfront-invalidation-paths",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/invalidation-specifying-objects.html",
+      "title": "Amazon CloudFront: Specify files for invalidation",
+      "claim": "Invalidation paths are distribution-relative and case-sensitive; trailing wildcards, query strings, variants, rewrites, and slash forms affect scope.",
+      "accessed_at": "2026-09-17T12:47:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "aws-cloudfront-invalidation-requests",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation_Requests.html",
+      "title": "Amazon CloudFront: Invalidation requests",
+      "claim": "An invalidation request has an identifier and status; operators can inspect the request and wait for Completed, which describes CloudFront operation status.",
+      "accessed_at": "2026-09-17T12:47:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "aws-cloudfront-versioned-files",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/UpdatingExistingObjects.html",
+      "title": "Amazon CloudFront: Update existing objects",
+      "claim": "AWS recommends version identifiers for frequently updated files and documents their deployment and rollback trade-offs relative to invalidation.",
+      "accessed_at": "2026-09-17T12:47:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "aws-cloudfront-invalidation-pricing",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PayingForInvalidation.html",
+      "title": "Amazon CloudFront: Invalidation pricing",
+      "claim": "The current pricing documentation states the monthly free path allowance and billing treatment for invalidation paths and wildcards.",
+      "accessed_at": "2026-09-17T12:47:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "aws-cloudfront-limits",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html",
+      "title": "Amazon CloudFront: Quotas",
+      "claim": "The current quota documentation states invalidation path/tag and wildcard request-rate limits used in the report.",
+      "accessed_at": "2026-09-17T12:47:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "aws-cloudfront-create-invalidation",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateInvalidation.html",
+      "title": "Amazon CloudFront API: CreateInvalidation",
+      "claim": "CreateInvalidation accepts a path-based invalidation request and returns an invalidation identifier for tracking.",
+      "accessed_at": "2026-09-17T12:47:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "aws-cloudfront-get-invalidation",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetInvalidation.html",
+      "title": "Amazon CloudFront API: GetInvalidation",
+      "claim": "GetInvalidation exposes the status and details of a named invalidation so an operator can verify completion.",
+      "accessed_at": "2026-09-17T12:47:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
     }
   ]
 }
