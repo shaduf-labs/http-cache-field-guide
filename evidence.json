@@ -710,6 +710,216 @@
       "accessed_at": "2026-09-19T06:17:03Z",
       "relation": "limits",
       "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "cloudflare-cache-rules-2026-09-20",
+      "source_type": "cloudflare-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/how-to/cache-rules/",
+      "title": "Cloudflare Cache Rules overview",
+      "claim": "Documents proxied-DNS requirements, plan rule scope, custom-key/purge interactions, and Trace as configuration evidence; the actual zone rule was not supplied.",
+      "accessed_at": "2026-09-20T10:26:19Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "cloudflare-cache-rules-settings-2026-09-20",
+      "source_type": "cloudflare-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/how-to/cache-rules/settings/",
+      "title": "Cloudflare Cache Rules settings",
+      "claim": "Documents Edge Cache TTL modes, Browser TTL modes, status-code TTL, custom-key settings, and query-parameter limits; plan and configured values remain unknown.",
+      "accessed_at": "2026-09-20T10:26:42Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "cloudflare-origin-cache-control-2026-09-20",
+      "source_type": "cloudflare-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/concepts/cache-control/",
+      "title": "Cloudflare Origin Cache Control",
+      "claim": "Documents OCC-on/OCC-off behavior for no-cache/zero lifetimes, no-store, private, Authorization, Set-Cookie, and revalidation directives; a named zone state was not observed.",
+      "accessed_at": "2026-09-20T10:27:04Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "cloudflare-edge-browser-ttl-2026-09-20",
+      "source_type": "cloudflare-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/how-to/edge-browser-cache-ttl/",
+      "title": "Cloudflare Edge and Browser Cache TTL",
+      "claim": "Separates hidden edge TTL from viewer/browser TTL and documents purge/browser boundaries; no edge or viewer capture was available.",
+      "accessed_at": "2026-09-20T10:27:26Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "cloudflare-set-browser-ttl-2026-09-20",
+      "source_type": "cloudflare-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/how-to/edge-browser-cache-ttl/set-browser-ttl/",
+      "title": "Cloudflare Set Browser TTL",
+      "claim": "Documents Browser TTL override behavior relative to higher origin max-age; exact rule and plan remain zone-specific.",
+      "accessed_at": "2026-09-20T10:27:47Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "cloudflare-default-cache-behavior-2026-09-20",
+      "source_type": "cloudflare-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/concepts/default-cache-behavior/",
+      "title": "Cloudflare default cache behavior",
+      "claim": "Documents default header/status eligibility and default TTLs; it does not replace the explicit OCC table for an OCC-enabled case.",
+      "accessed_at": "2026-09-20T10:28:08Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "cloudflare-cache-responses-2026-09-20",
+      "source_type": "cloudflare-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/concepts/cache-responses/",
+      "title": "Cloudflare cache responses",
+      "claim": "Defines CF-Cache-Status states and diagnostic boundaries for BYPASS, MISS, REVALIDATED, EXPIRED, DYNAMIC, and related response behavior; no status was captured.",
+      "accessed_at": "2026-09-20T10:28:29Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "cloudflare-revalidation-2026-09-20",
+      "source_type": "cloudflare-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/concepts/revalidation/",
+      "title": "Cloudflare revalidation",
+      "claim": "Documents stale/revalidation interactions and directives that prevent stale use; tier and POP behavior were not tested.",
+      "accessed_at": "2026-09-20T10:28:47Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "cloudflare-cache-keys-2026-09-20",
+      "source_type": "cloudflare-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/how-to/cache-keys/",
+      "title": "Cloudflare Cache Keys",
+      "claim": "Documents default key members, custom query/header/cookie/host/device/geo/language dimensions, plan gates, and Trace; the actual key is unknown.",
+      "accessed_at": "2026-09-20T10:29:06Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "cloudflare-purge-overview-2026-09-20",
+      "source_type": "cloudflare-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/how-to/purge-cache/",
+      "title": "Cloudflare purge cache overview",
+      "claim": "Documents purge methods, limits, and the boundary that a successful purge response is not proof of object existence or eviction; no purge ran.",
+      "accessed_at": "2026-09-20T10:29:25Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "cloudflare-purge-single-file-2026-09-20",
+      "source_type": "cloudflare-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/how-to/purge-cache/purge-by-single-file/",
+      "title": "Cloudflare purge by single file",
+      "claim": "Documents exact URL, case/query, special key inputs, method-sensitive rule, and transform boundaries for URL purges; no target URL was available.",
+      "accessed_at": "2026-09-20T10:29:44Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "cloudflare-purge-cache-key-2026-09-20",
+      "source_type": "cloudflare-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/how-to/purge-cache/purge-cache-key/",
+      "title": "Cloudflare purge by cache key",
+      "claim": "Documents header/cookie/device/geo/language inputs for custom-key URL purges and broader alternatives; no custom key or payload exists here.",
+      "accessed_at": "2026-09-20T10:30:02Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "cloudflare-purge-api-2026-09-20",
+      "source_type": "cloudflare-documentation",
+      "source_url": "https://developers.cloudflare.com/api/resources/cache/methods/purge/",
+      "title": "Cloudflare purge API",
+      "claim": "Documents the purge endpoint, payload families, and required permission; no credentials or API call was used.",
+      "accessed_at": "2026-09-20T10:30:18Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "cloudflare-purge-tags-2026-09-20",
+      "source_type": "cloudflare-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/how-to/purge-cache/purge-by-tags/",
+      "title": "Cloudflare purge by tags",
+      "claim": "Documents Cache-Tag association, stripping, tag size/batch limits, and tag purge scope; no tag was captured or purged.",
+      "accessed_at": "2026-09-20T10:30:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "cloudflare-purge-prefix-2026-09-20",
+      "source_type": "cloudflare-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/how-to/purge-cache/purge_by_prefix/",
+      "title": "Cloudflare purge by prefix",
+      "claim": "Documents host/path prefix scope, query/fragment limits, and batch boundary; no target host or path was supplied.",
+      "accessed_at": "2026-09-20T10:30:50Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "cloudflare-purge-hostname-2026-09-20",
+      "source_type": "cloudflare-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/how-to/purge-cache/purge-by-hostname/",
+      "title": "Cloudflare purge by hostname",
+      "claim": "Documents hostname-wide scope and batch boundary; no hostname purge was authorized or executed.",
+      "accessed_at": "2026-09-20T10:31:03Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "cloudflare-purge-everything-2026-09-20",
+      "source_type": "cloudflare-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/how-to/purge-cache/purge-everything/",
+      "title": "Cloudflare purge everything",
+      "claim": "Documents zone-wide scope and origin-load warning; it cannot prove browser/downstream deletion and was not run.",
+      "accessed_at": "2026-09-20T10:31:13Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "cloudflare-cdn-cache-control-2026-09-20",
+      "source_type": "cloudflare-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/concepts/cdn-cache-control/",
+      "title": "Cloudflare CDN-Cache-Control boundary",
+      "claim": "Identifies a separate specialized directive boundary that can change the ordinary Cache Rules/OCC model; it was outside the unobserved case.",
+      "accessed_at": "2026-09-20T10:31:20Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "cloudflare-cache-response-rules-2026-09-20",
+      "source_type": "cloudflare-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/how-to/cache-response-rules/",
+      "title": "Cloudflare Cache Response Rules boundary",
+      "claim": "Identifies response-rule precedence as a product boundary to audit when it can conflict with Cache Rules; no such zone configuration was available.",
+      "accessed_at": "2026-09-20T10:31:29Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc9111-cloudflare-precedence-2026-09-20",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-5.2.2.10",
+      "title": "RFC 9111 shared-cache freshness precedence",
+      "claim": "Supports the normative ordering s-maxage over max-age over Expires and distinguishes no-cache, no-store, private, Age, and invalidation semantics from Cloudflare product behavior.",
+      "accessed_at": "2026-09-20T10:26:19Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc9211-cloudflare-evidence-2026-09-20",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9211.html#section-2",
+      "title": "RFC 9211 Cache-Status",
+      "claim": "Provides the named-cache diagnostic concept used in the verification template; Cloudflare CF-Cache-Status is vendor-specific and was not captured.",
+      "accessed_at": "2026-09-20T10:26:19Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
     }
   ]
 }

@@ -168,6 +168,30 @@
       "changed_at": "2026-09-20T07:02:18.469Z",
       "summary": "Scoped long-token wrapping and removed non-table nested overflow from updated document content; wide evidence tables retain horizontal scrolling as the only intentional nested scroll surface.",
       "path": "/p/http-cache-field-guide/reports/cloudfront-ttl-invalidation-2026-09-17.html"
+    },
+    {
+      "change_id": "cloudflare-report",
+      "changed_at": "2026-09-20T10:45:50Z",
+      "summary": "Added the reader-facing Cloudflare Cache Rules and Origin Cache Control report with an accessible edge/browser/key/purge diagram, one-page precedence/purge matrix, two decision paths, CloudFront crosswalk, authorized-only verification template, source links, retrieval window, and explicit documentation-only limits.",
+      "path": "/p/http-cache-field-guide/reports/cloudflare-cache-rules-2026-09-20.html"
+    },
+    {
+      "change_id": "cloudflare-overview-answer",
+      "changed_at": "2026-09-20T10:45:50Z",
+      "summary": "Updated the decision-first overview and current answer with Cloudflare OCC and Cache Rule precedence, separate Browser TTL, cache-key identity, and purge acknowledgment boundaries.",
+      "path": "/p/http-cache-field-guide/"
+    },
+    {
+      "change_id": "cloudflare-navigation",
+      "changed_at": "2026-09-20T10:45:50Z",
+      "summary": "Added a reader-facing Cloudflare guide page and standard Left page-tree entry while preserving the existing four foundational reports and CloudFront audit URLs.",
+      "path": "/p/http-cache-field-guide/cloudflare"
+    },
+    {
+      "change_id": "cloudflare-history-evidence",
+      "changed_at": "2026-09-20T10:45:50Z",
+      "summary": "Recorded the Cloudflare research run in history and added primary Cloudflare/RFC evidence links; no zone measurement or purge execution is claimed.",
+      "path": "/p/http-cache-field-guide/history"
     }
   ]
 }

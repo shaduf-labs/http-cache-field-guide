@@ -209,3 +209,28 @@
 [data-agent-document].guide-page.cloudfront-audit .audit-diagram svg{max-width:100%;height:auto}
 [data-agent-document].guide-page.cloudfront-audit .audit-table{max-width:100%;margin-block:1rem}
 [data-agent-document].guide-page.cloudfront-audit .audit-table table{min-width:720px}
+
+/* Cloudflare report: keep provider controls visibly separate without changing earlier research. */
+[data-agent-document].guide-page.cloudflare-report .cf-separation svg{min-height:275px}
+[data-agent-document].guide-page.cloudflare-report .cf-matrix table{min-width:1240px;font-size:.87rem;line-height:1.45}
+[data-agent-document].guide-page.cloudflare-report .cf-matrix th:first-child,
+[data-agent-document].guide-page.cloudflare-report .cf-matrix td:first-child{min-width:190px}
+[data-agent-document].guide-page.cloudflare-report .cf-matrix th:nth-child(2),
+[data-agent-document].guide-page.cloudflare-report .cf-matrix td:nth-child(2){min-width:245px}
+[data-agent-document].guide-page.cloudflare-report .cf-matrix th:nth-child(3),
+[data-agent-document].guide-page.cloudflare-report .cf-matrix td:nth-child(3){min-width:225px}
+[data-agent-document].guide-page.cloudflare-report .cf-matrix th:nth-child(4),
+[data-agent-document].guide-page.cloudflare-report .cf-matrix td:nth-child(4){min-width:240px}
+[data-agent-document].guide-page.cloudflare-report .cf-crosswalk table{min-width:1050px;font-size:.9rem;line-height:1.45}
+[data-agent-document].guide-page.cloudflare-report .cf-crosswalk th:first-child,
+[data-agent-document].guide-page.cloudflare-report .cf-crosswalk td:first-child{min-width:145px}
+[data-agent-document].guide-page.cloudflare-report .cf-crosswalk th:nth-child(2),
+[data-agent-document].guide-page.cloudflare-report .cf-crosswalk td:nth-child(2),
+[data-agent-document].guide-page.cloudflare-report .cf-crosswalk th:nth-child(3),
+[data-agent-document].guide-page.cloudflare-report .cf-crosswalk td:nth-child(3){min-width:270px}
+[data-agent-document].guide-page.cloudflare-report pre{border-left:4px solid var(--guide-purple);background:#f4f0ff;color:#102a43}
+[data-agent-document].guide-page.cloudflare-report .related-reports{border-top:1px solid var(--guide-line);margin-top:1.5rem;padding-top:13px;color:var(--guide-muted);font-size:.9rem;line-height:1.7}
+[data-agent-document].guide-page.cloudflare-landing .callout{margin-top:1.35rem}
+@media(max-width:720px){
+  [data-agent-document].guide-page.cloudflare-report .cf-separation svg{min-height:330px}
+}

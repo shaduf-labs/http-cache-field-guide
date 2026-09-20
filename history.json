@@ -55,6 +55,17 @@
       "summary": "Refreshed the preserved CloudFront report URL with the completed 19 Sep audit: s-maxage-only documentation gap, viewer-only response-headers policy boundary, effective cache-key invalidation scope, rewrite-stage limits, and Completed-status evidence. No live CloudFront measurement or invalidation was performed.",
       "report_path": "/p/http-cache-field-guide/reports/cloudfront-ttl-invalidation-2026-09-17.html",
       "entrypoint": "reports/cloudfront-ttl-invalidation-2026-09-17.html"
+    },
+    {
+      "run_id": "run:manual:17af50bd90e691210b3c88b2f42f7749",
+      "status": "completed",
+      "answer_change": "meaningful_change",
+      "started_at": "2026-09-20T10:19:14.743Z",
+      "completed_at": "2026-09-20T10:45:50Z",
+      "title": "Cloudflare Cache Rules and Origin Cache Control",
+      "summary": "Added a documentation-grounded Cloudflare case covering OCC and Cache Rule edge precedence, separate Browser TTL, cache-key identity, purge scopes, a matched CloudFront crosswalk, and an authorized-only verification template. No Cloudflare zone response or purge was available.",
+      "report_path": "/p/http-cache-field-guide/reports/cloudflare-cache-rules-2026-09-20.html",
+      "entrypoint": "reports/cloudflare-cache-rules-2026-09-20.html"
     }
   ]
 }
