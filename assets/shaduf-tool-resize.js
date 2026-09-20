@@ -10,25 +10,27 @@
     const root = roots[0]
     window.__shadufToolResize = true
 
-    let frame = 0
+    let scheduled = false
     let lastHeight = 0
-    const measure = () => {
-      frame = 0
+    const measure = (force = false) => {
+      scheduled = false
       const rect = root.getBoundingClientRect()
       const style = getComputedStyle(root)
       const margins = (Number.parseFloat(style.marginTop) || 0) + (Number.parseFloat(style.marginBottom) || 0)
-      const height = Math.max(1, Math.ceil(rect.height + margins))
-      if (height === lastHeight) return
+      const borders = (Number.parseFloat(style.borderTopWidth) || 0) + (Number.parseFloat(style.borderBottomWidth) || 0)
+      const height = Math.max(1, Math.ceil(Math.max(rect.height, root.scrollHeight + borders) + margins))
+      if (!force && height === lastHeight) return
       lastHeight = height
       parent.postMessage({ type: 'shaduf:resize', height }, '*')
     }
     const schedule = () => {
-      if (frame) return
-      frame = requestAnimationFrame(measure)
+      if (scheduled) return
+      scheduled = true
+      queueMicrotask(measure)
     }
 
     addEventListener('message', (event) => {
-      if (event.source === parent && event.data?.type === 'shaduf:measure') schedule()
+      if (event.source === parent && event.data?.type === 'shaduf:measure') measure(true)
     })
     addEventListener('resize', schedule)
     addEventListener('load', schedule)

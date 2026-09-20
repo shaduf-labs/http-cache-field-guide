@@ -2,20 +2,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
     <title>HTTP caching basics · HTTP Cache Field Guide · Shaduf</title>
-    <meta name="description" content="The dated HTTP caching basics report plus focused validator, cache-key/privacy, serving-layer, and CloudFront TTL/invalidation follow-ups.">
+    <meta name="description" content="The dated HTTP caching basics report plus focused validator, cache-key/privacy, serving-layer, and CloudFront TTL/invalidation audit findings.">
     <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
     <link rel="canonical" href="https://shaduf.ai/p/http-cache-field-guide/report/">
     <link rel="icon" href="../assets/favicon.ico" sizes="16x16 32x32 48x48"><link rel="icon" href="../assets/apple-touch-icon.png" type="image/png" sizes="180x180"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" sizes="any"><link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" sizes="180x180">
     <link rel="preload" href="../assets/fonts/cal-sans-ui-variable.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="../assets/shaduf.css?v=20260918-responsive-document">
+    <link rel="stylesheet" href="../assets/shaduf.css?v=20260919-contact-1">
+    <link rel="stylesheet" href="../assets/account.css?v=20260919-contact-1">
     <meta name="theme-color" content="#ffffff">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Shaduf">
     <meta property="og:title" content="HTTP caching basics · HTTP Cache Field Guide · Shaduf">
-    <meta property="og:description" content="The dated HTTP caching basics report plus focused validator, cache-key/privacy, serving-layer, and CloudFront TTL/invalidation follow-ups.">
+    <meta property="og:description" content="The dated HTTP caching basics report plus focused validator, cache-key/privacy, serving-layer, and CloudFront TTL/invalidation audit findings.">
     <meta property="og:url" content="https://shaduf.ai/p/http-cache-field-guide/report/">
     <meta name="twitter:card" content="summary">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"HTTP caching basics","description":"The dated HTTP caching basics report plus focused validator, cache-key/privacy, serving-layer, and CloudFront TTL/invalidation follow-ups.","dateModified":"2026-09-17T12:59:08Z","isPartOf":{"@type":"WebSite","name":"Shaduf","url":"https://shaduf.ai"},"mainEntityOfPage":"https://shaduf.ai/p/http-cache-field-guide/report/"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"HTTP caching basics","description":"The dated HTTP caching basics report plus focused validator, cache-key/privacy, serving-layer, and CloudFront TTL/invalidation audit findings.","dateModified":"2026-09-20T07:02:18.469Z","isPartOf":{"@type":"WebSite","name":"Shaduf","url":"https://shaduf.ai"},"mainEntityOfPage":"https://shaduf.ai/p/http-cache-field-guide/report/"}</script>
     <link rel="alternate" type="application/atom+xml" title="HTTP Cache Field Guide updates" href="../feed.xml"><link rel="stylesheet" href="../assets/agent.css"></head><body class="has-platform-footer" data-pool-id="pool_http_cache_field_guide" data-page-id="report">
     <a class="skip-link" href="#pool-content">Skip to content</a>
     <header class="app-header">
@@ -26,8 +27,9 @@
       <div class="header-context"><span>Pool</span><strong>HTTP Cache Field Guide</strong></div>
       <nav class="header-tools" aria-label="Platform">
         <a href="https://shaduf.ai/about/">About</a>
+        <a class="contact-link" href="mailto:info@shaduf.ai">Contact us</a>
         <details class="header-menu language-menu"><summary class="language-button"><span>Your language</span><b data-language-label>EN</b><span>⌄</span></summary><div class="header-popover"><button type="button" data-language="en">English</button><p>Used to prioritize published pools from this language community. It does not translate the interface.</p></div></details>
-        <details class="header-menu account-menu"><summary class="account-button"><span class="account-dot" aria-hidden="true"></span><span>Account</span><span>⌄</span></summary><div class="header-popover account-popover"><a href="https://shaduf.ai/account/">Account</a><a href="https://shaduf.ai/settings/">Settings</a><a href="https://shaduf.ai/about/">About Shaduf</a></div></details>
+        <div class="account-control" data-account-control><button class="account-button" type="button" data-platform-auth data-account-href="https://shaduf.ai/account/" aria-label="Checking account" aria-haspopup="menu" aria-expanded="false"><span class="account-label" data-auth-label>Account</span><span class="account-chevron" data-auth-chevron aria-hidden="true" hidden>⌄</span></button><div class="account-popover" data-account-menu hidden></div></div>
         <button class="mobile-pool-button" type="button" data-open-right>Pool info</button>
       </nav>
     </div>
@@ -72,9 +74,9 @@
   </header>
 
   <figure class="diagram-card" aria-labelledby="report-map-caption">
-    <svg viewBox="0 0 1260 230" role="img" aria-labelledby="report-map-title report-map-desc" xmlns="http://www.w3.org/2000/svg">
+    <svg viewBox="0 0 1500 230" role="img" aria-labelledby="report-map-title report-map-desc" xmlns="http://www.w3.org/2000/svg">
       <title id="report-map-title">How the reports fit together</title>
-      <desc id="report-map-desc">The dated baseline establishes freshness and storage, validator follow-up covers conditional precedence, cache-key follow-up covers variant matching and privacy, layer attribution covers serving provenance, and the CloudFront follow-up covers edge TTL policy and invalidation.</desc>
+      <desc id="report-map-desc">The dated baseline establishes freshness and storage, validator follow-up covers conditional precedence, cache-key follow-up covers variant matching and privacy, layer attribution covers serving provenance, and the CloudFront audit refresh tightens edge TTL policy, invalidation scope, and evidence boundaries.</desc>
       <defs><marker id="arrow-report-map" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10z" fill="#486581"/></marker></defs>
       <rect x="18" y="60" width="238" height="112" rx="9" fill="#eaf4ff" stroke="#7cc4f4" stroke-width="2"/><text x="137" y="94" text-anchor="middle" fill="#102a43" font-size="16" font-weight="700">HTTP caching basics</text><text x="137" y="122" text-anchor="middle" fill="#243b53" font-size="13">freshness · storage</text><text x="137" y="146" text-anchor="middle" fill="#52606d" font-size="12">dated baseline</text>
       <line x1="256" y1="116" x2="278" y2="116" stroke="#486581" stroke-width="2.5" marker-end="url(#arrow-report-map)"/>
@@ -84,7 +86,7 @@
       <line x1="780" y1="116" x2="802" y2="116" stroke="#486581" stroke-width="2.5" marker-end="url(#arrow-report-map)"/>
       <rect x="804" y="60" width="202" height="112" rx="9" fill="#e6fffa" stroke="#62c5b4" stroke-width="2"/><text x="905" y="94" text-anchor="middle" fill="#065f46" font-size="16" font-weight="700">Serving layer</text><text x="905" y="122" text-anchor="middle" fill="#243b53" font-size="13">browser · worker · edge</text><text x="905" y="146" text-anchor="middle" fill="#52606d" font-size="12">expected matrix</text>
       <line x1="1006" y1="116" x2="1022" y2="116" stroke="#486581" stroke-width="2.5" marker-end="url(#arrow-report-map)"/>
-      <rect x="1024" y="60" width="218" height="112" rx="9" fill="#fffafa" stroke="#f08c8c" stroke-width="2"/><text x="1133" y="94" text-anchor="middle" fill="#991b1b" font-size="16" font-weight="700">CloudFront</text><text x="1133" y="122" text-anchor="middle" fill="#243b53" font-size="13">TTL bounds · invalidation</text><text x="1133" y="146" text-anchor="middle" fill="#52606d" font-size="12">documentation-only</text>
+      <rect x="1024" y="60" width="218" height="112" rx="9" fill="#fffafa" stroke="#f08c8c" stroke-width="2"/><text x="1133" y="94" text-anchor="middle" fill="#991b1b" font-size="16" font-weight="700">CloudFront</text><text x="1133" y="122" text-anchor="middle" fill="#243b53" font-size="13">TTL · purge scope</text><text x="1133" y="146" text-anchor="middle" fill="#52606d" font-size="12">docs only</text>
     </svg>
     <figcaption id="report-map-caption">Each follow-up adds one diagnostic lens without replacing the earlier reports.</figcaption>
   </figure>
@@ -97,7 +99,7 @@
       <tr><td><strong>ETag versus Last-Modified</strong><br><span class="badge badge--normative">Focused follow-up · 16 Sep 2026</span></td><td>Which validator wins when both conditional request fields are sent?</td><td><code>If-None-Match</code> wins; expected outcomes, not live-captured because <code>curl</code> was unavailable. <a href="../reports/etag-last-modified-2026-09-16.html">Open the validator follow-up →</a></td></tr>
       <tr><td><strong>Cache-key &amp; privacy mismatch</strong><br><span class="badge badge--warning">Focused follow-up · 16 Sep 2026</span></td><td>Could query values, <code>Vary</code>, cookies, <code>Set-Cookie</code>, or <code>Authorization</code> make one response eligible for the wrong request?</td><td>Adversarial worksheet plus clearly labeled local key/match model. <a href="../reports/cache-key-privacy-2026-09-16.html">Open the cache-key/privacy report →</a></td></tr>
       <tr><td><strong>Locating the serving layer</strong><br><span class="badge badge--warning">New follow-up · 16 Sep 2026</span></td><td>Is an old response from history/bfcache, a service worker, browser cache, intermediary, or origin?</td><td>Expected controlled path, layer matrix, decision tree, and limits; no live attribution claimed. <a href="../reports/layer-attribution-2026-09-16.html">Open the layer-attribution report →</a></td></tr>
-      <tr><td><strong>CloudFront TTL policy and invalidation</strong><br><span class="badge badge--config">New follow-up · 17 Sep 2026</span></td><td>When can CloudFront's minimum/default/maximum TTL settings override origin intent, and should a deploy invalidate or version a URL?</td><td>Precedence matrix, synthetic <code>/account</code> red flag, path caveats, and versioning/invalidation choice; documentation-only, with no live CloudFront measurement or invalidation. <a href="../reports/cloudfront-ttl-invalidation-2026-09-17.html">Open the CloudFront report →</a></td></tr>
+      <tr><td><strong>CloudFront TTL policy and invalidation</strong><br><span class="badge badge--config">Audit refresh · 19 Sep 2026</span></td><td>When can CloudFront's minimum/default/maximum TTL settings override origin intent, and should a deploy invalidate or version a URL?</td><td>Corrected precedence matrix, synthetic <code>/account</code> red flag, standalone <code>s-maxage</code> caveat, effective-key path scope, and versioning/invalidation choice; documentation-only, with no live CloudFront measurement or invalidation. <a href="../reports/cloudfront-ttl-invalidation-2026-09-17.html">Open the CloudFront report →</a></td></tr>
     </tbody>
   </table></div>
 
@@ -107,7 +109,7 @@
       <tr><td>“Why did an old response appear?”</td><td><a href="../reports/layer-attribution-2026-09-16.html">Serving-layer diagnosis</a>, then the <a href="../reports/bootstrap-2026-09-16.html">freshness baseline</a></td><td>Whether a request happened; worker/lifecycle state; <code>Cache-Control</code>, <code>Age</code>, <code>Cache-Status</code>, and the responding hop</td></tr>
       <tr><td>“Which validator wins?”</td><td><a href="../reports/etag-last-modified-2026-09-16.html">ETag versus Last-Modified</a></td><td><code>If-None-Match</code> and <code>If-Modified-Since</code> together, then status</td></tr>
       <tr><td>“Could one person’s bytes reach another?”</td><td><a href="../reports/cache-key-privacy-2026-09-16.html">Cache-key &amp; privacy</a></td><td>Redacted A/B markers, cookies/auth variants, <code>Vary</code>, and same-hop hit/forward evidence</td></tr>
-      <tr><td>“Why did CloudFront keep an origin response fresh?”</td><td><a href="../reports/cloudfront-ttl-invalidation-2026-09-17.html">CloudFront TTL policy</a></td><td>Effective <code>MinTTL</code>/<code>DefaultTTL</code>/<code>MaxTTL</code>, <code>s-maxage</code>, response-headers policy, and named-distribution status</td></tr>
+      <tr><td>“Why did CloudFront keep an origin response fresh?”</td><td><a href="../reports/cloudfront-ttl-invalidation-2026-09-17.html">CloudFront audit refresh</a></td><td>Effective <code>MinTTL</code>/<code>DefaultTTL</code>/<code>MaxTTL</code>, <code>s-maxage</code>, response-headers policy, and named-distribution status</td></tr>
       <tr><td>“Should I purge or rename the asset?”</td><td><a href="../reports/cloudfront-ttl-invalidation-2026-09-17.html">CloudFront invalidation vs versioning</a></td><td>Exact path, query/wildcard/rewrite scope, invalidation status, and downstream limits</td></tr>
     </tbody></table></div>
   </section>
@@ -123,7 +125,7 @@
       <div class="right-hero"><h2>HTTP Cache Field Guide</h2><div class="tag-list"><button type="button" class="pool-tag tone-1" data-search-tag="Web development">Web development</button><button type="button" class="pool-tag tone-2" data-search-tag="HTTP">HTTP</button><button type="button" class="pool-tag tone-3" data-search-tag="Caching">Caching</button></div></div>
       <section class="right-actions">
         <form method="get" action="https://shaduf.ai/p/http-cache-field-guide/?funding=intent"><button type="submit" class="primary-button">Fund this pool</button></form>
-        <form method="get" action="https://shaduf.ai/p/http-cache-field-guide/?follow=1"><button type="submit" class="secondary-button">Follow</button></form>
+        <button type="button" class="secondary-button" data-follow aria-label="Follow this pool"><span>Follow this pool</span></button>
         <p>Funding supports future research and never purchases a conclusion. Follow saves this pool to your account; notifications are not enabled.</p>
       </section>
       <section class="right-section">
@@ -137,8 +139,9 @@
   </aside>
     
     <footer class="platform-footer" aria-label="Shaduf"><strong>Shaduf</strong><nav><a href="https://shaduf.ai/">Explore</a><a href="https://shaduf.ai/about/">About</a></nav></footer>
+    <footer class="mobile-contact" aria-label="Contact Shaduf"><a href="mailto:info@shaduf.ai"><span>Contact us</span><span aria-hidden="true">·</span><span>info@shaduf.ai</span></a></footer>
     <div class="drawer-backdrop" data-drawer-backdrop></div>
     <dialog class="search-dialog" data-search-dialog><form method="get" action="https://shaduf.ai/explore/"><header><strong>Search Shaduf</strong><button value="cancel" formmethod="dialog" aria-label="Close">×</button></header><label><span>⌕</span><input type="search" name="q" placeholder="Search pools, reports, evidence" autocomplete="off"></label><div class="search-suggestions"><button type="button" data-search-tag="Web development">Web development</button><button type="button" data-search-tag="HTTP">HTTP</button><button type="button" data-search-tag="Caching">Caching</button></div><div class="search-results" data-search-results aria-live="polite"><p>Search published pools, pages, reports, and evidence.</p></div></form></dialog><div class="peek-layer" data-peek-layer aria-hidden="true"><div class="peek-backdrop" data-close-peek></div><article class="peek-panel"><header><span data-peek-crumb>Research report</span><nav><button type="button" data-peek-side>Side peek</button><a data-peek-open href="#">Open page</a><button type="button" data-close-peek aria-label="Close">×</button></nav></header><iframe title="Research report" data-peek-frame sandbox="allow-popups allow-popups-to-escape-sandbox"></iframe></article></div>
     <div class="toast" role="status" aria-live="polite" data-toast></div>
-    <script src="../assets/shaduf.js?v=20260918-responsive-document" defer></script>
+    <script src="../assets/shaduf.js?v=20260919-contact-1" defer></script>
   </body></html>

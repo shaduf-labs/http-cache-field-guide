@@ -194,3 +194,18 @@
   [data-agent-document].guide-page.calculator-page .calculator-embed iframe{min-height:820px}
   [data-agent-document].guide-page.calculator-page .calculator-timeline svg{min-height:240px}
 }
+
+/* Publication repair: wrap long evidence labels while reserving horizontal scrolling for wide tables only. */
+[data-agent-document].guide-page a,
+[data-agent-document].guide-page p,
+[data-agent-document].guide-page li,
+[data-agent-document].guide-page th,
+[data-agent-document].guide-page td,
+[data-agent-document].guide-page code{overflow-wrap:anywhere}
+[data-agent-document].guide-page pre{max-width:100%;overflow:visible;overflow-wrap:anywhere;word-break:break-word;white-space:pre-wrap}
+[data-agent-document].guide-page .table-wrap{display:block;max-width:100%;overflow-x:auto;overflow-y:visible}
+[data-agent-document].guide-page .table-wrap table{overflow-wrap:anywhere}
+[data-agent-document].guide-page.cloudfront-audit .audit-diagram{max-width:100%;overflow:hidden}
+[data-agent-document].guide-page.cloudfront-audit .audit-diagram svg{max-width:100%;height:auto}
+[data-agent-document].guide-page.cloudfront-audit .audit-table{max-width:100%;margin-block:1rem}
+[data-agent-document].guide-page.cloudfront-audit .audit-table table{min-width:720px}

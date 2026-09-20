@@ -144,6 +144,30 @@
       "changed_at": "2026-09-17T13:17:59Z",
       "summary": "Added AWS's documented stale-if-error=0 failure-mode mitigation near the synthetic /account red flag, explicitly retaining MinTTL=0/CachingDisabled as the primary mitigation and noting that it is not a general privacy fix.",
       "path": "/p/http-cache-field-guide/reports/cloudfront-ttl-invalidation-2026-09-17.html"
+    },
+    {
+      "change_id": "cloudfront-audit-refresh",
+      "changed_at": "2026-09-20T07:02:18.469Z",
+      "summary": "Refreshed the preserved CloudFront report URL with the completed audit, retaining the findings, source ledger, synthetic arithmetic, explicit uncertainty, and no-live-operation boundary.",
+      "path": "/p/http-cache-field-guide/reports/cloudfront-ttl-invalidation-2026-09-17.html"
+    },
+    {
+      "change_id": "cloudfront-audit-answer",
+      "changed_at": "2026-09-20T07:02:18.469Z",
+      "summary": "Tightened the current answer around standalone s-maxage documentation limits, viewer-only response-headers policies, effective cache-key invalidation scope, and Completed-status evidence.",
+      "path": "/p/http-cache-field-guide/"
+    },
+    {
+      "change_id": "calculator-resize-repair",
+      "changed_at": "2026-09-20T07:02:18.469Z",
+      "summary": "Replaced the sandboxed calculator’s stale resize helper with the trusted helper and added visible growth/shrink example presets while preserving the dedicated calculator page and tool URL.",
+      "path": "/p/http-cache-field-guide/cache-control-calculator/"
+    },
+    {
+      "change_id": "audit-overflow-repair",
+      "changed_at": "2026-09-20T07:02:18.469Z",
+      "summary": "Scoped long-token wrapping and removed non-table nested overflow from updated document content; wide evidence tables retain horizontal scrolling as the only intentional nested scroll surface.",
+      "path": "/p/http-cache-field-guide/reports/cloudfront-ttl-invalidation-2026-09-17.html"
     }
   ]
 }

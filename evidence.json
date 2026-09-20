@@ -560,6 +560,156 @@
       "accessed_at": "2026-09-17T12:47:34Z",
       "relation": "supports",
       "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc9111-s-maxage-audit",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-5.2.2.10",
+      "title": "RFC 9111 §5.2.2.10: s-maxage",
+      "claim": "For a shared cache, s-maxage overrides max-age and Expires; max-age is not required for the shared-cache lifetime.",
+      "accessed_at": "2026-09-19T06:17:03Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc9111-freshness-audit",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-4.2.1",
+      "title": "RFC 9111 §4.2.1: calculating freshness",
+      "claim": "Defines explicit freshness precedence and the boundary between freshness semantics and a measured product result.",
+      "accessed_at": "2026-09-19T06:17:03Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc9111-expires-audit",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-5.3",
+      "title": "RFC 9111 §5.3: Expires",
+      "claim": "An Expires date supplies freshness when stronger directives do not apply; expiration is not a purge command.",
+      "accessed_at": "2026-09-19T06:17:03Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "aws-cloudfront-expiration-audit",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html",
+      "title": "Amazon CloudFront: Manage how long content stays in a cache",
+      "claim": "CloudFront documents max-age or s-maxage as origin TTL inputs, privacy behavior, and the positive-MinTTL override; its detailed table does not provide a standalone s-maxage-only worked row.",
+      "accessed_at": "2026-09-19T06:17:03Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "aws-cloudfront-cache-policy-audit",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cache-key-understand-cache-policy.html",
+      "title": "Amazon CloudFront: Understand cache policies",
+      "claim": "The selected cache policy supplies cache-key inputs and MinTTL/DefaultTTL/MaxTTL; the attached behavior must be inspected instead of assumed.",
+      "accessed_at": "2026-09-19T06:17:03Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "aws-cloudfront-cache-policy-api-audit",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CachePolicyConfig.html",
+      "title": "Amazon CloudFront API: CachePolicyConfig",
+      "claim": "MinTTL is required; the API documents default values and the explicit-header boundary for DefaultTTL and MaxTTL.",
+      "accessed_at": "2026-09-19T06:17:03Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "aws-cloudfront-cache-behavior-api-audit",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CacheBehavior.html",
+      "title": "Amazon CloudFront API: CacheBehavior",
+      "claim": "The first matching behavior, CachePolicyId, response-headers policy, and deprecated legacy fields must be read together.",
+      "accessed_at": "2026-09-19T06:17:03Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "aws-cloudfront-response-headers-audit",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/understanding-response-headers-policies.html",
+      "title": "Amazon CloudFront: Understand response headers policies",
+      "claim": "A Cache-Control value added or overridden for the viewer does not change how CloudFront caches the object.",
+      "accessed_at": "2026-09-19T06:17:03Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "aws-cloudfront-invalidation-paths-audit",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/invalidation-specifying-objects.html",
+      "title": "Amazon CloudFront: Specify files for invalidation",
+      "claim": "Path, query, wildcard, variant, rewrite, and directory-form rules determine invalidation scope; effective cache-key inputs must be inspected.",
+      "accessed_at": "2026-09-19T06:17:03Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "aws-cloudfront-invalidation-requests-audit",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation_Requests.html",
+      "title": "Amazon CloudFront: Invalidation requests",
+      "claim": "An invalidation ID and accepted request are not completion evidence; GetInvalidation status Completed is the named operation’s completion signal.",
+      "accessed_at": "2026-09-19T06:17:03Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "aws-cloudfront-create-invalidation-audit",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_CreateInvalidation.html",
+      "title": "Amazon CloudFront API: CreateInvalidation",
+      "claim": "CreateInvalidation returns the request details and identifier for tracking, not proof that the batch finished.",
+      "accessed_at": "2026-09-19T06:17:03Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "aws-cloudfront-get-invalidation-audit",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetInvalidation.html",
+      "title": "Amazon CloudFront API: GetInvalidation",
+      "claim": "GetInvalidation exposes the named invalidation status; Completed is the completion evidence used by the audit.",
+      "accessed_at": "2026-09-19T06:17:03Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "aws-cloudfront-versioned-files-audit",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/UpdatingExistingObjects.html",
+      "title": "Amazon CloudFront: Update existing objects",
+      "claim": "Versioned names create a new cache target and help bypass old local/corporate copies; they do not delete the old URL.",
+      "accessed_at": "2026-09-19T06:17:03Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "aws-cloudfront-lambda-rewrite-audit",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-event-structure.html",
+      "title": "Amazon CloudFront: Lambda@Edge event structure",
+      "claim": "A viewer-request URI rewrite changes the request path; the audit retains AWS’s explicit two-path invalidation guidance for Lambda@Edge without generalizing it to every stage.",
+      "accessed_at": "2026-09-19T06:17:03Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "aws-cloudfront-functions-rewrite-audit",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/functions-event-structure.html",
+      "title": "Amazon CloudFront Functions event structure",
+      "claim": "A changed URI changes the requested object, but the audit does not claim the Lambda@Edge two-path invalidation instruction is universal for Functions.",
+      "accessed_at": "2026-09-19T06:17:03Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
     }
   ]
 }
