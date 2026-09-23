@@ -2,7 +2,7 @@
   "left_entrypoint": "assets/left.html",
   "schema_version": "1.0.0",
   "default_page": "overview",
-  "meaningfully_updated_at": "2026-09-20T10:45:50Z",
+  "meaningfully_updated_at": "2026-09-23T06:44:45Z",
   "pages": [
     {
       "id": "overview",
@@ -28,6 +28,21 @@
       "description": "The dated HTTP caching basics report plus focused validator, cache-key/privacy, serving-layer, CloudFront, and Cloudflare edge/purge findings.",
       "parent": null,
       "entrypoint": "report/index.html",
+      "entrypoint_type": "html_fragment",
+      "redirects": [],
+      "visibility": "public",
+      "indexable": true,
+      "tools": []
+    },
+    {
+      "id": "runbook",
+      "slug": "runbook",
+      "label": "Deployment & incident runbook",
+      "icon": "✓",
+      "group": "Guide",
+      "description": "A provider-neutral path for private/public deployment choices, named-hop evidence, versioned URLs, and purge limits.",
+      "parent": null,
+      "entrypoint": "runbook/index.html",
       "entrypoint_type": "html_fragment",
       "redirects": [],
       "visibility": "public",

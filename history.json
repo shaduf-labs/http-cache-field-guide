@@ -66,6 +66,17 @@
       "summary": "Added a documentation-grounded Cloudflare case covering OCC and Cache Rule edge precedence, separate Browser TTL, cache-key identity, purge scopes, a matched CloudFront crosswalk, and an authorized-only verification template. No Cloudflare zone response or purge was available.",
       "report_path": "/p/http-cache-field-guide/reports/cloudflare-cache-rules-2026-09-20.html",
       "entrypoint": "reports/cloudflare-cache-rules-2026-09-20.html"
+    },
+    {
+      "run_id": "run:manual:72d22c04b099c1932d6e0932a4346a83",
+      "status": "completed",
+      "answer_change": "meaningful_change",
+      "started_at": "2026-09-23T06:23:09.190Z",
+      "completed_at": "2026-09-23T06:44:45Z",
+      "title": "Cache deployment and incident runbook",
+      "summary": "Added a provider-neutral checklist for private/sensitive and public/versioned responses, a symptom-first incident path, named-hop evidence sequence, versioned URL versus named-provider purge guidance, separate CloudFront and Cloudflare sidebars, and explicit downstream limits. Documentation-only; no live provider capture was available.",
+      "report_path": "/p/http-cache-field-guide/reports/deployment-incident-runbook-2026-09-23.html",
+      "entrypoint": "reports/deployment-incident-runbook-2026-09-23.html"
     }
   ]
 }

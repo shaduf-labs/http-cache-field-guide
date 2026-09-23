@@ -920,6 +920,266 @@
       "accessed_at": "2026-09-20T10:26:19Z",
       "relation": "context",
       "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "runbook-rfc9111-2026-09-23",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html",
+      "title": "RFC 9111 — HTTP Caching",
+      "claim": "Supports the separation of storage audience, cache-key selection, freshness, validators, stale use, Age, Cache-Control directives, invalidation, and browser/application cache boundaries.",
+      "accessed_at": "2026-09-23T06:35:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "runbook-rfc9110-2026-09-23",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9110.html",
+      "title": "RFC 9110 — HTTP Semantics",
+      "claim": "Supports ETag and Last-Modified validators, Vary, If-None-Match precedence, 304, and Via semantics.",
+      "accessed_at": "2026-09-23T06:35:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "runbook-rfc5861-2026-09-23",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc5861.html",
+      "title": "RFC 5861 — HTTP stale controls",
+      "claim": "Defines stale-while-revalidate and stale-if-error as bounded extensions whose support is not universal.",
+      "accessed_at": "2026-09-23T06:35:34Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "runbook-rfc9211-2026-09-23",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9211.html",
+      "title": "RFC 9211 — Cache-Status",
+      "claim": "Defines optional named-cache diagnostic members and limits the reading of hit, forwarding, status, storage, and collapsed fields to the named cache.",
+      "accessed_at": "2026-09-23T06:35:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "runbook-mdn-caching-2026-09-23",
+      "source_type": "browser-documentation",
+      "source_url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching",
+      "title": "MDN — HTTP caching",
+      "claim": "Provides developer-facing explanations of private/shared caching, browser history/application boundaries, and versioned assets; RFC 9111 remains normative.",
+      "accessed_at": "2026-09-23T06:35:34Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "runbook-mdn-cache-control-2026-09-23",
+      "source_type": "browser-documentation",
+      "source_url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control",
+      "title": "MDN — Cache-Control",
+      "claim": "Cross-checks no-cache versus no-store, browser/shared directives, immutable assets, and request-side cache controls.",
+      "accessed_at": "2026-09-23T06:35:34Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "runbook-mdn-conditional-2026-09-23",
+      "source_type": "browser-documentation",
+      "source_url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Conditional_requests",
+      "title": "MDN — Conditional requests",
+      "claim": "Cross-checks ETag, Last-Modified, conditional requests, and 304 explanations for browser-facing readers.",
+      "accessed_at": "2026-09-23T06:35:34Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "runbook-chrome-network-2026-09-23",
+      "source_type": "browser-documentation",
+      "source_url": "https://developer.chrome.com/docs/devtools/network/",
+      "title": "Chrome DevTools — Network panel",
+      "claim": "Supports recording whether a browser request occurred and inspecting initiator, status, timing, headers, and source labels; Disable cache changes the experiment.",
+      "accessed_at": "2026-09-23T06:35:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "runbook-chrome-network-reference-2026-09-23",
+      "source_type": "browser-documentation",
+      "source_url": "https://developer.chrome.com/docs/devtools/network/reference/",
+      "title": "Chrome DevTools — Network features reference",
+      "claim": "Supports the browser-side request and response inspection steps in the incident path.",
+      "accessed_at": "2026-09-23T06:35:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "runbook-chrome-application-2026-09-23",
+      "source_type": "browser-documentation",
+      "source_url": "https://developer.chrome.com/docs/devtools/application/",
+      "title": "Chrome DevTools — Application panel",
+      "claim": "Supports checking service workers and Cache Storage as application-layer state separate from a provider cache.",
+      "accessed_at": "2026-09-23T06:35:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "runbook-chrome-bfcache-2026-09-23",
+      "source_type": "browser-documentation",
+      "source_url": "https://developer.chrome.com/docs/devtools/application/back-forward-cache/",
+      "title": "Chrome DevTools — Back/forward cache",
+      "claim": "Supports treating history/back-forward restoration as a path that can display an earlier document without a new network request.",
+      "accessed_at": "2026-09-23T06:35:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "runbook-cloudfront-expiration-2026-09-23",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html",
+      "title": "Amazon CloudFront — Control the cache with headers and TTLs",
+      "claim": "Supports the CloudFront-specific interaction between origin freshness directives and minimum/default/maximum edge TTLs, including the positive minimum warning.",
+      "accessed_at": "2026-09-23T06:35:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "runbook-cloudfront-cache-policies-2026-09-23",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cache-key-understand-cache-policy.html",
+      "title": "Amazon CloudFront — Cache policies",
+      "claim": "Supports reading the selected CloudFront cache policy and its TTL/key settings together.",
+      "accessed_at": "2026-09-23T06:35:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "runbook-cloudfront-cache-key-2026-09-23",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/understanding-the-cache-key.html",
+      "title": "Amazon CloudFront — Understand the cache key",
+      "claim": "Supports the CloudFront-specific review of selected query, header, cookie, and other cache-key inputs.",
+      "accessed_at": "2026-09-23T06:35:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "runbook-cloudfront-response-headers-2026-09-23",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/understanding-response-headers-policies.html",
+      "title": "Amazon CloudFront — Response headers policies",
+      "claim": "Supports the boundary that a viewer-facing Cache-Control rewrite is not proof of CloudFront edge TTL or object storage.",
+      "accessed_at": "2026-09-23T06:35:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "runbook-cloudfront-invalidation-2026-09-23",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html",
+      "title": "Amazon CloudFront — Invalidation",
+      "claim": "Supports named-distribution invalidation and its distinction from versioned URLs and local or corporate downstream copies.",
+      "accessed_at": "2026-09-23T06:35:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "runbook-cloudfront-versioned-objects-2026-09-23",
+      "source_type": "cloudfront-documentation",
+      "source_url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/UpdatingExistingObjects.html",
+      "title": "Amazon CloudFront — Update existing objects",
+      "claim": "Supports versioned object names as a new target that does not delete an old URL or downstream copy.",
+      "accessed_at": "2026-09-23T06:35:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "runbook-cloudflare-cache-rules-2026-09-23",
+      "source_type": "cloudflare-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/how-to/cache-rules/",
+      "title": "Cloudflare — Cache Rules",
+      "claim": "Supports keeping matching Cache Rule behavior, rule scope, and provider configuration separate from HTTP semantics.",
+      "accessed_at": "2026-09-23T06:35:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "runbook-cloudflare-cache-rule-settings-2026-09-23",
+      "source_type": "cloudflare-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/how-to/cache-rules/settings/",
+      "title": "Cloudflare — Cache Rule settings",
+      "claim": "Supports separate Edge Cache TTL and Browser TTL modes, status-code TTL, and custom-key settings.",
+      "accessed_at": "2026-09-23T06:35:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "runbook-cloudflare-occ-2026-09-23",
+      "source_type": "cloudflare-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/concepts/cache-control/",
+      "title": "Cloudflare — Origin Cache Control",
+      "claim": "Supports the product-specific OCC directive table and the need to resolve the actual zone state rather than generalize it.",
+      "accessed_at": "2026-09-23T06:35:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "runbook-cloudflare-cache-responses-2026-09-23",
+      "source_type": "cloudflare-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/concepts/cache-responses/",
+      "title": "Cloudflare — Cache responses",
+      "claim": "Supports product-specific CF-Cache-Status and Age interpretation and the limit that no status was captured here.",
+      "accessed_at": "2026-09-23T06:35:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "runbook-cloudflare-revalidation-2026-09-23",
+      "source_type": "cloudflare-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/concepts/revalidation/",
+      "title": "Cloudflare — Revalidation",
+      "claim": "Supports keeping revalidation and stale behavior as product-specific observations requiring a named path.",
+      "accessed_at": "2026-09-23T06:35:34Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "runbook-cloudflare-cache-keys-2026-09-23",
+      "source_type": "cloudflare-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/how-to/cache-keys/",
+      "title": "Cloudflare — Cache keys",
+      "claim": "Supports reviewing default/custom URL, query, header, cookie, host, device, geo, and language key dimensions before interpreting a purge or hit.",
+      "accessed_at": "2026-09-23T06:35:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "runbook-cloudflare-purge-2026-09-23",
+      "source_type": "cloudflare-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/how-to/purge-cache/",
+      "title": "Cloudflare — Purge cache overview",
+      "claim": "Supports the distinction between purge request acceptance, named scope, object eviction, and downstream browser/service-worker/proxy limits.",
+      "accessed_at": "2026-09-23T06:35:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "runbook-cloudflare-purge-single-file-2026-09-23",
+      "source_type": "cloudflare-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/how-to/purge-cache/purge-by-single-file/",
+      "title": "Cloudflare — Purge by single file",
+      "claim": "Supports exact URL/key input and method/query boundaries for a URL purge.",
+      "accessed_at": "2026-09-23T06:35:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "runbook-cloudflare-purge-key-2026-09-23",
+      "source_type": "cloudflare-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/how-to/purge-cache/purge-cache-key/",
+      "title": "Cloudflare — Purge by cache key",
+      "claim": "Supports the need to include custom-key inputs or choose a broader named purge scope.",
+      "accessed_at": "2026-09-23T06:35:34Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
     }
   ]
 }

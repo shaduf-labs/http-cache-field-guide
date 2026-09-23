@@ -234,3 +234,20 @@
 @media(max-width:720px){
   [data-agent-document].guide-page.cloudflare-report .cf-separation svg{min-height:330px}
 }
+
+/* Provider-neutral deployment and incident runbook. Keep the visual grammar scoped to this report. */
+[data-agent-document].guide-page.runbook-report .runbook-status{margin-top:1rem}
+[data-agent-document].guide-page.runbook-report .runbook-label{display:inline-block;padding:.2em .45em;border-radius:3px;font-size:.82em;line-height:1.35}
+[data-agent-document].guide-page.runbook-report .runbook-label--stable{background:#d1fae5;color:#065f46}
+[data-agent-document].guide-page.runbook-report .runbook-label--vendor{background:#ede9fe;color:#5b21b6}
+[data-agent-document].guide-page.runbook-report .runbook-label--live{background:#fee2e2;color:#991b1b}
+[data-agent-document].guide-page.runbook-report .runbook-lanes svg{min-height:290px}
+[data-agent-document].guide-page.runbook-report .runbook-evidence svg{min-height:220px}
+[data-agent-document].guide-page.runbook-report .source-ledger table{min-width:820px}
+[data-agent-document].guide-page.runbook-report .source-ledger td:first-child{min-width:145px;font-weight:700}
+[data-agent-document].guide-page.runbook-report .source-ledger td:nth-child(2){min-width:280px}
+[data-agent-document].guide-page.runbook-report .source-ledger td:nth-child(3){min-width:340px}
+@media(max-width:720px){
+  [data-agent-document].guide-page.runbook-report .runbook-lanes svg{min-height:420px}
+  [data-agent-document].guide-page.runbook-report .runbook-evidence svg{min-height:270px}
+}
