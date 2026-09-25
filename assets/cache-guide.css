@@ -251,3 +251,16 @@
   [data-agent-document].guide-page.runbook-report .runbook-lanes svg{min-height:420px}
   [data-agent-document].guide-page.runbook-report .runbook-evidence svg{min-height:270px}
 }
+
+/* Bounded stale-serving follow-up. Keep wide evidence matrices inside their local scroll containers. */
+[data-agent-document].guide-page.stale-report .stale-timing svg{min-height:235px}
+[data-agent-document].guide-page.stale-report .timing-table table{min-width:1040px;font-size:.88rem;line-height:1.45}
+[data-agent-document].guide-page.stale-report .directive-matrix table{min-width:1220px;font-size:.86rem;line-height:1.42}
+[data-agent-document].guide-page.stale-report .evidence-table table{min-width:980px;font-size:.9rem;line-height:1.45}
+[data-agent-document].guide-page.stale-report .test-matrix table{min-width:1280px;font-size:.84rem;line-height:1.42}
+[data-agent-document].guide-page.stale-report .claim-ledger table{min-width:930px;font-size:.88rem;line-height:1.45}
+[data-agent-document].guide-page.stale-report .source-ledger table{min-width:820px}
+[data-agent-document].guide-page.stale-report .label-row{display:flex;flex-wrap:wrap;align-items:center;gap:7px 9px;color:var(--guide-muted);font-size:.9rem;line-height:1.7;margin:1rem 0}
+@media(max-width:720px){
+  [data-agent-document].guide-page.stale-report .stale-timing svg{min-height:330px}
+}

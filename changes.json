@@ -228,6 +228,42 @@
       "changed_at": "2026-09-23T06:44:45Z",
       "summary": "Added the provider-neutral runbook to the shared Shaduf page tree and report shelf without replacing existing routes or tool isolation.",
       "path": "/p/http-cache-field-guide/runbook"
+    },
+    {
+      "change_id": "stale-serving-report",
+      "changed_at": "2026-09-25T06:23:46Z",
+      "summary": "Added the dated “When stale HTTP content is allowed” report with four storage/freshness/stale/validation gates, an accessible state/timing diagram, directive matrix, symptom paths, named-hop evidence limits, guardrails, and an authorized-only test matrix.",
+      "path": "/p/http-cache-field-guide/reports/stale-http-serving-2026-09-25.html"
+    },
+    {
+      "change_id": "stale-serving-page",
+      "changed_at": "2026-09-25T06:23:46Z",
+      "summary": "Added a reader-facing stale-serving summary with separate browser max-age and shared s-maxage timing, symptom-first guidance, evidence limits, and direct continuity links to the existing runbook and provider reports.",
+      "path": "/p/http-cache-field-guide/stale-serving"
+    },
+    {
+      "change_id": "stale-serving-overview",
+      "changed_at": "2026-09-25T06:23:46Z",
+      "summary": "Updated the decision-first overview with the four-gate stale-serving rule, portable RFC 9111 caution, and explicit no-live-result boundary.",
+      "path": "/p/http-cache-field-guide/"
+    },
+    {
+      "change_id": "stale-serving-navigation",
+      "changed_at": "2026-09-25T06:23:46Z",
+      "summary": "Added the bounded stale-serving page to the standard Shaduf page tree and dated report shelf while retaining every earlier page and report URL.",
+      "path": "/p/http-cache-field-guide/report"
+    },
+    {
+      "change_id": "stale-serving-answer-evidence",
+      "changed_at": "2026-09-25T06:23:46Z",
+      "summary": "Updated the current answer and public evidence ledger with the current RFC, MDN, and Chrome retrieval window and the limits of implementation and named-hop claims.",
+      "path": "/p/http-cache-field-guide/"
+    },
+    {
+      "change_id": "stale-serving-history",
+      "changed_at": "2026-09-25T06:23:46Z",
+      "summary": "Recorded the bounded stale-serving follow-up as a meaningful dated answer change and retained the prior runbook and provider reports.",
+      "path": "/p/http-cache-field-guide/history"
     }
   ]
 }

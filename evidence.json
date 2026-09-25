@@ -1180,6 +1180,86 @@
       "accessed_at": "2026-09-23T06:35:34Z",
       "relation": "supports",
       "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "stale-followup-rfc9111-2026-09-25",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html",
+      "title": "RFC 9111 §§3–5: HTTP Caching",
+      "claim": "Defines storage permission, private/shared handling, current age and freshness, stale-response prohibitions, revalidation, Age, and Cache-Control directive interactions used to separate max-age, s-maxage, no-cache, no-store, private, must-revalidate, and proxy-revalidate.",
+      "accessed_at": "2026-09-25T06:14:41Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "stale-followup-rfc5861-2026-09-25",
+      "source_type": "standard-extension",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc5861.html",
+      "title": "RFC 5861 §§3–4: stale-while-revalidate and stale-if-error",
+      "claim": "Defines bounded stale response extensions that permit stale-while-revalidate or stale-if-error behavior but do not require every cache to implement them.",
+      "accessed_at": "2026-09-25T06:14:41Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "stale-followup-rfc9110-2026-09-25",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9110.html",
+      "title": "RFC 9110 §§7.6.3, 13, and 15.4.5: Via and conditional responses",
+      "claim": "Defines Via forwarding evidence, conditional request precedence, validators, and the no-content semantics of 304 Not Modified.",
+      "accessed_at": "2026-09-25T06:14:41Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "stale-followup-rfc9211-2026-09-25",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9211.html",
+      "title": "RFC 9211: Cache-Status",
+      "claim": "Defines optional named-cache evidence including hit, fwd=stale, fwd-status, ttl, stored, and collapsed; each member is scoped and omission is not a negative result.",
+      "accessed_at": "2026-09-25T06:14:41Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "stale-followup-mdn-cache-control-2026-09-25",
+      "source_type": "developer-reference",
+      "source_url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control",
+      "title": "MDN: Cache-Control",
+      "claim": "Provides current browser-facing explanations of max-age, s-maxage, no-cache, no-store, private, revalidation, stale extensions, and versioned-asset boundaries.",
+      "accessed_at": "2026-09-25T06:14:41Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "stale-followup-mdn-caching-2026-09-25",
+      "source_type": "developer-reference",
+      "source_url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching",
+      "title": "MDN: HTTP caching",
+      "claim": "Separates private/shared caching, Age and managed-cache behavior, versioning, and browser history/application limits for developer diagnosis.",
+      "accessed_at": "2026-09-25T06:14:41Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "stale-followup-mdn-conditional-2026-09-25",
+      "source_type": "developer-reference",
+      "source_url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Conditional_requests",
+      "title": "MDN: Conditional requests",
+      "claim": "Explains ETag and Last-Modified validators, conditional requests, and 304 behavior for browser-facing readers.",
+      "accessed_at": "2026-09-25T06:14:41Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "stale-followup-chrome-network-2026-09-25",
+      "source_type": "browser-documentation",
+      "source_url": "https://developer.chrome.com/docs/devtools/network/",
+      "title": "Chrome DevTools: Network panel",
+      "claim": "Documents request/response header, timing, initiator, and cache-inspection workflows and notes that disabling browser cache changes the experiment.",
+      "accessed_at": "2026-09-25T06:14:41Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
     }
   ]
 }

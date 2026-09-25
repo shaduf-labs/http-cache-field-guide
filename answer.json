@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0.0",
   "status": "current",
-  "current_answer": "Use this order: classify whether the representation is private/sensitive or safely public; choose no HTTP retention, private/browser retention, or shared retention; set browser max-age and shared-cache s-maxage separately; add ETag or Last-Modified when retained content can validate; then audit every request variant and the effective cache key. For private or sensitive responses, use no-store when HTTP-cache retention is unacceptable, or private, no-cache when browser retention with validation is acceptable, and keep the route out of shared caching. For public HTML, use explicit browser/shared lifetimes and validators. For changed immutable assets, publish a new versioned URL. During an incident, first establish whether a network request occurred, then capture named-hop evidence, compare the affected browser with a fresh client, and record a redacted origin marker/counter. Keep CloudFront MinTTL/DefaultTTL/MaxTTL and invalidation named, and keep Cloudflare OCC, Cache Rules, Browser TTL, cache keys, and purge scopes named. A named-provider purge does not clear browsers, service workers, corporate proxies, history, other CDNs, or application caches. This 23 Sep 2026 synthesis is documentation-only: no live provider capture, browser capture, purge, or invalidation is claimed.",
+  "current_answer": "Treat stale serving as a four-gate decision: the response must be storable at the named cache, its effective freshness lifetime must have elapsed, a bounded stale permission must apply, and no stronger revalidation rule may block stale reuse. Private caches normally use max-age; shared caches use s-maxage before max-age and Expires. stale-while-revalidate may return old bytes while a supporting cache validates, and stale-if-error may return them for a defined error, but neither extension grants storage, fixes a cache key, clears a browser or service worker, or guarantees implementation support. Under the portable RFC 9111 reading, do not treat either extension as an override for no-cache, must-revalidate, proxy-revalidate, or shared s-maxage revalidation semantics. Use ETag or Last-Modified for the ordinary validation path; If-None-Match wins when both conditions are present. Diagnose old content with named Cache-Status, Age, Via, provider fields, validators, and a correlated origin marker, while treating missing or single-hop evidence as unknown. This 25 Sep 2026 follow-up is documentation-only: no live stale response, 304, provider, browser, origin, purge, or invalidation result is claimed.",
   "catalogue_card": {
     "question": "How can web developers choose correct HTTP cache headers and diagnose stale content without accidentally caching private responses?",
-    "text": "Start with representation sensitivity and storage audience, then separate freshness, validation, and cache-key matching. Use the provider-neutral deployment and incident runbook to choose private/public paths, identify a named serving hop, and state what the evidence does and does not prove."
+    "text": "When old bytes appear, separate storage permission, browser/private max-age, shared s-maxage, bounded stale permission, and conditional validation. Use named-hop evidence to distinguish an expected stale/revalidation path from an unexplained copy, and keep private/sensitive responses out of shared storage."
   },
   "summary": [
     "The checks common to CloudFront and Cloudflare are representation review, storage audience, explicit browser/shared freshness, validators, key review, named-hop evidence, and downstream limits.",
@@ -18,7 +18,14 @@
     "CloudFront positive minimum TTL and response-header policies are CloudFront-specific; a viewer Cache-Control value is not proof of edge TTL.",
     "Cloudflare Origin Cache Control, matching Cache Rule, Edge/Browser TTL, custom key, and purge scope are separate Cloudflare controls; keep them separate from CloudFront and HTTP rules.",
     "A named-provider purge or invalidation is not universal eviction: browser, service-worker, corporate-proxy, history, other edge, and application copies remain downstream limits.",
-    "This run is documentation-only/no live provider capture; no deployment, incident, privacy, freshness, purge, invalidation, or browser result is claimed."
+    "This run is documentation-only/no live provider capture; no deployment, incident, privacy, freshness, purge, invalidation, or browser result is claimed.",
+    "A stale response needs four gates: allowed storage, an elapsed effective lifetime, an applicable stale permission, and no stronger prohibition blocking reuse.",
+    "Private caches normally apply max-age; shared caches apply s-maxage before max-age and Expires. The same object can be fresh in one cache and stale in another.",
+    "stale-while-revalidate and stale-if-error are bounded, support-dependent permissions; they do not grant storage, shared safety, key correctness, purge, or browser/service-worker eviction.",
+    "Under the portable RFC 9111 reading, do not treat stale extensions as overrides for no-cache, must-revalidate, proxy-revalidate, or shared s-maxage revalidation semantics.",
+    "A 304 permits reuse of stored bytes at the evaluating recipient; it does not identify the hop, prove origin contact, or prove application freshness.",
+    "Cache-Status fwd=stale, fwd-status, hit, ttl, Age, Via, provider fields, and origin markers are scoped evidence. Missing fields are unknown.",
+    "Use a versioned URL for changed public assets; versioning and a named-provider purge have different scopes and neither clears every downstream copy."
   ],
   "uncertainty": [
     "No authorized CloudFront distribution, Cloudflare zone, endpoint, controlled origin, vendor log, browser or HTTP-client capture, purge/invalidation operation, or analytics was supplied.",
@@ -28,9 +35,12 @@
     "A response header, 200, 304, missing Age, missing Cache-Status, browser label, purge receipt, or invalidation completion cannot identify every producer or prove global eviction.",
     "Cloudflare documentation describes no-cache differently in generic and OCC-specific contexts; the actual zone state and an authorized synthetic capture are needed to resolve it.",
     "Provider-specific TTL, key, status, and purge behavior can vary by product, plan, configuration, tier, POP, and time; do not generalize either named provider.",
-    "The next useful live probe needs a fixed authorized URL, sanitized origin marker/counter, selected provider configuration, controlled request variants, named vantage, and permission to capture and if necessary purge synthetic objects."
+    "The next useful live probe needs a fixed authorized URL, sanitized origin marker/counter, selected provider configuration, controlled request variants, named vantage, and permission to capture and if necessary purge synthetic objects.",
+    "The RFCs do not establish that a particular browser, CDN, reverse proxy, corporate proxy, service worker, or application cache implements stale extensions or applies the same precedence.",
+    "The shared s-maxage plus stale-* combination remains an implementation/configuration boundary when the strict RFC 9111 revalidation rule applies; any different named-provider result needs documentation and an authorized capture.",
+    "No browser session, authorized URL, response header capture, Age, Cache-Status, Via, provider field, 304, origin marker/counter, purge, invalidation, or analytics result was produced in this follow-up; all timing rows are expected and unexecuted."
   ],
-  "checked_at": "2026-09-23T06:35:34Z",
-  "meaningfully_updated_at": "2026-09-23T06:44:45Z",
-  "freshness_note": "Updated 23 Sep 2026 with a provider-neutral deployment and incident runbook synthesized from current RFC, browser, CloudFront, and Cloudflare documentation. The report keeps private/public paths, versioned URL versus named-provider purge, named-hop evidence, and browser/service-worker/corporate-proxy limits explicit; no live provider capture or Runtime acceptance is claimed."
+  "checked_at": "2026-09-25T06:14:41Z",
+  "meaningfully_updated_at": "2026-09-25T06:23:46Z",
+  "freshness_note": "Updated 25 Sep 2026 with a focused standards-grounded follow-up on when stale HTTP content may be served, separate browser max-age and shared s-maxage timing, directive interactions, named-hop evidence, and authorized-only tests. The publication is documentation-only; no live stale, 304, provider, browser, origin, purge, invalidation, or analytics result is claimed."
 }

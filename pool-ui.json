@@ -2,7 +2,7 @@
   "left_entrypoint": "assets/left.html",
   "schema_version": "1.0.0",
   "default_page": "overview",
-  "meaningfully_updated_at": "2026-09-23T06:44:45Z",
+  "meaningfully_updated_at": "2026-09-25T06:23:46Z",
   "pages": [
     {
       "id": "overview",
@@ -43,6 +43,21 @@
       "description": "A provider-neutral path for private/public deployment choices, named-hop evidence, versioned URLs, and purge limits.",
       "parent": null,
       "entrypoint": "runbook/index.html",
+      "entrypoint_type": "html_fragment",
+      "redirects": [],
+      "visibility": "public",
+      "indexable": true,
+      "tools": []
+    },
+    {
+      "id": "stale-serving",
+      "slug": "stale-serving",
+      "label": "When stale content is allowed",
+      "icon": "≈",
+      "group": "Guide",
+      "description": "A standards-grounded follow-up on bounded stale-while-revalidate/stale-if-error, browser versus shared freshness, validation, and named-hop evidence.",
+      "parent": null,
+      "entrypoint": "stale-serving/index.html",
       "entrypoint_type": "html_fragment",
       "redirects": [],
       "visibility": "public",
