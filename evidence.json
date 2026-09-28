@@ -1260,6 +1260,96 @@
       "accessed_at": "2026-09-25T06:14:41Z",
       "relation": "limits",
       "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "service-worker-crd-lifecycle-2026-09-28",
+      "source_type": "standard",
+      "source_url": "https://www.w3.org/TR/2026/CRD-service-workers-20260917/",
+      "title": "W3C Service Workers and Cache API — Candidate Recommendation Draft, 17 Sep 2026",
+      "claim": "Specifies registration lifecycle slots and the update, install, wait, activation, skipWaiting(), clients.claim(), event-lifetime, and Cache API algorithms used in the report. Section 2.5 Control and Use is high-level and non-normative; the individual algorithms are cited for transition claims. The CRD is not a W3C Recommendation and does not establish a deployment outcome.",
+      "accessed_at": "2026-09-28T06:19:03Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "service-worker-storage-standard-2026-09-28",
+      "source_type": "standard",
+      "source_url": "https://storage.spec.whatwg.org/",
+      "title": "WHATWG Storage Standard",
+      "claim": "Defines storage buckets and best-effort local storage behavior, including user-agent clearing under storage pressure; used to qualify Cache API persistence and cache-miss handling.",
+      "accessed_at": "2026-09-28T06:19:03Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "service-worker-fetch-standard-2026-09-28",
+      "source_type": "standard",
+      "source_url": "https://fetch.spec.whatwg.org/",
+      "title": "WHATWG Fetch Standard",
+      "claim": "Provides the fetch-layer context for the limit that a service worker delegating to fetch() does not, by itself, prove a request reached a particular origin or intermediary.",
+      "accessed_at": "2026-09-28T06:19:03Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "service-worker-html-standard-2026-09-28",
+      "source_type": "standard",
+      "source_url": "https://html.spec.whatwg.org/multipage/",
+      "title": "WHATWG HTML Living Standard",
+      "claim": "Provides document and navigation lifecycle context relevant to the distinction between worker control and an already-running document. The W3C Service Workers CRD points control behavior to HTML from its non-normative high-level section.",
+      "accessed_at": "2026-09-28T06:19:03Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "service-worker-mdn-api-2026-09-28",
+      "source_type": "developer-reference",
+      "source_url": "https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API",
+      "title": "MDN: Service Worker API",
+      "claim": "Browser-facing overview of service-worker lifecycle and update behavior; developer guidance, not a cross-browser timing guarantee or a measurement of the target application.",
+      "accessed_at": "2026-09-28T06:19:03Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "service-worker-mdn-claim-2026-09-28",
+      "source_type": "developer-reference",
+      "source_url": "https://developer.mozilla.org/en-US/docs/Web/API/Clients/claim",
+      "title": "MDN: Clients.claim()",
+      "claim": "Explains the practical effect of claiming matching clients, including takeover of pages not previously controlled by the active service worker. Used as browser-facing guidance alongside the specification algorithm.",
+      "accessed_at": "2026-09-28T06:19:03Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "service-worker-mdn-skipwaiting-2026-09-28",
+      "source_type": "developer-reference",
+      "source_url": "https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/skipWaiting",
+      "title": "MDN: ServiceWorkerGlobalScope.skipWaiting()",
+      "claim": "Describes skipWaiting() as allowing a waiting worker to proceed past the normal waiting step; used as browser-facing guidance alongside the specification algorithm.",
+      "accessed_at": "2026-09-28T06:19:03Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "service-worker-mdn-updateviacache-2026-09-28",
+      "source_type": "developer-reference",
+      "source_url": "https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerRegistration/updateViaCache",
+      "title": "MDN: ServiceWorkerRegistration.updateViaCache",
+      "claim": "Describes the HTTP-cache setting for worker script and imported-script update checks; it does not clear Cache Storage.",
+      "accessed_at": "2026-09-28T06:19:03Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "service-worker-chrome-devtools-2026-09-28",
+      "source_type": "browser-documentation",
+      "source_url": "https://developer.chrome.com/docs/devtools/progressive-web-apps/",
+      "title": "Chrome DevTools: Debug Progressive Web Apps",
+      "claim": "Documents Chrome-specific service-worker update/status and Cache Storage inspection controls. Such controls are browser-specific and can change the experiment.",
+      "accessed_at": "2026-09-28T06:19:03Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
     }
   ]
 }

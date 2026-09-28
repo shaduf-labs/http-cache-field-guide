@@ -264,6 +264,36 @@
       "changed_at": "2026-09-25T06:23:46Z",
       "summary": "Recorded the bounded stale-serving follow-up as a meaningful dated answer change and retained the prior runbook and provider reports.",
       "path": "/p/http-cache-field-guide/history"
+    },
+    {
+      "change_id": "service-worker-update-report",
+      "changed_at": "2026-09-28T06:34:51Z",
+      "summary": "Added the dated service-worker lifecycle report with specified update/install/wait/activate distinctions, separate skipWaiting() and clients.claim() effects, Cache Storage limits, conservative rollout, diagnostics, source ledger, expected unexecuted scenarios, and explicit unknowns. No browser/app result is claimed.",
+      "path": "/p/http-cache-field-guide/reports/service-worker-update-lifecycle-2026-09-28.html"
+    },
+    {
+      "change_id": "service-worker-update-guide",
+      "changed_at": "2026-09-28T06:34:51Z",
+      "summary": "Added a concise reader guide for old code and asset URLs after worker deployment, with conservative release steps, a symptom-first diagnostic record, and direct links to the dated report and canonical prior reports.",
+      "path": "/p/http-cache-field-guide/service-worker-updates"
+    },
+    {
+      "change_id": "service-worker-update-overview",
+      "changed_at": "2026-09-28T06:34:51Z",
+      "summary": "Updated the current overview with the service-worker boundary: activation does not replace open-page code or automatically clear Cache Storage; old assets require an explicit compatibility-based retirement policy.",
+      "path": "/p/http-cache-field-guide/"
+    },
+    {
+      "change_id": "service-worker-update-navigation",
+      "changed_at": "2026-09-28T06:34:51Z",
+      "summary": "Added the reader guide and dated report to the native page tree, report shelf, research history, and serving-layer diagnosis cross-links while retaining existing report and calculator routes.",
+      "path": "/p/http-cache-field-guide/report"
+    },
+    {
+      "change_id": "service-worker-update-answer-evidence",
+      "changed_at": "2026-09-28T06:34:51Z",
+      "summary": "Updated the answer and source ledger with the W3C Service Workers CRD, WHATWG Storage/Fetch/HTML standards, and MDN/Chrome guidance. No lifecycle test, current deployment state, or browser behavior is claimed.",
+      "path": "/p/http-cache-field-guide/"
     }
   ]
 }

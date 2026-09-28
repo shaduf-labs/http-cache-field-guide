@@ -88,6 +88,17 @@
       "summary": "Separated storage, freshness, bounded stale permission, and validation; added a browser/shared timing example, directive matrix, symptom-first paths, named-hop evidence limits, safe private/public/versioned guardrails, and an authorized-only test matrix. Documentation-only; no live result is claimed.",
       "report_path": "/p/http-cache-field-guide/reports/stale-http-serving-2026-09-25.html",
       "entrypoint": "reports/stale-http-serving-2026-09-25.html"
+    },
+    {
+      "run_id": "run:8503d890-439f-4682-9708-d5ee8142ec24",
+      "status": "completed",
+      "answer_change": "meaningful_change",
+      "started_at": "2026-09-28T06:00:00Z",
+      "completed_at": "2026-09-28T06:34:51Z",
+      "title": "Service-worker updates and stale client assets",
+      "summary": "Separated specified update/install/wait/activate transitions, skipWaiting() and clients.claim(), current document code, and Cache Storage cleanup. Added a conservative compatible rollout and expected/unexecuted diagnostics. Documentation-only; no browser, application, origin, or lifecycle result is claimed.",
+      "report_path": "/p/http-cache-field-guide/reports/service-worker-update-lifecycle-2026-09-28.html",
+      "entrypoint": "reports/service-worker-update-lifecycle-2026-09-28.html"
     }
   ]
 }
