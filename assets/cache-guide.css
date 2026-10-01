@@ -264,3 +264,12 @@
 @media(max-width:720px){
   [data-agent-document].guide-page.stale-report .stale-timing svg{min-height:330px}
 }
+
+/* Redirect caching follow-up: keep hop diagrams readable and wide comparisons locally scrollable. */
+[data-agent-document].guide-page.redirect-summary .redirect-map svg,
+[data-agent-document].guide-page.redirect-report .redirect-map svg{min-height:0}
+[data-agent-document].guide-page.redirect-summary .redirect-status-table table{min-width:720px;font-size:.9rem;line-height:1.45}
+[data-agent-document].guide-page.redirect-report .status-table table{min-width:980px;font-size:.88rem;line-height:1.45}
+[data-agent-document].guide-page.redirect-report .policy-table table{min-width:1030px;font-size:.88rem;line-height:1.45}
+[data-agent-document].guide-page.redirect-report .scenario-table table{min-width:1180px;font-size:.86rem;line-height:1.42}
+[data-agent-document].guide-page.redirect-report .source-list{padding-left:1.5rem}

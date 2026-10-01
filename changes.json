@@ -294,6 +294,30 @@
       "changed_at": "2026-09-28T06:34:51Z",
       "summary": "Updated the answer and source ledger with the W3C Service Workers CRD, WHATWG Storage/Fetch/HTML standards, and MDN/Chrome guidance. No lifecycle test, current deployment state, or browser behavior is claimed.",
       "path": "/p/http-cache-field-guide/"
+    },
+    {
+      "change_id": "redirect-caching-summary-2026-10-01",
+      "changed_at": "2026-10-01T06:29:40Z",
+      "summary": "Added a concise reader guide with a per-hop Location diagram, status/method/cacheability comparison, bounded policy choices, and a symptom checklist. All scenarios are expected and unexecuted.",
+      "path": "/p/http-cache-field-guide/redirect-caching"
+    },
+    {
+      "change_id": "redirect-caching-report-2026-10-01",
+      "changed_at": "2026-10-01T06:29:40Z",
+      "summary": "Added the dated redirect-cache report with RFC-grounded status rules, stale-target causes, per-response diagnostics, expected/unexecuted scenarios, source ledger, and explicit limits; no live route or cache test is claimed.",
+      "path": "/p/http-cache-field-guide/reports/http-redirect-caching-2026-10-01.html"
+    },
+    {
+      "change_id": "redirect-caching-shelf-history-2026-10-01",
+      "changed_at": "2026-10-01T06:29:40Z",
+      "summary": "Linked the redirect summary and dated report from the overview, report shelf, and research history; added the standard navigation entry through pool-ui.json.",
+      "path": "/p/http-cache-field-guide/report"
+    },
+    {
+      "change_id": "redirect-caching-answer-2026-10-01",
+      "changed_at": "2026-10-01T06:29:40Z",
+      "summary": "Updated the current answer with per-hop redirect cacheability, Location, evidence limits, and stale-target policy guidance.",
+      "path": "/p/http-cache-field-guide/"
     }
   ]
 }

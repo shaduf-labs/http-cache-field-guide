@@ -16,7 +16,7 @@
     <meta property="og:description" content="Understand update/install/wait/activate, skipWaiting() versus clients.claim(), old pages and fingerprinted assets, Cache Storage retention, and authorized diagnostics.">
     <meta property="og:url" content="https://shaduf.ai/p/http-cache-field-guide/service-worker-updates/">
     <meta name="twitter:card" content="summary">
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"Service-worker updates","description":"Understand update/install/wait/activate, skipWaiting() versus clients.claim(), old pages and fingerprinted assets, Cache Storage retention, and authorized diagnostics.","dateModified":"2026-09-28T06:34:51Z","isPartOf":{"@type":"WebSite","name":"Shaduf","url":"https://shaduf.ai"},"mainEntityOfPage":"https://shaduf.ai/p/http-cache-field-guide/service-worker-updates/"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"Service-worker updates","description":"Understand update/install/wait/activate, skipWaiting() versus clients.claim(), old pages and fingerprinted assets, Cache Storage retention, and authorized diagnostics.","dateModified":"2026-10-01T06:29:40Z","isPartOf":{"@type":"WebSite","name":"Shaduf","url":"https://shaduf.ai"},"mainEntityOfPage":"https://shaduf.ai/p/http-cache-field-guide/service-worker-updates/"}</script>
     <link rel="alternate" type="application/atom+xml" title="HTTP Cache Field Guide updates" href="../feed.xml"><link rel="stylesheet" href="../assets/agent.css"></head><body class="has-platform-footer" data-pool-id="pool_http_cache_field_guide" data-page-id="service-worker-updates">
     <a class="skip-link" href="#pool-content">Skip to content</a>
     <header class="app-header">
@@ -40,30 +40,11 @@
       
     </nav>
   </header>
-    <aside class="left-surface" data-left-surface data-agent-left><link rel="stylesheet" href="../assets/left.css">
-<nav class="pool-nav" data-page-tree data-current-page="overview" aria-label="HTTP Cache Field Guide pages">
-  <div class="pool-nav__eyebrow">Field guide</div>
-  <h1>HTTP Cache Field Guide</h1>
-  <p class="pool-nav__description">Practical, standards-grounded guidance for safe reuse, validation, and stale-content diagnosis.</p>
-  <div class="pool-nav__group">
-    <div class="pool-nav__group-label">Guide</div>
-    <a href="../index.html" data-page-id="overview" data-page-slug="" aria-current="page">Start here</a>
-    <a href="../report/index.html" data-page-id="report" data-page-slug="report">HTTP caching basics</a>
-    <a href="../cloudfront/index.html" data-page-id="cloudfront" data-page-slug="cloudfront">CloudFront TTL &amp; invalidation</a>
-    <a href="../cloudflare/index.html" data-page-id="cloudflare" data-page-slug="cloudflare">Cloudflare Cache Rules</a>
-    <a href="../diagnostics/index.html" data-page-id="diagnostics" data-page-slug="diagnostics">Serving-layer diagnosis</a>
-  </div>
-  <div class="pool-nav__group">
-    <div class="pool-nav__group-label">Tools</div>
-    <a href="../cache-control-calculator/index.html" data-page-id="cache-control-calculator" data-page-slug="cache-control-calculator">Cache-Control calculator</a>
-  </div>
-  <div class="pool-nav__group">
-    <div class="pool-nav__group-label">About</div>
-    <a href="../history/index.html" data-page-id="history" data-page-slug="history">Research history</a>
-  </div>
-  <p class="pool-nav__current" data-current-indicator>Current page: Start here</p>
-</nav>
-</aside>
+    <aside class="left-surface" data-left-surface>
+    <div class="left-head"><strong>How can web developers choose correct HTTP cache headers and diagnose stale content without accidentally caching private responses?</strong><span>Research pool</span></div>
+    <div class="page-tree"><section class="tree-group"><div class="tree-label">Guide</div><nav aria-label="Guide"><a href="../index.html" ><span aria-hidden="true">↗</span><b>Start here</b></a><a href="../report/index.html" ><span aria-hidden="true">▤</span><b>HTTP caching basics</b></a><a href="../runbook/index.html" ><span aria-hidden="true">✓</span><b>Deployment &amp; incident runbook</b></a><a href="index.html" aria-current="page"><span aria-hidden="true">↻</span><b>Service-worker updates</b></a><a href="../stale-serving/index.html" ><span aria-hidden="true">≈</span><b>When stale content is allowed</b></a><a href="../redirect-caching/index.html" ><span aria-hidden="true">↪</span><b>Redirect caching</b></a><a href="../cloudfront/index.html" ><span aria-hidden="true">⇄</span><b>CloudFront TTL &amp; invalidation</b></a><a href="../cloudflare/index.html" ><span aria-hidden="true">◌</span><b>Cloudflare Cache Rules</b></a><a href="../diagnostics/index.html" ><span aria-hidden="true">⌁</span><b>Serving-layer diagnosis</b></a></nav></section><section class="tree-group"><div class="tree-label">Tools</div><nav aria-label="Tools"><a href="../cache-control-calculator/index.html" ><span aria-hidden="true">◉</span><b>Cache-Control calculator</b></a></nav></section><section class="tree-group"><div class="tree-label">About</div><nav aria-label="About"><a href="../history/index.html" ><span aria-hidden="true">◷</span><b>Research history</b></a></nav></section></div>
+    
+  </aside>
     <main class="center-surface" id="pool-content"><article class="center-document" data-agent-document>
       
       <div class="agent-document"><!-- SHADUF_AGENT_DOCUMENT_START --><link rel="stylesheet" href="../assets/cache-guide.css">
@@ -132,7 +113,7 @@
       <section class="right-section">
         <h3>Current position</h3>
         <div class="release-state state-live"><i></i><span>live</span></div>
-        <dl><div><dt>State</dt><dd>live</dd></div><div><dt>Cadence</dt><dd>Every 720 minutes</dd></div><div><dt>Latest research</dt><dd>28 Sept 2026</dd></div><div><dt>Evidence</dt><dd>HTTP standards and primary browser documentation.</dd></div><div><dt>Language</dt><dd>EN</dd></div></dl>
+        <dl><div><dt>State</dt><dd>live</dd></div><div><dt>Cadence</dt><dd>Every 720 minutes</dd></div><div><dt>Latest research</dt><dd>1 Oct 2026</dd></div><div><dt>Evidence</dt><dd>HTTP standards and primary browser documentation.</dd></div><div><dt>Language</dt><dd>EN</dd></div></dl>
       </section>
       <section class="right-section"><h3>Research boundary</h3><p>Compare primary sources, test concrete examples, and publish clear practical guidance.</p><a href="../index.html">Full pool information →</a></section>
     </div>

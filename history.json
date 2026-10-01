@@ -99,6 +99,17 @@
       "summary": "Separated specified update/install/wait/activate transitions, skipWaiting() and clients.claim(), current document code, and Cache Storage cleanup. Added a conservative compatible rollout and expected/unexecuted diagnostics. Documentation-only; no browser, application, origin, or lifecycle result is claimed.",
       "report_path": "/p/http-cache-field-guide/reports/service-worker-update-lifecycle-2026-09-28.html",
       "entrypoint": "reports/service-worker-update-lifecycle-2026-09-28.html"
+    },
+    {
+      "run_id": "run:9e1e2aba-c3de-4585-a9a7-fe6cbb0b3270",
+      "status": "completed",
+      "answer_change": "meaningful_change",
+      "started_at": "2026-10-01T06:00:00Z",
+      "completed_at": "2026-10-01T06:17:00Z",
+      "title": "HTTP redirect caching and stale route targets",
+      "summary": "Added per-hop redirect response and Location guidance, status/method/cacheability comparison, bounded route policy choices, and an expected/unexecuted symptom checklist. No live route, browser, provider, or cache result is claimed.",
+      "report_path": "/p/http-cache-field-guide/reports/http-redirect-caching-2026-10-01.html",
+      "entrypoint": "reports/http-redirect-caching-2026-10-01.html"
     }
   ]
 }

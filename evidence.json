@@ -1350,6 +1350,66 @@
       "accessed_at": "2026-09-28T06:19:03Z",
       "relation": "limits",
       "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "redirect-rfc9110-2026-10-01",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9110.html",
+      "title": "RFC 9110: HTTP Semantics",
+      "claim": "Defines Location and redirect processing, 301/302/303/307/308 semantics and method effects, heuristic cacheability of 301/308, and 304 meaning. Supports the per-hop response explanation and method/cacheability table.",
+      "accessed_at": "2026-10-01T06:17:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "redirect-rfc9111-2026-10-01",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html",
+      "title": "RFC 9111: HTTP Caching",
+      "claim": "Defines optional cache behavior, storage and cache keys, freshness and age, validation, invalidation, Cache-Control rules, and separation from history/application caches. Supports stale-target explanations and their limits.",
+      "accessed_at": "2026-10-01T06:17:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "redirect-rfc9211-2026-10-01",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9211.html",
+      "title": "RFC 9211: The Cache-Status HTTP Response Header Field",
+      "claim": "Defines optional per-cache Cache-Status member semantics, including hit, fwd, fwd-status, and ttl. Supports the scoped named-hop evidence procedure; the field is not exposed by every cache.",
+      "accessed_at": "2026-10-01T06:17:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "redirect-mdn-guide-2026-10-01",
+      "source_type": "developer-reference",
+      "source_url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Redirections",
+      "title": "MDN: Redirections in HTTP",
+      "claim": "Provides a practical browser/developer status and method summary used as guidance alongside the normative RFC 9110 rules.",
+      "accessed_at": "2026-10-01T06:17:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "redirect-mdn-response-2026-10-01",
+      "source_type": "developer-reference",
+      "source_url": "https://developer.mozilla.org/en-US/docs/Web/API/Response/redirected",
+      "title": "MDN: Response.redirected",
+      "claim": "Documents redirect indication and the final Response URL; these values do not by themselves establish each intermediate response or its cache supplier.",
+      "accessed_at": "2026-10-01T06:17:00Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "redirect-chrome-network-2026-10-01",
+      "source_type": "browser-documentation",
+      "source_url": "https://developer.chrome.com/docs/devtools/network/reference/",
+      "title": "Chrome DevTools: Network features reference",
+      "claim": "Documents Chrome-specific request log, Preserve log, and browser-cache controls; these controls do not describe shared-cache or history behavior and were not exercised.",
+      "accessed_at": "2026-10-01T06:17:00Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
     }
   ]
 }

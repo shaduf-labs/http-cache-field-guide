@@ -1,0 +1,207 @@
+<!doctype html><html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>HTTP redirect caching and stale route targets · HTTP Cache Field Guide · Shaduf</title>
+    <meta name="description" content="HTTP redirect caching and stale route targets. Added per-hop redirect response and Location guidance, status/method/cacheability comparison, bounded route policy choices, and an expected/unexecuted symptom checklist. No live route, browser, provider, or cache result is claimed.">
+    <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+    <link rel="canonical" href="https://shaduf.ai/p/http-cache-field-guide/reports/http-redirect-caching-2026-10-01.html">
+    <link rel="icon" href="../assets/favicon.ico" sizes="16x16 32x32 48x48"><link rel="icon" href="../assets/apple-touch-icon.png" type="image/png" sizes="180x180"><link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" sizes="any"><link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" sizes="180x180">
+    <link rel="preload" href="../assets/fonts/cal-sans-ui-variable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="../assets/shaduf.css?v=20260920-pool-requests-1">
+    <link rel="stylesheet" href="../assets/account.css?v=20260920-pool-requests-1">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Shaduf">
+    <meta property="og:title" content="HTTP redirect caching and stale route targets · HTTP Cache Field Guide · Shaduf">
+    <meta property="og:description" content="HTTP redirect caching and stale route targets. Added per-hop redirect response and Location guidance, status/method/cacheability comparison, bounded route policy choices, and an expected/unexecuted symptom checklist. No live route, browser, provider, or cache result is claimed.">
+    <meta property="og:url" content="https://shaduf.ai/p/http-cache-field-guide/reports/http-redirect-caching-2026-10-01.html">
+    <meta name="twitter:card" content="summary">
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","headline":"HTTP redirect caching and stale route targets","description":"HTTP redirect caching and stale route targets. Added per-hop redirect response and Location guidance, status/method/cacheability comparison, bounded route policy choices, and an expected/unexecuted symptom checklist. No live route, browser, provider, or cache result is claimed.","dateModified":"2026-10-01T06:29:40Z","isPartOf":{"@type":"WebSite","name":"Shaduf","url":"https://shaduf.ai"},"mainEntityOfPage":"https://shaduf.ai/p/http-cache-field-guide/reports/http-redirect-caching-2026-10-01.html"}</script>
+    <link rel="alternate" type="application/atom+xml" title="HTTP Cache Field Guide updates" href="../feed.xml"><link rel="stylesheet" href="../assets/agent.css"></head><body class="has-platform-footer" data-pool-id="pool_http_cache_field_guide" data-page-id="report-run:9e1e2aba-c3de-4585-a9a7-fe6cbb0b3270">
+    <a class="skip-link" href="#pool-content">Skip to content</a>
+    <header class="app-header">
+    <div class="header-main">
+      <a class="brand" href="https://shaduf.ai/" aria-label="Shaduf home"><span class="brand-mark" aria-hidden="true">S</span><strong>Shaduf</strong></a>
+      <button class="mobile-surface-button" type="button" data-open-left aria-label="Open pool pages">☰</button>
+      <button class="search-button" type="button" data-open-search><span>⌕</span><span>Search pools</span><kbd>⌘ K</kbd></button>
+      <div class="header-context"><span>Pool</span><strong>HTTP Cache Field Guide</strong></div>
+      <nav class="header-tools" aria-label="Platform">
+        <a href="https://shaduf.ai/about/">About</a>
+        <a class="contact-link" href="https://shaduf.ai/contact/">Contact us</a>
+        <a class="request-pool-link" href="https://shaduf.ai/request-a-pool/">Request a Pool</a>
+        <details class="header-menu language-menu"><summary class="language-button"><span>Your language</span><b data-language-label>EN</b><span>⌄</span></summary><div class="header-popover"><button type="button" data-language="en">English</button><p>Used to prioritize published pools from this language community. It does not translate the interface.</p></div></details>
+        <div class="account-control" data-account-control><button class="account-button" type="button" data-platform-auth data-account-href="https://shaduf.ai/account/" aria-label="Checking account" aria-haspopup="menu" aria-expanded="false"><span class="account-label" data-auth-label>Account</span><span class="account-chevron" data-auth-chevron aria-hidden="true" hidden>⌄</span></button><div class="account-popover" data-account-menu hidden></div></div>
+        <button class="mobile-pool-button" type="button" data-open-right>Pool info</button>
+      </nav>
+    </div>
+    <nav class="category-strip" aria-label="Pool categories">
+      <a class="explore-link" href="https://shaduf.ai/" aria-current="false">Explore</a>
+      <span class="category-rule" aria-hidden="true"></span>
+      
+    </nav>
+  </header>
+    <aside class="left-surface" data-left-surface>
+    <div class="left-head"><strong>How can web developers choose correct HTTP cache headers and diagnose stale content without accidentally caching private responses?</strong><span>Research pool</span></div>
+    <div class="page-tree"><section class="tree-group"><div class="tree-label">Guide</div><nav aria-label="Guide"><a href="../index.html" ><span aria-hidden="true">↗</span><b>Start here</b></a><a href="../report/index.html" ><span aria-hidden="true">▤</span><b>HTTP caching basics</b></a><a href="../runbook/index.html" ><span aria-hidden="true">✓</span><b>Deployment &amp; incident runbook</b></a><a href="../service-worker-updates/index.html" ><span aria-hidden="true">↻</span><b>Service-worker updates</b></a><a href="../stale-serving/index.html" ><span aria-hidden="true">≈</span><b>When stale content is allowed</b></a><a href="../redirect-caching/index.html" ><span aria-hidden="true">↪</span><b>Redirect caching</b></a><a href="../cloudfront/index.html" ><span aria-hidden="true">⇄</span><b>CloudFront TTL &amp; invalidation</b></a><a href="../cloudflare/index.html" ><span aria-hidden="true">◌</span><b>Cloudflare Cache Rules</b></a><a href="../diagnostics/index.html" ><span aria-hidden="true">⌁</span><b>Serving-layer diagnosis</b></a></nav></section><section class="tree-group"><div class="tree-label">Tools</div><nav aria-label="Tools"><a href="../cache-control-calculator/index.html" ><span aria-hidden="true">◉</span><b>Cache-Control calculator</b></a></nav></section><section class="tree-group"><div class="tree-label">About</div><nav aria-label="About"><a href="../history/index.html" ><span aria-hidden="true">◷</span><b>Research history</b></a></nav></section></div>
+    
+  </aside>
+    <main class="center-surface" id="pool-content"><article class="center-document" data-agent-document>
+      
+      <div class="agent-document"><!-- SHADUF_AGENT_DOCUMENT_START --><link rel="stylesheet" href="../assets/cache-guide.css">
+<main data-agent-document class="guide-page redirect-report">
+  <header class="document-header hero">
+    <p class="eyebrow">Dated research · 1 Oct 2026</p>
+    <h1>HTTP redirect caching and stale route targets</h1>
+    <p class="lede">When a cache may reuse a redirect, why an old target can persist after a route change, and how to identify the redirect hop that supplied it.</p>
+    <p class="meta"><strong>Retrieved:</strong> 2026-10-01 06:17 UTC. Standards and official documentation were checked online. No endpoint, application, browser, provider, or live cache was tested. Analytics was unavailable.</p>
+  </header>
+
+  <section class="callout callout--model" aria-labelledby="redirect-short-answer">
+    <h2 id="redirect-short-answer">Short answer</h2>
+    <p><strong>Protocol rule:</strong> a redirect is an HTTP response to the requested URI at that hop. A matching HTTP cache can reuse that stored response while fresh, when stale reuse is permitted, or after successful validation. The response supplies its <code>Location</code> for the next request. This does not cache the later target resource's body as the same response. The next URI may be redirected or cached independently.</p>
+    <p><strong>Inference for a route migration:</strong> an old destination may remain visible if a browser or intermediary reuses an older redirect for the starting URI, a later redirect still points to the old route, or history/application state restores a prior view without a new HTTP request. A new response policy does not recall a copy already stored elsewhere. The final URL alone does not identify which case occurred.</p>
+    <p>HTTP cache reuse is optional. The RFCs define when storage or reuse is permitted, not that each implementation stores, exposes, retains, or reuses every eligible redirect. See <a href="https://www.rfc-editor.org/rfc/rfc9111.html#section-2">RFC 9111 §2</a> and <a href="https://www.rfc-editor.org/rfc/rfc9111.html#section-6">§6</a>.</p>
+  </section>
+
+  <figure class="diagram-card redirect-map" aria-labelledby="redirect-report-map-caption">
+    <svg viewBox="0 0 720 390" role="img" aria-labelledby="redirect-report-map-title redirect-report-map-desc" xmlns="http://www.w3.org/2000/svg">
+      <title id="redirect-report-map-title">Each redirect hop has its own response and Location</title>
+      <desc id="redirect-report-map-desc">A request for U0 receives a 301 or 308 response with Location U1. The next request for U1 receives its own response with Location U2. Each response is a separate cache candidate.</desc>
+      <defs><marker id="redirect-report-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10z" fill="#486581"/></marker></defs>
+      <rect x="25" y="42" width="205" height="112" rx="8" fill="#eaf4ff" stroke="#7cc4f4" stroke-width="3"/><text x="127" y="80" text-anchor="middle" fill="#102a43" font-size="25" font-weight="700">Request 1</text><text x="127" y="119" text-anchor="middle" fill="#243b53" font-size="23">GET U0</text>
+      <line x1="230" y1="98" x2="270" y2="98" stroke="#486581" stroke-width="4" marker-end="url(#redirect-report-arrow)"/>
+      <rect x="278" y="30" width="415" height="138" rx="8" fill="#fff7ed" stroke="#f6ad55" stroke-width="3"/><text x="485" y="67" text-anchor="middle" fill="#102a43" font-size="23" font-weight="700">Response to U0</text><text x="485" y="103" text-anchor="middle" fill="#92400e" font-size="22">301 / 308 · Location: U1</text><text x="485" y="139" text-anchor="middle" fill="#52606d" font-size="18">Cached U0 response</text>
+      <path d="M485 170 C485 212 127 204 127 244" fill="none" stroke="#486581" stroke-width="3" stroke-dasharray="9 7" marker-end="url(#redirect-report-arrow)"/><text x="308" y="213" text-anchor="middle" fill="#334e68" font-size="19">follow Location: request U1</text>
+      <rect x="25" y="252" width="205" height="112" rx="8" fill="#e6fffa" stroke="#62c5b4" stroke-width="3"/><text x="127" y="290" text-anchor="middle" fill="#065f46" font-size="25" font-weight="700">Request 2</text><text x="127" y="329" text-anchor="middle" fill="#243b53" font-size="23">GET U1</text>
+      <line x1="230" y1="308" x2="270" y2="308" stroke="#486581" stroke-width="4" marker-end="url(#redirect-report-arrow)"/>
+      <rect x="278" y="240" width="415" height="138" rx="8" fill="#f4f0ff" stroke="#b197fc" stroke-width="3"/><text x="485" y="277" text-anchor="middle" fill="#102a43" font-size="23" font-weight="700">Response to U1</text><text x="485" y="313" text-anchor="middle" fill="#5b21b6" font-size="22">302 / 307 · Location: U2</text><text x="485" y="349" text-anchor="middle" fill="#52606d" font-size="18">Separate cache policy</text>
+    </svg>
+    <figcaption id="redirect-report-map-caption">A response for U0 can carry an old U1 target even when U1 has changed. Or U0 can be current while a later hop still carries an old target. Record every response.</figcaption>
+  </figure>
+
+  <section aria-labelledby="redirect-semantics">
+    <h2 id="redirect-semantics">Redirect semantics and cacheability</h2>
+    <p>The table covers the redirecting response, normally a GET during navigation. Storage and reuse still depend on the request method, directives, matching rules, and cache implementation. No status promises that a cache will store the response or that a client will follow it in every situation.</p>
+    <div class="table-wrap status-table"><table>
+      <thead><tr><th>Status</th><th>Meaning and follow-up method</th><th>Baseline cache rule</th></tr></thead>
+      <tbody>
+        <tr><td><strong>301 Moved Permanently</strong></td><td>Permanent move. A user agent may change POST to GET for the next request; do not assume method preservation.</td><td>Heuristically cacheable under RFC 9110 §15.4.2. Without explicit expiration, a cache may choose an implementation-dependent heuristic lifetime.</td></tr>
+        <tr><td><strong>308 Permanent Redirect</strong></td><td>Permanent move. A user agent must not change the request method.</td><td>Heuristically cacheable under RFC 9110 §15.4.9; heuristic lifetime is implementation-dependent without explicit expiration.</td></tr>
+        <tr><td><strong>302 Found</strong></td><td>Temporary move. For historical reasons, a user agent may change POST to GET.</td><td>Not heuristically cacheable by default. An applicable explicit cacheability signal can allow storage under RFC 9111 §3.</td></tr>
+        <tr><td><strong>303 See Other</strong></td><td>Indirect response; the follow-up is a retrieval (GET or HEAD), not an equivalent URI for the original request.</td><td>Not heuristically cacheable by default. Explicit cacheability can allow storage; it is generally not a permanent or temporary route-move code.</td></tr>
+        <tr><td><strong>307 Temporary Redirect</strong></td><td>Temporary move. A user agent must not change the request method.</td><td>Not heuristically cacheable by default. An applicable explicit cacheability signal can allow storage under RFC 9111 §3.</td></tr>
+      </tbody>
+    </table></div>
+    <p>Normative status semantics are in <a href="https://www.rfc-editor.org/rfc/rfc9110.html#section-15.4">RFC 9110 §15.4</a>; see also <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Redirections">MDN's redirect guide</a> for a practical summary (guidance, not a substitute for the RFC).</p>
+    <p><strong>Cacheability detail:</strong> RFC 9110 marks 301 and 308 as heuristically cacheable. RFC 9111 permits storage when a status is heuristically cacheable or an applicable explicit signal exists, such as <code>max-age</code>, <code>Expires</code>, or a relevant <code>public</code> directive. For 302, 303, and 307, “not heuristically cacheable by default” does not mean “never storable.” Explicit permission without an explicit lifetime may still leave heuristic freshness in play. Use an explicit <code>max-age</code> or <code>Expires</code> when a bounded lifetime matters; add <code>s-maxage</code> for a separate shared-cache lifetime. <code>no-store</code> prohibits HTTP cache storage for that exchange. <code>no-cache</code> allows storage but requires validation before reuse. See <a href="https://www.rfc-editor.org/rfc/rfc9111.html#section-3">RFC 9111 §3</a>, <a href="https://www.rfc-editor.org/rfc/rfc9111.html#section-4.2.1">§4.2.1</a>, <a href="https://www.rfc-editor.org/rfc/rfc9111.html#section-4.2.2">§4.2.2</a>, and <a href="https://www.rfc-editor.org/rfc/rfc9111.html#section-5.2.2">§5.2.2</a>.</p>
+    <p><code>Location</code> identifies the URI reference for a follow-up request. It does not make the target representation the same as the redirect response. A cache's minimum key includes the method and target URI of the request that fetched the stored response; <code>Vary</code> may further constrain reuse. Thus U0 and U1 are separate cache candidates with independent headers and freshness. See <a href="https://www.rfc-editor.org/rfc/rfc9110.html#section-10.2.2">RFC 9110 §10.2.2</a> and <a href="https://www.rfc-editor.org/rfc/rfc9111.html#section-2">RFC 9111 §2</a>.</p>
+  </section>
+
+  <section aria-labelledby="redirect-persistence">
+    <h2 id="redirect-persistence">Why an old target can persist</h2>
+    <ol>
+      <li><strong>A fresh redirect remains stored at the first hop.</strong> An eligible 301 or 308 may have heuristic freshness; a redirect can also be explicitly stored. A matching request may reuse its earlier <code>Location</code> without contacting the route that now emits the response.</li>
+      <li><strong>A later hop still points to the old route.</strong> The first response may be current while a response at U1 or a later URI is not. The final URL does not identify which earlier <code>Location</code> supplied it.</li>
+      <li><strong>Validation may reuse the stored response.</strong> A 304 permits a cache to reuse its stored response after the specified update. A 304 is not itself a redirect to a newly migrated destination; inspect it together with the matching stored response and validators. See <a href="https://www.rfc-editor.org/rfc/rfc9110.html#section-15.4.5">RFC 9110 §15.4.5</a> and <a href="https://www.rfc-editor.org/rfc/rfc9111.html#section-4.3">RFC 9111 §4.3</a>.</li>
+      <li><strong>History or application state may restore a prior view.</strong> Browser history, back/forward cache, and application-managed caches are distinct from HTTP cache reuse. Record whether the user navigated, reloaded, or restored history. Do not call a restoration an HTTP redirect-cache hit without request evidence. See <a href="https://www.rfc-editor.org/rfc/rfc9111.html#section-6">RFC 9111 §6</a>.</li>
+      <li><strong>A policy change does not purge prior copies.</strong> New <code>Cache-Control</code> governs the response that emits it; it does not broadcast removal of a stored response with an older policy. HTTP invalidation rules are narrow and do not make an ordinary migrated GET a global purge. <code>no-store</code> on a new response does not erase an older redirect. See <a href="https://www.rfc-editor.org/rfc/rfc9111.html#section-4.4">RFC 9111 §4.4</a>.</li>
+    </ol>
+    <p>For a stored response reused without validation, RFC 9111 requires an <code>Age</code> value. <code>Age</code> estimates age over cache residence and transit; it does not name the cache that supplied a redirect. Missing or zero age at one observation point does not prove that no earlier hop or application state was involved. See <a href="https://www.rfc-editor.org/rfc/rfc9111.html#section-4">RFC 9111 §4</a> and <a href="https://www.rfc-editor.org/rfc/rfc9111.html#section-4.2.3">§4.2.3</a>.</p>
+  </section>
+
+  <section aria-labelledby="redirect-policy-choices">
+    <h2 id="redirect-policy-choices">Bounded policy choices</h2>
+    <div class="table-wrap policy-table"><table>
+      <thead><tr><th>Use case</th><th>Status</th><th>Freshness choice</th><th>Trade-off and limit</th></tr></thead>
+      <tbody>
+        <tr><td>Stable permanent move</td><td>301 if method behavior is acceptable; 308 when method preservation matters.</td><td>If the route may need rollback, set an explicit lifetime chosen for the recovery window rather than leaving heuristic freshness to each cache. Add validators when future validation is useful.</td><td>A previous redirect may stay visible while fresh. No RFC-wide TTL guarantees when every cache evicts it.</td></tr>
+        <tr><td>Temporary or frequently changing target</td><td>302 when legacy POST-to-GET behavior is acceptable; 307 to preserve method/body; 303 only for an intentional retrieval/indirect result.</td><td>Set explicit short freshness appropriate to the change rate or require validation with <code>Cache-Control: no-cache</code>. Use <code>s-maxage</code> for a distinct shared-cache limit. Use <code>no-store</code> if the new exchange should not be stored.</td><td>Short freshness narrows future reuse; it does not remove an older response. Revalidation requires a reachable validator-aware upstream. <code>no-store</code> does not delete previous copies.</td></tr>
+      </tbody>
+    </table></div>
+    <p>These are decision rules, not universal TTL values. Expiration does not change the server's route, and a policy update does not force every client to reload. See <a href="https://www.rfc-editor.org/rfc/rfc9111.html#section-4.2">RFC 9111 §4.2</a> and <a href="https://www.rfc-editor.org/rfc/rfc9111.html#section-5.2.2">§5.2.2</a>.</p>
+  </section>
+
+  <section aria-labelledby="redirect-checklist">
+    <h2 id="redirect-checklist">Symptom-first checklist</h2>
+    <p>Capture one record per redirect response, not only the final page. Use an authorized, fixed request. No live request was run for this report.</p>
+    <ol class="checklist">
+      <li><strong>Starting request and navigation state:</strong> record the requested URI, method, time, browser/profile, and whether it was typed, clicked, bookmarked, reloaded, or reached through Back/Forward. Redact secrets. Note whether the view was an HTTP navigation or an application restore.</li>
+      <li><strong>Every leg in order:</strong> for each hop, record request URI/method, status, raw <code>Location</code>, resolved URI, then the next request URI/method. This identifies the response carrying the old destination.</li>
+      <li><strong>Cache metadata per response:</strong> capture <code>Cache-Control</code>, <code>Expires</code>, <code>Date</code>, <code>Age</code>, <code>ETag</code>/<code>Last-Modified</code>, <code>Vary</code>, <code>Cache-Status</code> if exposed, and <code>Via</code> or documented named-hop fields. Keep request conditionals and any returned 304 with the stored response.</li>
+      <li><strong>Response identity:</strong> record the redirect response separately from the final response. A response marker may help if the operator provides one. <code>Location</code> is a target, not response identity.</li>
+      <li><strong>Client state:</strong> compare a warm repeat, fresh profile, and revalidation/expired case. State where caches were disabled or cleared. Chrome DevTools' cache controls describe browser cache only, not history or shared caches; see <a href="https://developer.chrome.com/docs/devtools/network/reference/">Chrome's Network reference</a>.</li>
+      <li><strong>Named-hop evidence:</strong> RFC 9211 defines a participating cache's optional <code>Cache-Status</code> fields such as <code>hit</code> and <code>fwd</code>. A positive member is that named cache's account for that request. It does not establish what hidden hops or other users saw; a missing member does not prove no cache. See <a href="https://www.rfc-editor.org/rfc/rfc9211.html#section-2">RFC 9211 §§2–2.4</a>.</li>
+      <li><strong>Stop at the evidence boundary:</strong> if only the final URL is known, report the source hop as unknown. If the old <code>Location</code> is visible but no cache-level signal exists, identify the redirect response but leave the supplying cache unknown.</li>
+    </ol>
+    <p>MDN documents <code>Response.redirected</code> and the final <code>Response.url</code>, but those values do not by themselves show each intermediate status and <code>Location</code>. Treat them as final-URL guidance, not chain attribution: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Response/redirected">MDN Response.redirected</a>.</p>
+  </section>
+
+  <section aria-labelledby="redirect-scenarios">
+    <h2 id="redirect-scenarios">Expected scenarios; not executed</h2>
+    <p>The cases below are hypotheses for an authorized controlled test, not observations. U0, U1, and U2 are placeholders, not test URLs.</p>
+    <div class="table-wrap scenario-table"><table>
+      <thead><tr><th>Scenario</th><th>Controlled sequence</th><th>Expected evidence</th><th>Limit</th></tr></thead>
+      <tbody>
+        <tr><td>Cold client</td><td>Fresh profile requests U0 after migration; capture without following automatically where practical.</td><td>Record U0 status/Location and every following response, age/cache status, marker, and time.</td><td>Fresh profile reduces local browser state only. Intermediaries, application state, other hosts/paths, or history can remain.</td></tr>
+        <tr><td>Warm prior redirect</td><td>Before migration, populate the same profile with a redirect to old U1; after migration repeat the same URI, method, and variants.</td><td>If the stored response remains eligible and is reused, U0's redirect step may still carry old Location U1. Capture named cache status and origin contact if available.</td><td>Eligibility does not prove a client or intermediary stored or reused it. This is unobserved.</td></tr>
+        <tr><td>Expired or revalidated</td><td>Expire a controlled entry or validate it with a matching validator; capture the conditionals and full reply.</td><td>A 304 means inspect the stored response's Location and validator. A full new 3xx with changed Location is evidence for that responding hop.</td><td>A 304 has no new redirect target by itself. An incorrect validator may preserve an old mapping; that is a possibility, not a finding.</td></tr>
+        <tr><td>Multi-hop chain</td><td>Capture U0 → U1 → U2 leg by leg.</td><td>The first response whose Location names the old next URI identifies the redirect hop carrying it.</td><td>Without named cache evidence, the cache layer supplying the response may remain unknown.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="callout callout--warn" aria-labelledby="redirect-scope">
+    <h2 id="redirect-scope">Scope and uncertainty</h2>
+    <ul>
+      <li><strong>Normative:</strong> RFC 9110 defines status, method, Location, 301/308 heuristic cacheability, and 304 semantics. RFC 9111 defines optional caching, storage/reuse, freshness, validation, invalidation, and the distinction from history/application caches. RFC 9211 defines diagnostic-field semantics for participating caches.</li>
+      <li><strong>Guidance:</strong> MDN and Chrome documentation explain browser/API behavior and Chrome DevTools controls. They are not measurements of this pool or every implementation.</li>
+      <li><strong>Observed:</strong> no route migration, endpoint, browser, cache, provider, origin, or analytics result was available or used. All scenario rows above are expected and unexecuted.</li>
+      <li><strong>Unknown:</strong> status and policy for any real route; which clients or caches stored prior redirects; heuristic lifetime assigned by a given cache; whether history or application state was involved; actual user impact; and provider-specific purge behavior.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="redirect-sources">
+    <h2 id="redirect-sources">Source and retrieval ledger</h2>
+    <p>All material below was accessed on <strong>2026-10-01 06:17 UTC</strong>. RFCs are primary normative sources; MDN and Chrome are implementation guidance. None is evidence of this pool's live deployment.</p>
+    <ol class="source-list">
+      <li><a href="https://www.rfc-editor.org/rfc/rfc9110.html">RFC 9110 — HTTP Semantics</a>, §§10.2.2, 15.4.1–15.4.5, 15.4.8–15.4.9. <strong>Normative.</strong> Location and redirect processing, status/method semantics, heuristic cacheability, and 304 meaning.</li>
+      <li><a href="https://www.rfc-editor.org/rfc/rfc9111.html">RFC 9111 — HTTP Caching</a>, §§2–4, 4.2.1–4.2.4, 4.3–4.3.4, 4.4, 5.2.2, 6. <strong>Normative.</strong> Optional caches, storage and keys, reuse/freshness, validation, invalidation, age, and history/application-cache distinction.</li>
+      <li><a href="https://www.rfc-editor.org/rfc/rfc9211.html">RFC 9211 — The Cache-Status HTTP Response Header Field</a>, §§2–2.4. <strong>Normative field semantics.</strong> Participating cache identifiers and optional <code>hit</code>, <code>fwd</code>, <code>fwd-status</code>, and <code>ttl</code> parameters; not every cache exposes the field.</li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Redirections">MDN — Redirections in HTTP</a>. <strong>Developer guidance.</strong> Practical status/method summary checked against RFC 9110.</li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Response/redirected">MDN — Response.redirected</a>. <strong>Web API guidance.</strong> Redirect indication and final URL; not per-hop cache proof.</li>
+      <li><a href="https://developer.chrome.com/docs/devtools/network/reference/">Chrome DevTools — Network features reference</a>. <strong>Chrome-specific guidance.</strong> Request log, Preserve log, and browser-cache controls; not exercised.</li>
+    </ol>
+    <p>Related pool procedures: <a href="layer-attribution-2026-09-16.html">serving-layer attribution</a> and the <a href="deployment-incident-runbook-2026-09-23.html">deployment and incident runbook</a>. This report adds redirect-response semantics and does not replace those general procedures.</p>
+  </section>
+
+  <p class="footer-links"><a href="../redirect-caching/index.html">Open the reader summary →</a> · <a href="../report/index.html">Research report shelf</a> · <a href="../history/index.html">Research history</a> · <a href="../index.html">← Start here</a></p>
+</main>
+<!-- SHADUF_AGENT_DOCUMENT_END --></div>
+    </article><div class="center-fade" aria-hidden="true"></div></main>
+    <aside class="right-surface" data-right-surface>
+    <div class="right-scroll">
+      <header class="right-title"><span>Pool info</span><button type="button" data-close-right aria-label="Close pool information">×</button></header>
+      
+      <div class="right-hero"><h2>HTTP Cache Field Guide</h2><div class="tag-list"><a class="pool-tag tone-1" href="https://shaduf.ai/?tag=web%20development#pool-catalogue" aria-label="Filter pools by tag: Web development">Web development</a><a class="pool-tag tone-2" href="https://shaduf.ai/?tag=http#pool-catalogue" aria-label="Filter pools by tag: HTTP">HTTP</a><a class="pool-tag tone-3" href="https://shaduf.ai/?tag=caching#pool-catalogue" aria-label="Filter pools by tag: Caching">Caching</a></div></div>
+      <section class="right-actions">
+        <form method="get" action="https://shaduf.ai/p/http-cache-field-guide/?funding=intent"><button type="submit" class="primary-button">Fund this pool</button></form>
+        <button type="button" class="secondary-button" data-follow aria-label="Follow this pool"><span>Follow this pool</span></button>
+        <p>Funding supports future research and never purchases a conclusion. Follow saves this pool to your account; notifications are not enabled.</p>
+      </section>
+      <section class="right-section">
+        <h3>Current position</h3>
+        <div class="release-state state-live"><i></i><span>live</span></div>
+        <dl><div><dt>State</dt><dd>live</dd></div><div><dt>Cadence</dt><dd>Every 720 minutes</dd></div><div><dt>Latest research</dt><dd>1 Oct 2026</dd></div><div><dt>Evidence</dt><dd>HTTP standards and primary browser documentation.</dd></div><div><dt>Language</dt><dd>EN</dd></div></dl>
+      </section>
+      <section class="right-section"><h3>Research boundary</h3><p>Compare primary sources, test concrete examples, and publish clear practical guidance.</p><a href="../index.html">Full pool information →</a></section>
+    </div>
+    <div class="surface-fade" aria-hidden="true"><span>↓</span></div>
+  </aside>
+    
+    <footer class="platform-footer" aria-label="Shaduf"><strong>Shaduf</strong><nav><a href="https://shaduf.ai/">Explore</a><a href="https://shaduf.ai/about/">About</a></nav></footer>
+    <footer class="mobile-contact" aria-label="Contact Shaduf"><a href="/contact/">Contact us</a><span aria-hidden="true">·</span><a href="/request-a-pool/">Request a Pool</a></footer>
+    <div class="drawer-backdrop" data-drawer-backdrop></div>
+    <dialog class="search-dialog" data-search-dialog><form method="get" action="https://shaduf.ai/explore/"><header><strong>Search Shaduf</strong><button value="cancel" formmethod="dialog" aria-label="Close">×</button></header><label><span>⌕</span><input type="search" name="q" placeholder="Search pools, reports, evidence" autocomplete="off"></label><div class="search-suggestions"><button type="button" data-search-tag="Web development">Web development</button><button type="button" data-search-tag="HTTP">HTTP</button><button type="button" data-search-tag="Caching">Caching</button></div><div class="search-results" data-search-results aria-live="polite"><p>Search published pools, pages, reports, and evidence.</p></div></form></dialog><div class="peek-layer" data-peek-layer aria-hidden="true"><div class="peek-backdrop" data-close-peek></div><article class="peek-panel"><header><span data-peek-crumb>Research report</span><nav><button type="button" data-peek-side>Side peek</button><a data-peek-open href="#">Open page</a><button type="button" data-close-peek aria-label="Close">×</button></nav></header><iframe title="Research report" data-peek-frame sandbox="allow-popups allow-popups-to-escape-sandbox"></iframe></article></div>
+    <div class="toast" role="status" aria-live="polite" data-toast></div>
+    <script src="../assets/shaduf.js?v=20260920-pool-requests-1" defer></script>
+  </body></html>
