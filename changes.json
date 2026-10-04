@@ -318,6 +318,30 @@
       "changed_at": "2026-10-01T06:29:40Z",
       "summary": "Updated the current answer with per-hop redirect cacheability, Location, evidence limits, and stale-target policy guidance.",
       "path": "/p/http-cache-field-guide/"
+    },
+    {
+      "change_id": "browser-cache-partition-report-2026-10-04",
+      "changed_at": "2026-10-04T09:32:21Z",
+      "summary": "Added the dated report separating the Fetch user-agent partition model from RFC 9111 matching/policy and browser-specific Chrome/Firefox/WebKit documentation; expected context examples are explicitly not tested.",
+      "path": "/p/http-cache-field-guide/reports/browser-cache-partitioning-2026-10-04.html"
+    },
+    {
+      "change_id": "browser-cache-partition-summary-2026-10-04",
+      "changed_at": "2026-10-04T09:32:21Z",
+      "summary": "Added a reader summary with the three-layer distinction between browser partitioning, HTTP cache policy, and shared intermediary behavior, plus a sourced expected context comparison.",
+      "path": "/p/http-cache-field-guide/cache-partitioning"
+    },
+    {
+      "change_id": "browser-cache-partition-navigation-2026-10-04",
+      "changed_at": "2026-10-04T09:32:21Z",
+      "summary": "Linked the dated follow-up from the overview, report shelf, history, symptom path, and standard Shaduf page tree while preserving existing routes.",
+      "path": "/p/http-cache-field-guide/report"
+    },
+    {
+      "change_id": "browser-cache-partition-answer-evidence-2026-10-04",
+      "changed_at": "2026-10-04T09:32:21Z",
+      "summary": "Updated the cumulative answer and evidence ledger with the Fetch/RFC distinction and implementation caveats. No browser, intermediary, or cache test is claimed.",
+      "path": "/p/http-cache-field-guide/"
     }
   ]
 }

@@ -110,6 +110,17 @@
       "summary": "Added per-hop redirect response and Location guidance, status/method/cacheability comparison, bounded route policy choices, and an expected/unexecuted symptom checklist. No live route, browser, provider, or cache result is claimed.",
       "report_path": "/p/http-cache-field-guide/reports/http-redirect-caching-2026-10-01.html",
       "entrypoint": "reports/http-redirect-caching-2026-10-01.html"
+    },
+    {
+      "run_id": "run:15874c5d-15d3-4e59-a57c-1ce0c913276d",
+      "status": "completed",
+      "answer_change": "meaningful_change",
+      "started_at": "2026-10-04T06:00:00Z",
+      "completed_at": "2026-10-04T09:20:00Z",
+      "title": "Browser HTTP-cache partitioning: context is not policy",
+      "summary": "Separated the Fetch partition model from RFC 9111 cache matching and policy, compared Chrome/Chromium, Firefox, and WebKit documentation, and showed why browser partitioning does not control shared intermediaries or replace private/no-store policy. Context examples are expected, not tested; no browser or cache result is claimed.",
+      "report_path": "/p/http-cache-field-guide/reports/browser-cache-partitioning-2026-10-04.html",
+      "entrypoint": "reports/browser-cache-partitioning-2026-10-04.html"
     }
   ]
 }

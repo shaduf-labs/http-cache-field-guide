@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "default_page": "overview",
-  "meaningfully_updated_at": "2026-10-01T06:29:40Z",
+  "meaningfully_updated_at": "2026-10-04T09:32:21Z",
   "pages": [
     {
       "id": "overview",
@@ -87,6 +87,21 @@
       "description": "Why an old redirect target can persist, how status and method affect cacheability, and how to record each redirect hop.",
       "parent": null,
       "entrypoint": "redirect-caching/index.html",
+      "entrypoint_type": "html_fragment",
+      "redirects": [],
+      "visibility": "public",
+      "indexable": true,
+      "tools": []
+    },
+    {
+      "id": "cache-partitioning",
+      "slug": "cache-partitioning",
+      "label": "Browser cache partitioning",
+      "icon": "◫",
+      "group": "Guide",
+      "description": "Separate browser-local HTTP-cache partitioning from RFC cache policy, Vary, freshness, and shared intermediary behavior.",
+      "parent": null,
+      "entrypoint": "cache-partitioning/index.html",
       "entrypoint_type": "html_fragment",
       "redirects": [],
       "visibility": "public",

@@ -1410,6 +1410,96 @@
       "accessed_at": "2026-10-01T06:17:00Z",
       "relation": "limits",
       "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "partition-rfc9111-2026-10-04",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html",
+      "title": "RFC 9111: HTTP Caching",
+      "claim": "Defines the minimum cache key as method plus target URI, permits additional cache-specific key material, and specifies Vary, storage, freshness, validation, private/shared, and no-store behavior.",
+      "accessed_at": "2026-10-04T09:20:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "partition-fetch-2026-10-04",
+      "source_type": "standard",
+      "source_url": "https://fetch.spec.whatwg.org/",
+      "title": "WHATWG Fetch Standard",
+      "claim": "Defines the user-agent HTTP-cache partition model using a network partition key whose first component is the top-level site and whose second component is null or implementation-defined.",
+      "accessed_at": "2026-10-04T09:20:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "partition-chrome-cache-2026-10-04",
+      "source_type": "browser-documentation",
+      "source_url": "https://developer.chrome.com/blog/http-cache-partitioning",
+      "title": "Chrome for Developers: Gaining security and privacy by partitioning the cache",
+      "claim": "Documents the Chrome 86-era rollout and historical key description; not a stable tuple for every current build.",
+      "accessed_at": "2026-10-04T09:20:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "partition-chrome-136-2026-10-04",
+      "source_type": "browser-documentation",
+      "source_url": "https://developer.chrome.com/release-notes/136",
+      "title": "Chrome 136 release notes",
+      "claim": "Documents the version-specific is-cross-site-main-frame-navigation boolean as an HTTP cache-key input.",
+      "accessed_at": "2026-10-04T09:20:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "partition-chromium-pervasive-2026-10-04",
+      "source_type": "browser-implementation-source",
+      "source_url": "https://chromium.googlesource.com/chromium/src/+/HEAD/services/network/pervasive_resources/README.md",
+      "title": "Chromium source: pervasive-resource cache sharing README",
+      "claim": "Describes a selective single-keyed HTTP-cache path for a curated set of extremely pervasive resources; does not establish which current channel/build enables it.",
+      "accessed_at": "2026-10-04T09:20:00Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "partition-chromium-intent-2026-10-04",
+      "source_type": "browser-implementation-discussion",
+      "source_url": "https://groups.google.com/a/chromium.org/g/blink-dev/c/oKoNHxyhZxs",
+      "title": "Chromium intent to ship: pervasive-resource cache sharing",
+      "claim": "Records a narrow implementation intent and targeted milestone; intent is not proof of rollout or resource eligibility.",
+      "accessed_at": "2026-10-04T09:20:00Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "partition-firefox-mdn-2026-10-04",
+      "source_type": "browser-documentation",
+      "source_url": "https://developer.mozilla.org/en-US/docs/Web/Privacy/Guides/State_Partitioning",
+      "title": "MDN: State Partitioning",
+      "claim": "Mozilla-maintained documentation describes Firefox HTTP Cache network partitioning by top-level site, the Firefox 85 network-partitioning milestone, broader default State Partitioning since 103, and configurable behavior.",
+      "accessed_at": "2026-10-04T09:20:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "partition-webkit-tracking-2026-10-04",
+      "source_type": "browser-documentation",
+      "source_url": "https://webkit.org/tracking-prevention/",
+      "title": "WebKit: Tracking Prevention",
+      "claim": "States that third-party HTTP-cache entries are partitioned per first-party website; the cited summary does not give a complete key tuple.",
+      "accessed_at": "2026-10-04T09:20:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "partition-webkit-itp-2026-10-04",
+      "source_type": "browser-documentation",
+      "source_url": "https://webkit.org/blog/7675/intelligent-tracking-prevention/",
+      "title": "WebKit: Intelligent Tracking Prevention",
+      "claim": "Historical 2017 engine-author statement that WebKit partitioned caches for third-party domains; does not establish current behavior for every WebKit product.",
+      "accessed_at": "2026-10-04T09:20:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
     }
   ]
 }
