@@ -273,3 +273,59 @@
 [data-agent-document].guide-page.redirect-report .policy-table table{min-width:1030px;font-size:.88rem;line-height:1.45}
 [data-agent-document].guide-page.redirect-report .scenario-table table{min-width:1180px;font-size:.86rem;line-height:1.42}
 [data-agent-document].guide-page.redirect-report .source-list{padding-left:1.5rem}
+
+/* Request Cache-Control report and guide: a compact, readable direction-by-direction matrix. */
+[data-agent-document].guide-page.request-cache-report .request-directive-grid,
+[data-agent-document].guide-page.request-cache-summary .request-quick-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));
+  gap:0 22px;
+  margin:1rem 0;
+  border-block:1px solid var(--guide-line);
+}
+[data-agent-document].guide-page.request-cache-report .request-directive-card,
+[data-agent-document].guide-page.request-cache-summary .request-quick-item{
+  min-width:0;
+  border:0;
+  border-bottom:1px solid var(--guide-line);
+  border-radius:0;
+  padding:13px 0 15px;
+  background:transparent;
+  box-shadow:none;
+}
+[data-agent-document].guide-page.request-cache-report .request-directive-card h3,
+[data-agent-document].guide-page.request-cache-summary .request-quick-item h3{
+  margin:.15rem 0 .55rem;
+  color:var(--guide-blue);
+}
+[data-agent-document].guide-page.request-cache-report .request-directive-card dl{margin:0}
+[data-agent-document].guide-page.request-cache-report .request-directive-card dl div{
+  display:grid;
+  grid-template-columns:minmax(86px,.34fr) minmax(0,1fr);
+  gap:7px 12px;
+  padding:5px 0;
+}
+[data-agent-document].guide-page.request-cache-report .request-directive-card dt{
+  color:var(--guide-muted);
+  font-size:.86rem;
+  font-weight:800;
+}
+[data-agent-document].guide-page.request-cache-report .request-directive-card dd{
+  min-width:0;
+  margin:0;
+}
+[data-agent-document].guide-page.request-cache-summary .request-policy-compare{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));
+  gap:16px;
+}
+[data-agent-document].guide-page.request-cache-summary .request-policy-compare>div{
+  min-width:0;
+  border-left:3px solid var(--guide-blue);
+  padding:5px 0 5px 13px;
+}
+[data-agent-document].guide-page.request-cache-summary .request-policy-compare>div+div{border-left-color:var(--guide-amber)}
+[data-agent-document].guide-page.request-cache-report .request-boundaries{padding-left:1.35rem}
+@media(max-width:720px){
+  [data-agent-document].guide-page.request-cache-report .request-directive-card dl div{grid-template-columns:1fr;gap:0}
+}

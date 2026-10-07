@@ -1500,6 +1500,56 @@
       "accessed_at": "2026-10-04T09:20:00Z",
       "relation": "context",
       "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "request-rfc9111-2026-10-07",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html",
+      "title": "RFC 9111: HTTP Caching",
+      "claim": "Defines the request directives as advisory and response directives as mandatory for caches; specifies no-cache, no-store, max-age, min-fresh, max-stale, only-if-cached, validation, invalidation, Age, and cache behavior boundaries.",
+      "accessed_at": "2026-10-07T06:12:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "request-rfc9110-2026-10-07",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9110.html",
+      "title": "RFC 9110: HTTP Semantics",
+      "claim": "Defines conditional request semantics, validator precedence, and 304 Not Modified behavior used to distinguish validation from origin-contact claims.",
+      "accessed_at": "2026-10-07T06:12:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "request-rfc9211-2026-10-07",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9211.html#section-2",
+      "title": "RFC 9211: The Cache-Status HTTP Response Header Field",
+      "claim": "Defines optional Cache-Status evidence for named caches; absence of the optional field does not prove a cache miss or expose every hidden hop.",
+      "accessed_at": "2026-10-07T06:12:00Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "request-mdn-control-2026-10-07",
+      "source_type": "secondary-documentation",
+      "source_url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control",
+      "title": "MDN: Cache-Control",
+      "claim": "Used as a secondary wording cross-check for request and response Cache-Control descriptions; RFC 9111 controls normative interpretations.",
+      "accessed_at": "2026-10-07T06:12:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "request-chrome-devtools-2026-10-07",
+      "source_type": "browser-documentation",
+      "source_url": "https://developer.chrome.com/docs/devtools/network/reference/",
+      "title": "Chrome DevTools: Network reference",
+      "claim": "Documents browser-local cache controls as DevTools features; it does not describe shared cache or intermediary state, and the controls were not exercised.",
+      "accessed_at": "2026-10-07T06:12:00Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
     }
   ]
 }

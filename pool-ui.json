@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "default_page": "overview",
-  "meaningfully_updated_at": "2026-10-04T09:32:21Z",
+  "meaningfully_updated_at": "2026-10-07T06:17:14Z",
   "pages": [
     {
       "id": "overview",
@@ -9,9 +9,24 @@
       "label": "Start here",
       "icon": "↗",
       "group": "Guide",
-      "description": "A decision-first path for safe HTTP caching, validator precedence, request-variant privacy, service-worker lifecycle, redirect caching, serving-layer diagnosis, and CloudFront/Cloudflare deployment choices.",
+      "description": "A decision-first path for safe HTTP caching, request Cache-Control preferences, validator precedence, request-variant privacy, service-worker lifecycle, redirect caching, serving-layer diagnosis, and CloudFront/Cloudflare deployment choices.",
       "parent": null,
       "entrypoint": "index.html",
+      "entrypoint_type": "html_fragment",
+      "redirects": [],
+      "visibility": "public",
+      "indexable": true,
+      "tools": []
+    },
+    {
+      "id": "request-cache-controls",
+      "slug": "request-cache-controls",
+      "label": "Request cache controls",
+      "icon": "⇢",
+      "group": "Guide",
+      "description": "Separate advisory request Cache-Control preferences from mandatory response policy; compare no-cache, no-store, max-age, min-fresh, max-stale, and only-if-cached without inferring origin contact or purge.",
+      "parent": null,
+      "entrypoint": "request-cache-controls/index.html",
       "entrypoint_type": "html_fragment",
       "redirects": [],
       "visibility": "public",
@@ -24,7 +39,7 @@
       "label": "HTTP caching basics",
       "icon": "▤",
       "group": "Guide",
-      "description": "The dated HTTP caching basics report plus focused validator, cache-key/privacy, redirect, service-worker, serving-layer, CloudFront, and Cloudflare findings.",
+      "description": "The dated HTTP caching basics report plus focused request-directive, validator, cache-key/privacy, redirect, service-worker, serving-layer, CloudFront, and Cloudflare findings.",
       "parent": null,
       "entrypoint": "report/index.html",
       "entrypoint_type": "html_fragment",

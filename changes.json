@@ -342,6 +342,30 @@
       "changed_at": "2026-10-04T09:32:21Z",
       "summary": "Updated the cumulative answer and evidence ledger with the Fetch/RFC distinction and implementation caveats. No browser, intermediary, or cache test is claimed.",
       "path": "/p/http-cache-field-guide/"
+    },
+    {
+      "change_id": "request-cache-controls-report-2026-10-07",
+      "changed_at": "2026-10-07T06:17:14Z",
+      "summary": "Added a reader-facing dated report comparing six RFC 9111 request Cache-Control directives with response policy, synthetic selection cases, named-hop evidence limits, source links, and an explicit no-live-experiment boundary.",
+      "path": "/p/http-cache-field-guide/reports/request-cache-controls-2026-10-07.html"
+    },
+    {
+      "change_id": "request-cache-controls-summary-2026-10-07",
+      "changed_at": "2026-10-07T06:17:14Z",
+      "summary": "Added a decision-first summary that answers what a request directive asks a cache to do and distinguishes advisory preferences from response policy and purge/origin-contact claims.",
+      "path": "/p/http-cache-field-guide/request-cache-controls"
+    },
+    {
+      "change_id": "request-cache-controls-navigation-2026-10-07",
+      "changed_at": "2026-10-07T06:17:14Z",
+      "summary": "Linked the summary and dated report from the overview, dated-report shelf, history, symptom index, and shared pool-ui navigation while preserving existing routes.",
+      "path": "/p/http-cache-field-guide/report"
+    },
+    {
+      "change_id": "request-cache-controls-answer-evidence-2026-10-07",
+      "changed_at": "2026-10-07T06:17:14Z",
+      "summary": "Updated the cumulative answer, uncertainty, freshness note, research history, and public evidence ledger with the RFC request-versus-response distinction. No authorized runtime or browser/provider experiment is claimed.",
+      "path": "/p/http-cache-field-guide/"
     }
   ]
 }

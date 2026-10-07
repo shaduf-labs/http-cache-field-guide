@@ -121,6 +121,17 @@
       "summary": "Separated the Fetch partition model from RFC 9111 cache matching and policy, compared Chrome/Chromium, Firefox, and WebKit documentation, and showed why browser partitioning does not control shared intermediaries or replace private/no-store policy. Context examples are expected, not tested; no browser or cache result is claimed.",
       "report_path": "/p/http-cache-field-guide/reports/browser-cache-partitioning-2026-10-04.html",
       "entrypoint": "reports/browser-cache-partitioning-2026-10-04.html"
+    },
+    {
+      "run_id": "run:94b0365b-fe66-434c-9606-55d58be78fa3",
+      "status": "completed",
+      "answer_change": "meaningful_change",
+      "started_at": "2026-10-07T06:00:00Z",
+      "completed_at": "2026-10-07T06:12:00Z",
+      "title": "Request-side HTTP cache controls",
+      "summary": "Compared six RFC 9111 request Cache-Control directives with response policy and explained why request preferences are advisory—not universal bypass, origin-contact, purge, or privacy commands. The examples are synthetic standards expectations; no authorized runtime or browser/provider experiment was available.",
+      "report_path": "/p/http-cache-field-guide/reports/request-cache-controls-2026-10-07.html",
+      "entrypoint": "reports/request-cache-controls-2026-10-07.html"
     }
   ]
 }
