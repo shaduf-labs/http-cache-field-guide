@@ -1550,6 +1550,86 @@
       "accessed_at": "2026-10-07T06:12:00Z",
       "relation": "limits",
       "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "post-rfc9110-9-3-3-2026-10-10",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-9.3.3",
+      "title": "RFC 9110 §9.3.3: POST",
+      "claim": "A POST response meets the POST-specific cacheability condition only with explicit freshness and Content-Location equal to the request target URI; if stored, it can be reused for later GET or HEAD, not POST. This permission does not mandate storage or reuse.",
+      "accessed_at": "2026-10-10T06:08:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "post-rfc9110-8-7-2026-10-10",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-8.7",
+      "title": "RFC 9110 §8.7: Content-Location",
+      "claim": "Defines Content-Location as representation metadata and supports distinguishing it from the request target URI; POST eligibility requires its value to be the same as that target.",
+      "accessed_at": "2026-10-10T06:08:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "post-rfc9111-2-2026-10-10",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-2",
+      "title": "RFC 9111 §2: Overview of Cache Operation",
+      "claim": "HTTP caching is optional; cache requirements do not mandate that a cache always store or reuse a particular otherwise-eligible response.",
+      "accessed_at": "2026-10-10T06:08:00Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "post-rfc9111-3-2026-10-10",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-3",
+      "title": "RFC 9111 §3: Storing Responses in Caches",
+      "claim": "General cache storage conditions continue to apply in addition to the POST-specific eligibility conditions.",
+      "accessed_at": "2026-10-10T06:08:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "post-rfc9111-4-2026-10-10",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-4",
+      "title": "RFC 9111 §4: Constructing Responses from Caches",
+      "claim": "Defines method/target requirements for reuse and requires unsafe requests to be forwarded before a cache responds.",
+      "accessed_at": "2026-10-10T06:08:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "post-rfc9111-4-2-1-2026-10-10",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-4.2.1",
+      "title": "RFC 9111 §4.2.1: Calculating Freshness Lifetime",
+      "claim": "Identifies explicit freshness inputs including max-age, Expires, and shared-cache s-maxage and distinguishes them from heuristic freshness.",
+      "accessed_at": "2026-10-10T06:08:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "post-rfc9111-4-4-2026-10-10",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-4.4",
+      "title": "RFC 9111 §4.4: Invalidating Stored Responses",
+      "claim": "After a non-error (2xx or 3xx) response to an unsafe request, a cache must invalidate stored response(s) for the target URI. The rule applies to caches the request traverses and does not guarantee global invalidation.",
+      "accessed_at": "2026-10-10T06:08:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "post-cloudflare-workers-custom-body-cache-2026-10-10",
+      "source_type": "vendor-documentation",
+      "source_url": "https://developers.cloudflare.com/workers/examples/cache-post-request/",
+      "title": "Cloudflare Workers: Cache POST requests",
+      "claim": "Shows a custom Worker example that hashes a POST body into a synthetic GET request key for Cache API matching and fetches the original POST on a miss. This illustrates application/edge logic, not generic HTTP cache support or a generally safe key design.",
+      "accessed_at": "2026-10-10T06:16:39Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
     }
   ]
 }

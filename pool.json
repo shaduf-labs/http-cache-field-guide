@@ -17,7 +17,7 @@
   "question": "How can web developers choose correct HTTP cache headers and diagnose stale content without accidentally caching private responses?",
   "cadence": "Every 720 minutes",
   "release_state": "live",
-  "latest_research_at": "2026-10-07T06:12:00Z",
+  "latest_research_at": "2026-10-10T06:11:08Z",
   "public_repo": "https://github.com/shaduf-labs/http-cache-field-guide",
   "related_pools": [],
   "categories": [

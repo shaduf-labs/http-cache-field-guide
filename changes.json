@@ -366,6 +366,36 @@
       "changed_at": "2026-10-07T06:17:14Z",
       "summary": "Updated the cumulative answer, uncertainty, freshness note, research history, and public evidence ledger with the RFC request-versus-response distinction. No authorized runtime or browser/provider experiment is claimed.",
       "path": "/p/http-cache-field-guide/"
+    },
+    {
+      "change_id": "post-response-caching-report-2026-10-10",
+      "changed_at": "2026-10-10T06:11:08Z",
+      "summary": "Added a dated RFC-first report separating POST response eligibility and possible GET/HEAD reuse from unsafe-request write-through and target-URI invalidation; the synthetic matrix is expected only and no implementation behavior is claimed.",
+      "path": "/p/http-cache-field-guide/reports/post-response-caching-2026-10-10.html"
+    },
+    {
+      "change_id": "post-response-caching-summary-2026-10-10",
+      "changed_at": "2026-10-10T06:11:08Z",
+      "summary": "Added a concise reader guide stating the two POST rules separately, including explicit freshness, same-target Content-Location, later GET/HEAD only, and non-global invalidation scope.",
+      "path": "/p/http-cache-field-guide/post-response-caching"
+    },
+    {
+      "change_id": "post-response-caching-navigation-2026-10-10",
+      "changed_at": "2026-10-10T06:11:08Z",
+      "summary": "Linked the new summary and dated report from the overview, canonical report shelf, research history, and standard pool-ui page tree while preserving previous report routes.",
+      "path": "/p/http-cache-field-guide/report"
+    },
+    {
+      "change_id": "post-response-caching-answer-evidence-2026-10-10",
+      "changed_at": "2026-10-10T06:11:08Z",
+      "summary": "Updated the cumulative answer, research history, uncertainty, freshness metadata, and public RFC evidence ledger with POST eligibility and unsafe-request invalidation boundaries. No live cache test or implementation result is claimed.",
+      "path": "/p/http-cache-field-guide/"
+    },
+    {
+      "change_id": "post-response-caching-scope-clarification-2026-10-10",
+      "changed_at": "2026-10-10T06:16:39Z",
+      "summary": "Added a labeled scope note distinguishing RFC-defined stored-POST response reuse for later GET/HEAD from custom application/edge memoization of POST-body results; cited Cloudflare’s official Worker example as custom logic, not generic HTTP cache support.",
+      "path": "/p/http-cache-field-guide/post-response-caching"
     }
   ]
 }

@@ -132,6 +132,17 @@
       "summary": "Compared six RFC 9111 request Cache-Control directives with response policy and explained why request preferences are advisory—not universal bypass, origin-contact, purge, or privacy commands. The examples are synthetic standards expectations; no authorized runtime or browser/provider experiment was available.",
       "report_path": "/p/http-cache-field-guide/reports/request-cache-controls-2026-10-07.html",
       "entrypoint": "reports/request-cache-controls-2026-10-07.html"
+    },
+    {
+      "run_id": "run:63ac2760-d93d-4cd4-ad18-67520d0559d9",
+      "status": "completed",
+      "answer_change": "meaningful_change",
+      "started_at": "2026-10-10T06:00:00Z",
+      "completed_at": "2026-10-10T06:11:08Z",
+      "title": "POST response caching and unsafe-request invalidation",
+      "summary": "Separated POST-specific response eligibility—explicit freshness and same-target Content-Location, with possible later GET/HEAD reuse—from unsafe-request write-through and 2xx/3xx target-URI invalidation at traversed caches. The matrix is expected and unexecuted; no implementation result is claimed.",
+      "report_path": "/p/http-cache-field-guide/reports/post-response-caching-2026-10-10.html",
+      "entrypoint": "reports/post-response-caching-2026-10-10.html"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "default_page": "overview",
-  "meaningfully_updated_at": "2026-10-07T06:17:14Z",
+  "meaningfully_updated_at": "2026-10-10T06:11:08Z",
   "pages": [
     {
       "id": "overview",
@@ -9,7 +9,7 @@
       "label": "Start here",
       "icon": "↗",
       "group": "Guide",
-      "description": "A decision-first path for safe HTTP caching, request Cache-Control preferences, validator precedence, request-variant privacy, service-worker lifecycle, redirect caching, serving-layer diagnosis, and CloudFront/Cloudflare deployment choices.",
+      "description": "A decision-first path for safe HTTP caching, POST-response eligibility and unsafe-request invalidation, request Cache-Control preferences, validator precedence, request-variant privacy, service-worker lifecycle, redirect caching, serving-layer diagnosis, and CloudFront/Cloudflare deployment choices.",
       "parent": null,
       "entrypoint": "index.html",
       "entrypoint_type": "html_fragment",
@@ -27,6 +27,21 @@
       "description": "Separate advisory request Cache-Control preferences from mandatory response policy; compare no-cache, no-store, max-age, min-fresh, max-stale, and only-if-cached without inferring origin contact or purge.",
       "parent": null,
       "entrypoint": "request-cache-controls/index.html",
+      "entrypoint_type": "html_fragment",
+      "redirects": [],
+      "visibility": "public",
+      "indexable": true,
+      "tools": []
+    },
+    {
+      "id": "post-response-caching",
+      "slug": "post-response-caching",
+      "label": "POST response caching",
+      "icon": "↔",
+      "group": "Guide",
+      "description": "When a POST response is eligible for possible later GET/HEAD reuse, and how unsafe-request write-through and target-URI invalidation are separate rules.",
+      "parent": null,
+      "entrypoint": "post-response-caching/index.html",
       "entrypoint_type": "html_fragment",
       "redirects": [],
       "visibility": "public",
