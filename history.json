@@ -143,6 +143,17 @@
       "summary": "Separated POST-specific response eligibility—explicit freshness and same-target Content-Location, with possible later GET/HEAD reuse—from unsafe-request write-through and 2xx/3xx target-URI invalidation at traversed caches. The matrix is expected and unexecuted; no implementation result is claimed.",
       "report_path": "/p/http-cache-field-guide/reports/post-response-caching-2026-10-10.html",
       "entrypoint": "reports/post-response-caching-2026-10-10.html"
+    },
+    {
+      "run_id": "run:dcdb8aee-4deb-4ead-84f2-372353ad6ec7",
+      "status": "completed",
+      "answer_change": "meaningful_change",
+      "started_at": "2026-10-13T06:00:00Z",
+      "completed_at": "2026-10-13T06:18:24Z",
+      "title": "Negative caching of missing versioned assets",
+      "summary": "Added the standards-level boundary for 404/410 responses: heuristically cacheable does not mean stored, and status alone supplies no lifetime. A stored negative response may remain reusable after bytes return at the same URI; a new no-store response is not a purge. The report also distinguishes named HTTP-cache evidence from service-worker or application responses. Documentation-only; no implementation result is claimed.",
+      "report_path": "/p/http-cache-field-guide/reports/negative-caching-missing-assets-2026-10-13.html",
+      "entrypoint": "reports/negative-caching-missing-assets-2026-10-13.html"
     }
   ]
 }

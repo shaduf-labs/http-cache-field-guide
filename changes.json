@@ -396,6 +396,30 @@
       "changed_at": "2026-10-10T06:16:39Z",
       "summary": "Added a labeled scope note distinguishing RFC-defined stored-POST response reuse for later GET/HEAD from custom application/edge memoization of POST-body results; cited Cloudflare’s official Worker example as custom logic, not generic HTTP cache support.",
       "path": "/p/http-cache-field-guide/post-response-caching"
+    },
+    {
+      "change_id": "negative-caching-report-2026-10-13",
+      "changed_at": "2026-10-13T06:13:00Z",
+      "summary": "Added the dated RFC-first report on 404/410 cacheability, freshness, validation, invalidation limits, and evidence for distinguishing an HTTP-cache response from a service worker or application. No cache/provider/browser behavior is claimed.",
+      "path": "/p/http-cache-field-guide/reports/negative-caching-missing-assets-2026-10-13.html"
+    },
+    {
+      "change_id": "negative-caching-summary-2026-10-13",
+      "changed_at": "2026-10-13T06:13:00Z",
+      "summary": "Added a concise reader guide on why a stored negative response for a versioned asset may persist, what response directives do, and why status alone or Age cannot identify the serving layer.",
+      "path": "/p/http-cache-field-guide/negative-caching"
+    },
+    {
+      "change_id": "negative-caching-navigation-2026-10-13",
+      "changed_at": "2026-10-13T06:13:00Z",
+      "summary": "Linked the new guide and dated report from the overview, dated-report shelf, research history, and native pool-ui page tree while preserving prior routes and the calculator.",
+      "path": "/p/http-cache-field-guide/report"
+    },
+    {
+      "change_id": "negative-caching-answer-evidence-2026-10-13",
+      "changed_at": "2026-10-13T06:13:00Z",
+      "summary": "Updated the cumulative answer, catalogue summary, uncertainty, freshness metadata, research history, and public evidence ledger with the 404/410 storage, lifetime, no-store, and hop-evidence boundaries. No endpoint, cache, provider, browser, or deployment was tested.",
+      "path": "/p/http-cache-field-guide/"
     }
   ]
 }

@@ -1630,6 +1630,106 @@
       "accessed_at": "2026-10-10T06:16:39Z",
       "relation": "context",
       "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "negative-rfc9110-missing-status-2026-10-13",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9110.html#section-15.5.5",
+      "title": "RFC 9110 §§15.5.5 and 15.5.11: 404 and 410",
+      "claim": "Defines 404/410 status semantics and identifies both as heuristically cacheable; status does not establish actual cache storage or a universal lifetime.",
+      "accessed_at": "2026-10-13T06:13:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "negative-rfc9111-storage-2026-10-13",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-3",
+      "title": "RFC 9111 §3: Storing Responses in Caches",
+      "claim": "Defines general conditions for storage, including the no-store prohibition and the cacheability basis; cacheable does not mean storage is required.",
+      "accessed_at": "2026-10-13T06:13:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "negative-rfc9111-freshness-2026-10-13",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-4.2.1",
+      "title": "RFC 9111 §§4.2.1–4.2.4: freshness and age",
+      "claim": "Defines explicit freshness precedence, optional heuristic freshness, Age calculation, and stale-response rules; supplies no universal 404/410 heuristic TTL.",
+      "accessed_at": "2026-10-13T06:13:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "negative-rfc9111-validation-invalidation-2026-10-13",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-4.3",
+      "title": "RFC 9111 §§4.3–4.4: validation and invalidation",
+      "claim": "Defines stored-response validation and the narrow mandatory invalidation trigger for successful responses to unsafe requests at caches traversed.",
+      "accessed_at": "2026-10-13T06:13:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "negative-rfc9111-response-directives-2026-10-13",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-5.2.2",
+      "title": "RFC 9111 §5.2.2: response Cache-Control directives",
+      "claim": "Defines no-cache, no-store, max-age, and s-maxage behavior; a new no-store response is not a purge directive for older entries.",
+      "accessed_at": "2026-10-13T06:13:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "negative-rfc9211-cache-status-2026-10-13",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9211.html#section-2",
+      "title": "RFC 9211 §2: Cache-Status",
+      "claim": "Defines optional named-cache handling information such as hit and forwarding details; presence is not universal or authenticated provenance.",
+      "accessed_at": "2026-10-13T06:13:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "negative-service-worker-draft-2026-10-13",
+      "source_type": "standard",
+      "source_url": "https://www.w3.org/TR/2026/CRD-service-workers-20260917/",
+      "title": "W3C Service Workers: 17 Sep 2026 Candidate Recommendation Draft",
+      "claim": "Draft source for fetch-handler response behavior and script-managed Cache objects, used only to distinguish the service-worker Cache API from HTTP-cache behavior. This is not a W3C Recommendation.",
+      "accessed_at": "2026-10-13T06:13:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "negative-chrome-network-2026-10-13",
+      "source_type": "browser-documentation",
+      "source_url": "https://developer.chrome.com/docs/devtools/network/reference",
+      "title": "Chrome DevTools Network reference",
+      "claim": "Chrome-specific affordances for inspecting requests, response headers, initiators, and service-worker timing; not a cross-browser behavior claim.",
+      "accessed_at": "2026-10-13T06:13:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "negative-chrome-application-2026-10-13",
+      "source_type": "browser-documentation",
+      "source_url": "https://developer.chrome.com/docs/devtools/application/",
+      "title": "Chrome DevTools Application panel",
+      "claim": "Chrome-specific inspection of service workers and Cache Storage; an inspection affordance, not evidence about any target application.",
+      "accessed_at": "2026-10-13T06:13:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "negative-mdn-cache-control-2026-10-13",
+      "source_type": "developer-reference",
+      "source_url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control",
+      "title": "MDN: Cache-Control",
+      "claim": "Developer-facing cross-check for no-store/no-cache and freshness directive wording; RFC 9111 remains normative.",
+      "accessed_at": "2026-10-13T06:13:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
     }
   ]
 }

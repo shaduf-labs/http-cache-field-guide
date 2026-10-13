@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "default_page": "overview",
-  "meaningfully_updated_at": "2026-10-10T06:11:08Z",
+  "meaningfully_updated_at": "2026-10-13T06:18:24Z",
   "pages": [
     {
       "id": "overview",
@@ -9,9 +9,24 @@
       "label": "Start here",
       "icon": "↗",
       "group": "Guide",
-      "description": "A decision-first path for safe HTTP caching, POST-response eligibility and unsafe-request invalidation, request Cache-Control preferences, validator precedence, request-variant privacy, service-worker lifecycle, redirect caching, serving-layer diagnosis, and CloudFront/Cloudflare deployment choices.",
+      "description": "A decision-first path for safe HTTP caching, missing-asset 404/410 responses, POST-response eligibility and unsafe-request invalidation, request Cache-Control preferences, validator precedence, request-variant privacy, service-worker lifecycle, redirect caching, serving-layer diagnosis, and CloudFront/Cloudflare deployment choices.",
       "parent": null,
       "entrypoint": "index.html",
+      "entrypoint_type": "html_fragment",
+      "redirects": [],
+      "visibility": "public",
+      "indexable": true,
+      "tools": []
+    },
+    {
+      "id": "negative-caching",
+      "slug": "negative-caching",
+      "label": "Missing asset responses",
+      "icon": "∅",
+      "group": "Guide",
+      "description": "Why 404/410 responses are heuristically cacheable but not necessarily stored; how freshness, validation, no-store, versioned URLs, and named-hop evidence apply to a missing asset.",
+      "parent": null,
+      "entrypoint": "negative-caching/index.html",
       "entrypoint_type": "html_fragment",
       "redirects": [],
       "visibility": "public",
