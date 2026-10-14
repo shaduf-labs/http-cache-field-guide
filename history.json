@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "runs": [
     {
-      "run_id": "run:manual:5f3ef5f0e568a40f7c614692b6d944cc",
+      "run_id": "report-b00f5b7611f346458fabaf97",
       "status": "completed",
       "answer_change": "meaningful_change",
       "started_at": "2026-09-16T02:08:44.239Z",
@@ -13,7 +13,7 @@
       "entrypoint": "reports/bootstrap-2026-09-16.html"
     },
     {
-      "run_id": "run:3f494691-2e16-49a5-9a98-918cd5fb525d",
+      "run_id": "report-2b45735e3e9058c459f9d66b",
       "status": "completed",
       "answer_change": "meaningful_change",
       "started_at": "2026-09-16T06:00:00Z",
@@ -24,7 +24,7 @@
       "entrypoint": "reports/etag-last-modified-2026-09-16.html"
     },
     {
-      "run_id": "run:manual:1ea99ce67290ffb8cc91714d756a489d",
+      "run_id": "report-8d41a6bd8d1e381f619e740a",
       "status": "completed",
       "answer_change": "meaningful_change",
       "started_at": "2026-09-16T10:25:34.768Z",
@@ -35,7 +35,7 @@
       "entrypoint": "reports/cache-key-privacy-2026-09-16.html"
     },
     {
-      "run_id": "run:manual:00d394e1ecdd1773e3d68f0786af2a8f",
+      "run_id": "report-07a812800b375711879a8b1b",
       "status": "completed",
       "answer_change": "meaningful_change",
       "started_at": "2026-09-16T14:02:40Z",
@@ -46,7 +46,7 @@
       "entrypoint": "reports/layer-attribution-2026-09-16.html"
     },
     {
-      "run_id": "run:manual:2d8b5d5d08351fad4281f20b655ac2c3",
+      "run_id": "report-598cc39b5481e96960610e9c",
       "status": "completed",
       "answer_change": "meaningful_change",
       "started_at": "2026-09-17T12:32:50.178Z",
@@ -57,7 +57,7 @@
       "entrypoint": "reports/cloudfront-ttl-invalidation-2026-09-17.html"
     },
     {
-      "run_id": "run:manual:17af50bd90e691210b3c88b2f42f7749",
+      "run_id": "report-f3f234e4319d3ba2f63339a9",
       "status": "completed",
       "answer_change": "meaningful_change",
       "started_at": "2026-09-20T10:19:14.743Z",
@@ -68,7 +68,7 @@
       "entrypoint": "reports/cloudflare-cache-rules-2026-09-20.html"
     },
     {
-      "run_id": "run:manual:72d22c04b099c1932d6e0932a4346a83",
+      "run_id": "report-612ca11b74483a2f53ea9824",
       "status": "completed",
       "answer_change": "meaningful_change",
       "started_at": "2026-09-23T06:23:09.190Z",
@@ -79,7 +79,7 @@
       "entrypoint": "reports/deployment-incident-runbook-2026-09-23.html"
     },
     {
-      "run_id": "run:8e99ae2f-43f7-41c7-a491-f81a4377a3a9",
+      "run_id": "report-ddb8f01cd10931e3fbf9e54d",
       "status": "completed",
       "answer_change": "meaningful_change",
       "started_at": "2026-09-25T06:00:00Z",
@@ -90,7 +90,7 @@
       "entrypoint": "reports/stale-http-serving-2026-09-25.html"
     },
     {
-      "run_id": "run:8503d890-439f-4682-9708-d5ee8142ec24",
+      "run_id": "report-b251f58890ef686f4ab69d23",
       "status": "completed",
       "answer_change": "meaningful_change",
       "started_at": "2026-09-28T06:00:00Z",
@@ -101,7 +101,7 @@
       "entrypoint": "reports/service-worker-update-lifecycle-2026-09-28.html"
     },
     {
-      "run_id": "run:9e1e2aba-c3de-4585-a9a7-fe6cbb0b3270",
+      "run_id": "report-bd41898d85c766e088eca824",
       "status": "completed",
       "answer_change": "meaningful_change",
       "started_at": "2026-10-01T06:00:00Z",
@@ -112,7 +112,7 @@
       "entrypoint": "reports/http-redirect-caching-2026-10-01.html"
     },
     {
-      "run_id": "run:15874c5d-15d3-4e59-a57c-1ce0c913276d",
+      "run_id": "report-95ed2d27ab37b6e7c4d5c55c",
       "status": "completed",
       "answer_change": "meaningful_change",
       "started_at": "2026-10-04T06:00:00Z",
@@ -123,7 +123,7 @@
       "entrypoint": "reports/browser-cache-partitioning-2026-10-04.html"
     },
     {
-      "run_id": "run:94b0365b-fe66-434c-9606-55d58be78fa3",
+      "run_id": "report-7c00dca977684b8a5241e6f0",
       "status": "completed",
       "answer_change": "meaningful_change",
       "started_at": "2026-10-07T06:00:00Z",
@@ -134,7 +134,7 @@
       "entrypoint": "reports/request-cache-controls-2026-10-07.html"
     },
     {
-      "run_id": "run:63ac2760-d93d-4cd4-ad18-67520d0559d9",
+      "run_id": "report-e297018de439b9770d963953",
       "status": "completed",
       "answer_change": "meaningful_change",
       "started_at": "2026-10-10T06:00:00Z",
@@ -145,7 +145,7 @@
       "entrypoint": "reports/post-response-caching-2026-10-10.html"
     },
     {
-      "run_id": "run:dcdb8aee-4deb-4ead-84f2-372353ad6ec7",
+      "run_id": "report-ce1f2e8e32aad83bc689eef2",
       "status": "completed",
       "answer_change": "meaningful_change",
       "started_at": "2026-10-13T06:00:00Z",
