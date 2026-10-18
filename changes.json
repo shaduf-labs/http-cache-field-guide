@@ -420,6 +420,24 @@
       "changed_at": "2026-10-13T06:13:00Z",
       "summary": "Updated the cumulative answer, catalogue summary, uncertainty, freshness metadata, research history, and public evidence ledger with the 404/410 storage, lifetime, no-store, and hop-evidence boundaries. No endpoint, cache, provider, browser, or deployment was tested.",
       "path": "/p/http-cache-field-guide/"
+    },
+    {
+      "change_id": "age-current-age-report",
+      "changed_at": "2026-10-16T07:26:45Z",
+      "summary": "Added the RFC 9111 Age/current_age report with section-specific sources, the initial-age choices, a fully synthetic worked calculation, and explicit no-live limits.",
+      "path": "/p/http-cache-field-guide/reports/age-current-age-2026-10-16.html"
+    },
+    {
+      "change_id": "age-current-age-guide",
+      "changed_at": "2026-10-16T07:26:45Z",
+      "summary": "Added a concise reader guide and native page-tree entry, linking the current-age calculation to the existing calculator without changing calculator behavior.",
+      "path": "/p/http-cache-field-guide/age-current-age"
+    },
+    {
+      "change_id": "age-current-age-bridge",
+      "changed_at": "2026-10-16T07:26:45Z",
+      "summary": "Linked the guide and synthetic report from the calculator FAQ, report shelf, overview, and research history; updated the answer and source evidence.",
+      "path": "/p/http-cache-field-guide/"
     }
   ]
 }

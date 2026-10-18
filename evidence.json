@@ -1730,6 +1730,36 @@
       "accessed_at": "2026-10-13T06:13:00Z",
       "relation": "context",
       "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc9111-age-current-age-2026-10-16",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-4.2.3",
+      "title": "RFC 9111 §4.2.3 — Calculating Age",
+      "claim": "Defines age_value, apparent_age, corrected_age_value, the conditional MAY for using corrected_age_value as corrected_initial_age on an all-HTTP/1.1-or-later path, the more conservative legacy-cache calculation, resident_time, and current_age.",
+      "accessed_at": "2026-10-16T07:26:45Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc9111-age-reuse-2026-10-16",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-4",
+      "title": "RFC 9111 §4 — Age on unvalidated stored-response reuse",
+      "claim": "Requires a cache using a stored response to satisfy a request without validation to generate Age equal to that stored response’s current_age, replacing any present Age field.",
+      "accessed_at": "2026-10-16T07:26:45Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc9111-age-field-2026-10-16",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-5.1",
+      "title": "RFC 9111 §5.1 — Age field definition",
+      "claim": "Defines Age as the sender’s estimate in seconds of elapsed time since origin generation or successful validation, and states that its presence implies the response was not generated or validated by the origin for this request; the field alone does not name a cache hop.",
+      "accessed_at": "2026-10-16T07:26:45Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
     }
   ]
 }

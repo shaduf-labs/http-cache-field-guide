@@ -154,6 +154,17 @@
       "summary": "Added the standards-level boundary for 404/410 responses: heuristically cacheable does not mean stored, and status alone supplies no lifetime. A stored negative response may remain reusable after bytes return at the same URI; a new no-store response is not a purge. The report also distinguishes named HTTP-cache evidence from service-worker or application responses. Documentation-only; no implementation result is claimed.",
       "report_path": "/p/http-cache-field-guide/reports/negative-caching-missing-assets-2026-10-13.html",
       "entrypoint": "reports/negative-caching-missing-assets-2026-10-13.html"
+    },
+    {
+      "run_id": "report-b771ed45a86985b0dfbd2b74",
+      "status": "completed",
+      "answer_change": "meaningful_change",
+      "started_at": "2026-10-16T06:00:00Z",
+      "completed_at": "2026-10-16T07:26:45Z",
+      "title": "How Age relates to current_age",
+      "summary": "Explained RFC 9111 §4.2.3’s initial-age choices and resident-time calculation, the generated Age requirement for unvalidated stored-response reuse, and the limits of Age as hop evidence. The arithmetic is fully synthetic; no live cache behavior was tested.",
+      "report_path": "/p/http-cache-field-guide/reports/age-current-age-2026-10-16.html",
+      "entrypoint": "reports/age-current-age-2026-10-16.html"
     }
   ]
 }

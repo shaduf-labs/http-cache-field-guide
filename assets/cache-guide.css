@@ -329,3 +329,8 @@
 @media(max-width:720px){
   [data-agent-document].guide-page.request-cache-report .request-directive-card dl div{grid-template-columns:1fr;gap:0}
 }
+
+/* Accessible document blocks; the platform scopes these selectors. */
+.table-wrap { display:block; max-width:100%; overflow-x:auto; }
+.diagram-card .diagram-steps { display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr)); padding-inline-start:1.4rem; }
+.diagram-card .diagram-steps li { min-width:0; overflow-wrap:anywhere; }
