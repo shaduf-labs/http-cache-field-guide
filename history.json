@@ -165,6 +165,17 @@
       "summary": "Explained RFC 9111 §4.2.3’s initial-age choices and resident-time calculation, the generated Age requirement for unvalidated stored-response reuse, and the limits of Age as hop evidence. The arithmetic is fully synthetic; no live cache behavior was tested.",
       "report_path": "/p/http-cache-field-guide/reports/age-current-age-2026-10-16.html",
       "entrypoint": "reports/age-current-age-2026-10-16.html"
+    },
+    {
+      "run_id": "report-17d1194bd49c48135347720b",
+      "status": "completed",
+      "answer_change": "meaningful_change",
+      "started_at": "2026-10-19T06:00:00Z",
+      "completed_at": "2026-10-19T06:18:56Z",
+      "title": "Authorization reuse and proxy-revalidate",
+      "summary": "RFC 9111 §3.5 lists must-revalidate, public, and s-maxage as permissions for a shared cache to reuse a response to an Authorization request; proxy-revalidate instead governs validation before stale reuse. Erratum 9004 proposed a no-behavior-change clarification, but its final disposition was not confirmed from the accessible archive record. No cache implementation behavior was tested.",
+      "report_path": "/p/http-cache-field-guide/reports/authorization-proxy-revalidate-2026-10-19.html",
+      "entrypoint": "reports/authorization-proxy-revalidate-2026-10-19.html"
     }
   ]
 }

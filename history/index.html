@@ -71,6 +71,7 @@
     <div class="timeline-step"><strong>13 · POST responses</strong><small>GET/HEAD eligibility vs invalidation</small></div>
     <div class="timeline-step"><strong>14 · Missing assets</strong><small>404/410 cacheability vs actual storage</small></div>
     <div class="timeline-step"><strong>15 · Age calculation</strong><small>Age input vs current_age</small></div>
+    <div class="timeline-step"><strong>16 · Authorization responses</strong><small>Shared reuse vs stale validation</small></div>
   </section>
 
   <section aria-labelledby="history-items">
@@ -166,6 +167,12 @@
         <p>Explained RFC 9111 §4.2.3’s initial-age choices and resident-time calculation; clarified when an unvalidated stored response must be emitted with <code>Age</code> equal to its calculated current age. The arithmetic is fully synthetic; no live endpoint, browser, cache, provider, or header behavior was tested.</p>
         <p><a href="../age-current-age/index.html">Open the reader guide →</a> · <a href="../reports/age-current-age-2026-10-16.html">Open the dated report</a></p>
       </li>
+      <li class="card card--amber">
+        <span class="badge badge--warning">19 Oct 2026 · Authorization reuse clarification</span>
+        <h2>Does <code>proxy-revalidate</code> permit shared reuse of an Authorization response?</h2>
+        <p>RFC 9111 §3.5 lists <code>must-revalidate</code>, <code>public</code>, and <code>s-maxage</code> as shared-cache permissions for an Authorization request. <code>proxy-revalidate</code> instead governs validation before stale reuse. Erratum 9004 proposed a no-behavior-change clarification; its accessible record was Reported and final disposition was not confirmed. No cache implementation behavior was tested.</p>
+        <p><a href="../reports/authorization-proxy-revalidate-2026-10-19.html">Open the dated report →</a></p>
+      </li>
     </ol>
   </section>
 
@@ -186,7 +193,7 @@
       <section class="right-section">
         <h3>Current position</h3>
         <div class="release-state state-live"><i></i><span>live</span></div>
-        <dl><div><dt>State</dt><dd>live</dd></div><div><dt>Cadence</dt><dd>Every 720 minutes</dd></div><div><dt>Latest research</dt><dd>16 Oct 2026</dd></div><div><dt>Evidence</dt><dd>HTTP standards and primary browser documentation.</dd></div><div><dt>Language</dt><dd>EN</dd></div></dl>
+        <dl><div><dt>State</dt><dd>live</dd></div><div><dt>Cadence</dt><dd>Every 720 minutes</dd></div><div><dt>Latest research</dt><dd>19 Oct 2026</dd></div><div><dt>Evidence</dt><dd>HTTP standards and primary browser documentation.</dd></div><div><dt>Language</dt><dd>EN</dd></div></dl>
       </section>
       <section class="right-section"><h3>Research boundary</h3><p>Compare primary sources, test concrete examples, and publish clear practical guidance.</p><a href="../index.html">Full pool information →</a></section>
     </div>

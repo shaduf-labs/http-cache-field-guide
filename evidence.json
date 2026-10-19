@@ -1760,6 +1760,36 @@
       "accessed_at": "2026-10-16T07:26:45Z",
       "relation": "supports",
       "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc9111-auth-proxy-revalidate-2026-10-19",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html#section-3.5",
+      "title": "RFC 9111 §§3.5 and 5.2.2.8–.10: Authorization reuse and response directives",
+      "claim": "Section 3.5 lists must-revalidate, public, and s-maxage as permissions for shared-cache reuse of a response to an Authorization request; proxy-revalidate governs stale validation and is not a listed permission.",
+      "accessed_at": "2026-10-19T06:00:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc9111-erratum-9004-submission-2026-10-19",
+      "source_type": "standards-process-archive",
+      "source_url": "https://mailarchive.ietf.org/arch/msg/httpbisa/QV2natFRXDjFBYTc0xpk9jueNPM/",
+      "title": "IETF HTTP working-group archive: RFC 9111 Erratum 9004 submission",
+      "claim": "The submission proposes wording to clarify that proxy-revalidate is not among §3.5 permissions and describes the proposal as requesting no behavior change; the accessible record was marked Reported when checked for this review.",
+      "accessed_at": "2026-10-19T06:00:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "rfc9111-erratum-9004-reply-2026-10-19",
+      "source_type": "standards-process-archive",
+      "source_url": "https://mailarchive.ietf.org/arch/msg/httpbisa/mOjbYcnfoqLFpAY5w9EEVFwKc7o/",
+      "title": "IETF HTTP working-group archive: co-author reply on Erratum 9004",
+      "claim": "A co-author reply says REJECT; this reply alone does not establish the final formal erratum disposition, which was not confirmed from the accessible record.",
+      "accessed_at": "2026-10-19T06:00:00Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
     }
   ]
 }

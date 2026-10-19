@@ -438,6 +438,24 @@
       "changed_at": "2026-10-16T07:26:45Z",
       "summary": "Linked the guide and synthetic report from the calculator FAQ, report shelf, overview, and research history; updated the answer and source evidence.",
       "path": "/p/http-cache-field-guide/"
+    },
+    {
+      "change_id": "authorization-proxy-revalidate-report-2026-10-19",
+      "changed_at": "2026-10-19T06:18:56Z",
+      "summary": "Added a source-backed explanation of RFC 9111 Authorization-request reuse permissions versus the stale-validation role of proxy-revalidate; Erratum 9004 remains an unconfirmed, no-behavior-change clarification proposal.",
+      "path": "/p/http-cache-field-guide/reports/authorization-proxy-revalidate-2026-10-19.html"
+    },
+    {
+      "change_id": "authorization-proxy-revalidate-answer-2026-10-19",
+      "changed_at": "2026-10-19T06:18:56Z",
+      "summary": "Clarified that proxy-revalidate alone is not one of RFC 9111 §3.5’s permissions for shared reuse of an Authorization response, while preserving the uncertainty around Erratum 9004’s final disposition.",
+      "path": "/p/http-cache-field-guide/"
+    },
+    {
+      "change_id": "authorization-proxy-revalidate-shelf-2026-10-19",
+      "changed_at": "2026-10-19T06:18:56Z",
+      "summary": "Linked the RFC 9111 directive clarification and its erratum-status limits from the dated report shelf and research history.",
+      "path": "/p/http-cache-field-guide/report"
     }
   ]
 }

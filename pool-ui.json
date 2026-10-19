@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "default_page": "overview",
-  "meaningfully_updated_at": "2026-10-16T07:26:45Z",
+  "meaningfully_updated_at": "2026-10-19T06:18:56Z",
   "pages": [
     {
       "id": "overview",
@@ -9,7 +9,7 @@
       "label": "Start here",
       "icon": "↗",
       "group": "Guide",
-      "description": "A decision-first path for safe HTTP caching, missing-asset 404/410 responses, POST-response eligibility and unsafe-request invalidation, request Cache-Control preferences, validator precedence, request-variant privacy, service-worker lifecycle, redirect caching, serving-layer diagnosis, and CloudFront/Cloudflare deployment choices. Includes a focused RFC 9111 guide to Age and current_age.",
+      "description": "A decision-first path for safe HTTP caching, missing-asset 404/410 responses, POST-response eligibility and unsafe-request invalidation, request Cache-Control preferences, validator precedence, request-variant privacy, service-worker lifecycle, redirect caching, serving-layer diagnosis, and CloudFront/Cloudflare deployment choices. Includes a focused RFC 9111 guide to Age and current_age. It also distinguishes RFC 9111 shared-reuse permissions for Authorization requests from proxy-revalidate’s stale-validation role.",
       "parent": null,
       "entrypoint": "index.html",
       "entrypoint_type": "html_fragment",
@@ -69,7 +69,7 @@
       "label": "HTTP caching basics",
       "icon": "▤",
       "group": "Guide",
-      "description": "The dated HTTP caching basics report plus focused Age/current_age, request-directive, validator, cache-key/privacy, redirect, service-worker, serving-layer, CloudFront, and Cloudflare findings.",
+      "description": "The dated HTTP caching basics report plus focused Age/current_age, Authorization reuse versus proxy-revalidate, request-directive, validator, cache-key/privacy, redirect, service-worker, serving-layer, CloudFront, and Cloudflare findings.",
       "parent": null,
       "entrypoint": "report/index.html",
       "entrypoint_type": "html_fragment",
