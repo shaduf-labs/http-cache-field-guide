@@ -456,6 +456,30 @@
       "changed_at": "2026-10-19T06:18:56Z",
       "summary": "Linked the RFC 9111 directive clarification and its erratum-status limits from the dated report shelf and research history.",
       "path": "/p/http-cache-field-guide/report"
+    },
+    {
+      "change_id": "validation-freshening-report-2026-10-22",
+      "changed_at": "2026-10-22T06:14:46Z",
+      "summary": "Added a dated RFC 9111 §4.3.4 report on 304 candidate selection, strong/weak/no-validator branches, metadata updates, and a synthetic four-entry example; no implementation behavior was tested.",
+      "path": "/p/http-cache-field-guide/reports/validation-freshening-2026-10-22.html"
+    },
+    {
+      "change_id": "validation-freshening-guide-2026-10-22",
+      "changed_at": "2026-10-22T06:14:46Z",
+      "summary": "Added a concise 304 selection guide with an accessible decision sequence, the narrow no-validator case, and a clear metadata-versus-body distinction.",
+      "path": "/p/http-cache-field-guide/validation-freshening"
+    },
+    {
+      "change_id": "validation-freshening-answer-2026-10-22",
+      "changed_at": "2026-10-22T06:14:46Z",
+      "summary": "Extended the current answer with RFC 9111 §4.3.4 candidate-selection and validator rules, the synthetic-example limit, and the metadata-only meaning of a 304.",
+      "path": "/p/http-cache-field-guide/"
+    },
+    {
+      "change_id": "validation-freshening-navigation-2026-10-22",
+      "changed_at": "2026-10-22T06:14:46Z",
+      "summary": "Added the 304 response selection guide and dated report to the standard page tree, report shelf, overview, and research history while preserving existing report routes and the cache-decision tool.",
+      "path": "/p/http-cache-field-guide/report"
     }
   ]
 }

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "default_page": "overview",
-  "meaningfully_updated_at": "2026-10-19T06:18:56Z",
+  "meaningfully_updated_at": "2026-10-22T06:14:46Z",
   "pages": [
     {
       "id": "overview",
@@ -207,6 +207,21 @@
       "description": "How RFC 9111 §4.2.3 derives current_age from Age, Date, request/response timing, and resident time, including what Age can and cannot show.",
       "parent": null,
       "entrypoint": "age-current-age/index.html",
+      "entrypoint_type": "html_fragment",
+      "redirects": [],
+      "visibility": "public",
+      "indexable": true,
+      "tools": []
+    },
+    {
+      "id": "validation-freshening",
+      "slug": "validation-freshening",
+      "label": "304 response selection",
+      "icon": "↻",
+      "group": "Guide",
+      "description": "A practical RFC 9111 §4.3.4 guide to candidate responses, strong versus weak validator selection, the narrow no-validator case, and 304 metadata updates.",
+      "parent": null,
+      "entrypoint": "validation-freshening/index.html",
       "entrypoint_type": "html_fragment",
       "redirects": [],
       "visibility": "public",
