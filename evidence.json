@@ -1820,6 +1820,76 @@
       "accessed_at": "2026-10-22T06:00:00Z",
       "relation": "limits",
       "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "cdn-targeted-rfc9213",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9213.html",
+      "title": "RFC 9213 — Targeted HTTP Cache Control",
+      "claim": "Supports the target-list selection, first valid/non-empty field, ordinary fallback, pass-through, targeted directive, end-to-end freshness, forwarding, and security claims.",
+      "accessed_at": "2026-10-25T06:12:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "cdn-targeted-rfc9111",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html",
+      "title": "RFC 9111 — HTTP Caching",
+      "claim": "Supports the ordinary s-maxage/max-age/Expires precedence, shared-cache semantics, Age/current-age model, cache-key minimum, Vary, Authorization, and directive limitations.",
+      "accessed_at": "2026-10-25T06:12:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "cdn-targeted-rfc8941",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc8941.html",
+      "title": "RFC 8941 — Structured Field Values for HTTP",
+      "claim": "Provides the dictionary syntax referenced by RFC 9213 for targeted field values.",
+      "accessed_at": "2026-10-25T06:12:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "cdn-targeted-cloudflare-header",
+      "source_type": "vendor-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/concepts/cdn-cache-control/",
+      "title": "Cloudflare CDN-Cache-Control",
+      "claim": "Supports Cloudflare’s documented precedence, forwarding/suppression, Browser/Edge TTL interactions, Expires handling, Surrogate-Control note, and product examples.",
+      "accessed_at": "2026-10-25T06:12:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "cdn-targeted-cloudflare-responses",
+      "source_type": "vendor-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/concepts/cache-responses/",
+      "title": "Cloudflare cache responses",
+      "claim": "Supports Cloudflare’s documented header precedence, BYPASS/revalidation explanations, and Edge TTL exception.",
+      "accessed_at": "2026-10-25T06:12:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "cdn-targeted-cloudflare-occ",
+      "source_type": "vendor-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/concepts/cache-control/",
+      "title": "Cloudflare Origin Cache Control",
+      "claim": "Supports the Cloudflare-specific OCC directives and Authorization interaction; does not establish a universal rule or any supplied zone configuration.",
+      "accessed_at": "2026-10-25T06:12:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "cdn-targeted-cloudflare-rules",
+      "source_type": "vendor-documentation",
+      "source_url": "https://developers.cloudflare.com/cache/how-to/cache-response-rules/",
+      "title": "Cloudflare Cache Response Rules",
+      "claim": "Supports documented precedence of Cache Response Rules over origin-set targeted headers and Cache Rules, including the set_cache_control example.",
+      "accessed_at": "2026-10-25T06:12:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
     }
   ]
 }

@@ -158,13 +158,13 @@
       "path": "/p/http-cache-field-guide/"
     },
     {
-      "change_id": "calculator-resize-repair",
+      "change_id": "calculator-resize-helper",
       "changed_at": "2026-09-20T07:02:18.469Z",
       "summary": "Replaced the sandboxed calculator’s stale resize helper with the trusted helper and added visible growth/shrink example presets while preserving the dedicated calculator page and tool URL.",
       "path": "/p/http-cache-field-guide/cache-control-calculator/"
     },
     {
-      "change_id": "audit-overflow-repair",
+      "change_id": "document-overflow-wrapping",
       "changed_at": "2026-09-20T07:02:18.469Z",
       "summary": "Scoped long-token wrapping and removed non-table nested overflow from updated document content; wide evidence tables retain horizontal scrolling as the only intentional nested scroll surface.",
       "path": "/p/http-cache-field-guide/reports/cloudfront-ttl-invalidation-2026-09-17.html"
@@ -480,6 +480,36 @@
       "changed_at": "2026-10-22T06:14:46Z",
       "summary": "Added the 304 response selection guide and dated report to the standard page tree, report shelf, overview, and research history while preserving existing report routes and the cache-decision tool.",
       "path": "/p/http-cache-field-guide/report"
+    },
+    {
+      "change_id": "cdn-targeted-cache-control-report",
+      "changed_at": "2026-10-25T06:12:00Z",
+      "summary": "Added the dated RFC 9213 and Cloudflare documentation report with target-list selection, ordinary fallback, end-to-end Age, a synthetic cache-policy matrix, product-specific precedence/forwarding, privacy limits, and primary source links.",
+      "path": "/p/http-cache-field-guide/reports/cdn-targeted-cache-control-2026-10-25.html"
+    },
+    {
+      "change_id": "cdn-targeted-cache-control-guide",
+      "changed_at": "2026-10-25T06:12:00Z",
+      "summary": "Added a concise reader guide separating CDN-targeted fields from ordinary s-maxage and distinguishing RFC 9213 semantics from Cloudflare’s documented product behavior.",
+      "path": "/p/http-cache-field-guide/cdn-targeted-cache-control"
+    },
+    {
+      "change_id": "cdn-targeted-cache-control-overview",
+      "changed_at": "2026-10-25T06:12:00Z",
+      "summary": "Linked the CDN-targeted guide and dated report from the field-guide overview without replacing the separate Cloudflare Cache Rules and Origin Cache Control coverage.",
+      "path": "/p/http-cache-field-guide/"
+    },
+    {
+      "change_id": "cdn-targeted-cache-control-navigation",
+      "changed_at": "2026-10-25T06:12:00Z",
+      "summary": "Added the reader guide to the shared pool page tree, report shelf, and research history while retaining existing page routes and the calculator.",
+      "path": "/p/http-cache-field-guide/report"
+    },
+    {
+      "change_id": "cdn-targeted-cache-control-answer-evidence",
+      "changed_at": "2026-10-25T06:12:00Z",
+      "summary": "Updated the current answer, uncertainty, freshness note, and public source ledger with RFC 9213 field selection, shared-cache s-maxage, Cloudflare product limits, and the synthetic/no-live-evidence boundary.",
+      "path": "/p/http-cache-field-guide/"
     }
   ]
 }

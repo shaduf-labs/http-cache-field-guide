@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "default_page": "overview",
-  "meaningfully_updated_at": "2026-10-22T06:14:46Z",
+  "meaningfully_updated_at": "2026-10-25T06:12:00Z",
   "pages": [
     {
       "id": "overview",
@@ -177,6 +177,21 @@
       "description": "A documentation-grounded Cloudflare case for Origin Cache Control, Cache Rule edge/browser TTL, cache-key identity, purge scope, and verification limits.",
       "parent": null,
       "entrypoint": "cloudflare/index.html",
+      "entrypoint_type": "html_fragment",
+      "redirects": [],
+      "visibility": "public",
+      "indexable": true,
+      "tools": []
+    },
+    {
+      "id": "cdn-targeted-cache-control",
+      "slug": "cdn-targeted-cache-control",
+      "label": "CDN-targeted Cache-Control",
+      "icon": "⇢",
+      "group": "Guide",
+      "description": "How RFC 9213 selects a CDN-targeted response policy, why it differs from shared-cache s-maxage, and what Cloudflare documents about targeted-field precedence, forwarding, age, privacy, and key limits.",
+      "parent": null,
+      "entrypoint": "cdn-targeted-cache-control/index.html",
       "entrypoint_type": "html_fragment",
       "redirects": [],
       "visibility": "public",

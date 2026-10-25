@@ -195,7 +195,7 @@
   [data-agent-document].guide-page.calculator-page .calculator-timeline svg{min-height:240px}
 }
 
-/* Publication repair: wrap long evidence labels while reserving horizontal scrolling for wide tables only. */
+/* Long evidence labels wrap; wide tables retain the only intentional nested horizontal scroll. */
 [data-agent-document].guide-page a,
 [data-agent-document].guide-page p,
 [data-agent-document].guide-page li,

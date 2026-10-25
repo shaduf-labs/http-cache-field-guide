@@ -187,6 +187,17 @@
       "summary": "Added a standards-based 304 candidate and validator-selection guide. Strong validators select all matches; weak validators select the most recent matching response only when no strong validator is present; the no-validator case is limited to one validator-less candidate. A 304 updates metadata rather than carrying replacement bytes. The example is synthetic; no implementation behavior was tested.",
       "report_path": "/p/http-cache-field-guide/reports/validation-freshening-2026-10-22.html",
       "entrypoint": "reports/validation-freshening-2026-10-22.html"
+    },
+    {
+      "run_id": "report-43595de2daf815bcb8e191f9",
+      "status": "completed",
+      "answer_change": "meaningful_change",
+      "started_at": "2026-10-25T06:00:00Z",
+      "completed_at": "2026-10-25T06:12:00Z",
+      "title": "CDN-targeted Cache-Control",
+      "summary": "Explained RFC 9213 target-list selection and fallback, distinguished targeted fields from ordinary shared-cache s-maxage, and summarized Cloudflare’s documented precedence and forwarding. The comparison is synthetic; no implementation, zone, endpoint, browser, or cache was tested.",
+      "report_path": "/p/http-cache-field-guide/reports/cdn-targeted-cache-control-2026-10-25.html",
+      "entrypoint": "reports/cdn-targeted-cache-control-2026-10-25.html"
     }
   ]
 }
