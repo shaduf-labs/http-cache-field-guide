@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "default_page": "overview",
-  "meaningfully_updated_at": "2026-10-25T06:12:00Z",
+  "meaningfully_updated_at": "2026-10-28T06:14:03Z",
   "pages": [
     {
       "id": "overview",
@@ -237,6 +237,21 @@
       "description": "A practical RFC 9111 §4.3.4 guide to candidate responses, strong versus weak validator selection, the narrow no-validator case, and 304 metadata updates.",
       "parent": null,
       "entrypoint": "validation-freshening/index.html",
+      "entrypoint_type": "html_fragment",
+      "redirects": [],
+      "visibility": "public",
+      "indexable": true,
+      "tools": []
+    },
+    {
+      "id": "immutable-directive",
+      "slug": "immutable-directive",
+      "label": "Immutable responses",
+      "icon": "⌁",
+      "group": "Guide",
+      "description": "What RFC 8246 says about fresh and stale immutable responses, explicit force reloads, versioned URLs, and the current MDN Chrome reload caveat.",
+      "parent": null,
+      "entrypoint": "immutable-directive/index.html",
       "entrypoint_type": "html_fragment",
       "redirects": [],
       "visibility": "public",

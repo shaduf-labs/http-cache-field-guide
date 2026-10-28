@@ -510,6 +510,30 @@
       "changed_at": "2026-10-25T06:12:00Z",
       "summary": "Updated the current answer, uncertainty, freshness note, and public source ledger with RFC 9213 field selection, shared-cache s-maxage, Cloudflare product limits, and the synthetic/no-live-evidence boundary.",
       "path": "/p/http-cache-field-guide/"
+    },
+    {
+      "change_id": "immutable-response-research-report",
+      "changed_at": "2026-10-28T06:14:03Z",
+      "summary": "Added the dated RFC 8246/RFC 9111 and browser-documentation review of response immutable, its freshness boundary, force-reload override, and versioned-resource example. No browser, cache, endpoint, or provider was tested.",
+      "path": "/p/http-cache-field-guide/reports/immutable-cache-control-2026-10-28.html"
+    },
+    {
+      "change_id": "immutable-response-reader-guide",
+      "changed_at": "2026-10-28T06:14:03Z",
+      "summary": "Added a concise guide and accessible freshness-boundary comparison for fresh, stale, and explicitly requested validation; clarified that max-age, not immutable, supplies the example lifetime.",
+      "path": "/p/http-cache-field-guide/immutable-directive"
+    },
+    {
+      "change_id": "immutable-response-discovery",
+      "changed_at": "2026-10-28T06:14:03Z",
+      "summary": "Linked the immutable response guide and dated report from the overview, report shelf, research history, and shared page navigation while retaining earlier routes.",
+      "path": "/p/http-cache-field-guide/report"
+    },
+    {
+      "change_id": "immutable-response-answer-evidence",
+      "changed_at": "2026-10-28T06:14:03Z",
+      "summary": "Updated the current answer and evidence ledger with RFC 8246/RFC 9111 semantics, current MDN reload documentation, the historical Chromium source, and explicit no-browser/no-cache testing limits.",
+      "path": "/p/http-cache-field-guide/"
     }
   ]
 }

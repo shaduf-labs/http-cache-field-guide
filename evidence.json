@@ -1890,6 +1890,56 @@
       "accessed_at": "2026-10-25T06:12:00Z",
       "relation": "supports",
       "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "immutable-rfc8246",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc8246.html",
+      "title": "RFC 8246 — HTTP Immutable Responses",
+      "claim": "Supports the freshness-limited response meaning, SHOULD NOT conditional-revalidate guidance while fresh, ordinary revalidation after staleness, intermediary exception for client validation signals, no-argument/request behavior, versioned-resource example, and force-reload override consideration.",
+      "accessed_at": "2026-10-28T06:11:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "immutable-rfc9111",
+      "source_type": "standard",
+      "source_url": "https://www.rfc-editor.org/rfc/rfc9111.html",
+      "title": "RFC 9111 — HTTP Caching",
+      "claim": "Supports explicit freshness lifetime rules, shared-cache s-maxage precedence, and the advisory status of request directives such as no-cache.",
+      "accessed_at": "2026-10-28T06:11:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "immutable-mdn-caching",
+      "source_type": "technical-documentation",
+      "source_url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Caching",
+      "title": "MDN — HTTP caching",
+      "claim": "Current documentation checked 28 Oct 2026; supports the reload/force-reload request examples, the versioned-resource and immutable explanation, and the scoped Chrome subresource-on-reload caveat. It does not establish compatibility across all browsers or versions.",
+      "accessed_at": "2026-10-28T06:11:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "immutable-mdn-cache-control",
+      "source_type": "technical-documentation",
+      "source_url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control",
+      "title": "MDN — Cache-Control header",
+      "claim": "Current documentation checked 28 Oct 2026; provides the response immutable explanation and versioned-resource example. It is explanatory documentation, not a browser test.",
+      "accessed_at": "2026-10-28T06:11:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "immutable-chromium-reload-2017",
+      "source_type": "browser-project-documentation",
+      "source_url": "https://blog.chromium.org/2017/01/reload-reloaded-faster-and-leaner-page_26.html",
+      "title": "Chromium Blog — Reload, reloaded: faster and leaner page reloads",
+      "claim": "Published 26 Jan 2017; historical project explanation of a Chrome reload design that validates the main resource and reuses cached page resources. Context only; not evidence of current-version behavior.",
+      "accessed_at": "2026-10-28T06:11:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
     }
   ]
 }

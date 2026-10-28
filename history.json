@@ -198,6 +198,17 @@
       "summary": "Explained RFC 9213 target-list selection and fallback, distinguished targeted fields from ordinary shared-cache s-maxage, and summarized Cloudflare’s documented precedence and forwarding. The comparison is synthetic; no implementation, zone, endpoint, browser, or cache was tested.",
       "report_path": "/p/http-cache-field-guide/reports/cdn-targeted-cache-control-2026-10-25.html",
       "entrypoint": "reports/cdn-targeted-cache-control-2026-10-25.html"
+    },
+    {
+      "run_id": "report-6e7493b68000d8014dae7c09",
+      "status": "completed",
+      "answer_change": "meaningful_change",
+      "started_at": "2026-10-28T06:00:00Z",
+      "completed_at": "2026-10-28T06:14:03Z",
+      "title": "What does immutable change for a fresh response?",
+      "summary": "Explained RFC 8246’s freshness-bounded recommendation against conditional validation, the return to ordinary revalidation when stale, and the explicit force-reload override. max-age, not immutable, supplies the example lifetime. The MDN Chrome caveat is limited to reload subresources; no browser, cache, endpoint, or provider was tested.",
+      "report_path": "/p/http-cache-field-guide/reports/immutable-cache-control-2026-10-28.html",
+      "entrypoint": "reports/immutable-cache-control-2026-10-28.html"
     }
   ]
 }
