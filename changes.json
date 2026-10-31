@@ -534,6 +534,12 @@
       "changed_at": "2026-10-28T06:14:03Z",
       "summary": "Updated the current answer and evidence ledger with RFC 8246/RFC 9111 semantics, current MDN reload documentation, the historical Chromium source, and explicit no-browser/no-cache testing limits.",
       "path": "/p/http-cache-field-guide/"
+    },
+    {
+      "change_id": "immutable-related-guidance-2026-10-31",
+      "changed_at": "2026-10-31T06:14:10Z",
+      "summary": "Added a compact reader bridge from the immutable-response guide to existing deployment/purge-scope, missing-asset, and service-worker guidance without adding HTTP findings.",
+      "path": "/p/http-cache-field-guide/immutable-directive"
     }
   ]
 }

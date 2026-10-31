@@ -209,6 +209,17 @@
       "summary": "Explained RFC 8246’s freshness-bounded recommendation against conditional validation, the return to ordinary revalidation when stale, and the explicit force-reload override. max-age, not immutable, supplies the example lifetime. The MDN Chrome caveat is limited to reload subresources; no browser, cache, endpoint, or provider was tested.",
       "report_path": "/p/http-cache-field-guide/reports/immutable-cache-control-2026-10-28.html",
       "entrypoint": "reports/immutable-cache-control-2026-10-28.html"
+    },
+    {
+      "run_id": "report-cbdbcee68db3f42235d603a0",
+      "status": "completed",
+      "answer_change": "no_meaningful_change",
+      "started_at": "2026-10-31T06:00:00Z",
+      "completed_at": "2026-10-31T06:14:10Z",
+      "title": "Related guidance for immutable assets",
+      "summary": "Connected the immutable-response guide to existing deployment and purge-scope, missing-asset, and service-worker guidance. This is a navigation update, not a new HTTP protocol finding or a live-behavior result.",
+      "report_path": "/p/http-cache-field-guide/reports/related-guidance-immutable-assets-2026-10-31.html",
+      "entrypoint": "reports/related-guidance-immutable-assets-2026-10-31.html"
     }
   ]
 }

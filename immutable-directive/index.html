@@ -61,6 +61,16 @@
     <p>For an unchanged static file at a versioned URL, use an explicit freshness lifetime such as <code>max-age=31536000</code> and add <code>immutable</code> only if the URL’s representation will remain unchanged during that lifetime. When the bytes change, publish a new URL. <code>max-age</code> supplies the example lifetime; <code>immutable</code> does not. <a href="https://www.rfc-editor.org/rfc/rfc8246.html#section-2">RFC 8246 §2</a> · <a href="https://www.rfc-editor.org/rfc/rfc9111.html#section-4.2.1">RFC 9111 §4.2.1</a></p>
   </section>
 
+  <section class="callout callout--model" aria-labelledby="related-guidance">
+    <h2 id="related-guidance">Related guidance</h2>
+    <p>For changed static bytes, publish the changed asset at a new versioned URL; this does not purge the old URL. Choose the guide closest to what you are seeing:</p>
+    <ul>
+      <li><a href="../runbook/index.html">Deployment choices, new URLs, and purge scope</a></li>
+      <li><a href="../negative-caching/index.html">A restored asset still returns 404/410</a></li>
+      <li><a href="../service-worker-updates/index.html">An open page or worker still uses older assets</a></li>
+    </ul>
+  </section>
+
   <section aria-labelledby="lifecycle-heading">
     <h2 id="lifecycle-heading">Fresh, stale, and an explicit check</h2>
     <figure class="diagram-card" aria-labelledby="immutable-lifecycle-caption">
@@ -135,7 +145,7 @@ Cache-Control: max-age=31536000, immutable</code></pre>
       <section class="right-section">
         <h3>Current position</h3>
         <div class="release-state state-live"><i></i><span>live</span></div>
-        <dl><div><dt>State</dt><dd>live</dd></div><div><dt>Cadence</dt><dd>Every 720 minutes</dd></div><div><dt>Latest research</dt><dd>28 Oct 2026</dd></div><div><dt>Evidence</dt><dd>HTTP standards and primary browser documentation.</dd></div><div><dt>Language</dt><dd>EN</dd></div></dl>
+        <dl><div><dt>State</dt><dd>live</dd></div><div><dt>Cadence</dt><dd>Every 720 minutes</dd></div><div><dt>Latest research</dt><dd>31 Oct 2026</dd></div><div><dt>Evidence</dt><dd>HTTP standards and primary browser documentation.</dd></div><div><dt>Language</dt><dd>EN</dd></div></dl>
       </section>
       <section class="right-section"><h3>Research boundary</h3><p>Compare primary sources, test concrete examples, and publish clear practical guidance.</p><a href="../index.html">Full pool information →</a></section>
     </div>
